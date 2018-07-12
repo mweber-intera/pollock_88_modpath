@@ -8,7 +8,34 @@ def PointsInCircum(x,y, r,n=8):
     y0 = np.array([i[1] for i in a])
     return x0+x, y0+y
 
+def find_row_col(dis,globx,globy):
+    nrow,ncol,delr,delc = dis.nrow,dis.ncol,dis.delr.array,dis.delc.array
+    Lx,Ly = delc.sum(), delr.sum()
 
+    rows, cols = [], []
+    locxs, locys = [], []
+    for i in range(len(globx)):
+        gx,gy = globx[i], globy[i]
+        row = np.searchsorted(delr.cumsum(),gy,side='right')
+
+        col = np.searchsorted(delc.cumsum(),gx,side='left')
+
+        Lx_temp = delc[:col].sum()
+        Ly_temp = delr[:row].sum()
+
+        locx = (gx-Lx_temp)/delc[0]
+        locy = 1+((Ly_temp-gy))/delr[0]
+
+        # print(gx,row)
+        # print(gy, col)
+        # print(Lx_temp,Ly_temp)
+        # print(locx,locy)
+        # exit()
+        rows.append(row)
+        cols.append(col)
+        locxs.append(locx)
+        locys.append(locy)
+    return rows,cols,locxs,locys
 
 def create_pt_df(dis,strt_time,n=8):
     locx, locy = [], []
@@ -21,17 +48,22 @@ def create_pt_df(dis,strt_time,n=8):
     nrow,ncol,delr,delc = dis.nrow,dis.ncol,dis.delr.array,dis.delc.array
     Lx,Ly = delc.sum(), delr.sum()
     # for something in rows # old way
-    x, y = PointsInCircum(.5, .5, .5, n)
+    # x, y = PointsInCircum(.5, .5, .5, n)
+
+    globx, globy = PointsInCircum(Lx/2,Ly/2,150,n)
+
+    rows, cols, locxs, locys = find_row_col(dis,globx,globy)
 
 
     # print(x,y)
     # exit()
+    # for i in range(len(rows)):
     for j in range(n):
-        locx.append(x[j])
-        locy.append(y[j])
+        locx.append(locxs[j])
+        locy.append(locys[j])
         pg.append(f'GP{gp_n+1:02}')
-        locr.append(int(nrow/2)+1)
-        locc.append(int(ncol/2)+1)
+        locr.append(rows[j]+1)
+        locc.append(cols[j]+1)
         loclay.append(1)
         gp_num.append(gp_n)
 

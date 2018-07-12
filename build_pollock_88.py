@@ -44,7 +44,7 @@ oc = flopy.modflow.ModflowOc(mf, stress_period_data=spd, compact=True)
 
 nwt = flopy.modflow.ModflowNwt(mf, maxiterout=5000, linmeth=2, iprnwt=1)
 
-Qcfd = 40000.
+Qcfd = 160000.
 wel_spd = {}
 for sp in range(nper):
     wel_spd[sp] = [0,int(nrow/2),int(ncol/2),Qcfd]
@@ -70,7 +70,7 @@ def createCircularMask(h, w, center=None, radius=None):
 
     Y, X = np.ogrid[:h, :w]
     dist_from_center = np.sqrt((X - center[0])**2 + (Y-center[1])**2)
-    mask = (dist_from_center <= radius) & (dist_from_center >= radius-1)
+    mask = (dist_from_center < radius+1) & (dist_from_center >= radius)
     return mask
 
 mask = createCircularMask(ncol,nrow,radius=40)
@@ -142,6 +142,6 @@ plt.clabel(CS, inline=1, fontsize=10)
 well_epd = epdobj.get_alldata()
 well_pathlines = pthobj.get_alldata()
 modelmap.plot_pathline(well_pathlines, travel_time='<10000', layer='all', colors='red')
-modelmap.plot_endpoint(well_epd, direction='ending', colorbar=False)
+modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False)
 
 plt.show()
