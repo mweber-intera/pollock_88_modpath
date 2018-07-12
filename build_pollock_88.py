@@ -2,13 +2,14 @@ import flopy
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-
+import platform
 
 model_ws = os.path.join('pollock_model_ex1')
 if not os.path.exists(model_ws): os.mkdir(model_ws)
 gw_codes = os.path.join('gw_codes')
 exe = os.path.join(gw_codes,'mfnwt.exe')
-
+if platform.system() == 'Darwin':
+    exe = 'mfnwt' # assuming you have mfnwt in your path
 mf = flopy.modflow.Modflow('pollock_88',version='mfnwt',exe_name=exe,model_ws=model_ws)
 
 
@@ -32,7 +33,7 @@ laycbd = 0
 
 dis = flopy.modflow.ModflowDis(mf,nlay,nrow,ncol,nper,delr,delc,0,top,botm,perlen,nstp,1,steady)
 
-upw = flopy.modflow.ModflowUpw(mf,hk=10)
+upw = flopy.modflow.ModflowUpw(mf,hk=10,ipakcb=53)
 
 bas = flopy.modflow.ModflowBas(mf, ibound=1, strt=100.0)
 
@@ -85,6 +86,30 @@ chd = flopy.modflow.ModflowChd(mf,stress_period_data=chd_spd)
 
 mf.write_input()
 mf.run_model()
+
+
+
+
+# now for modpath
+
+mpexe = os.path.join(gw_codes,'mp6.exe')
+if platform.system() == 'Darwin':
+    mpexe = 'mp6' # assuming you have mp6 in your path
+
+mp = flopy.modpath.Modpath('pollock_88_mp',exe_name=mpexe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
+
+mpb = flopy.modpath.ModpathBas(mp,upw.hdry,ibound=mp_ibound,prsity=.3)
+
+mp_ibound = np.zeroes((nrow,ncol))
+mp_ibound[x,y] = 1
+
+start_time=[0]
+
+
+
+
+
+
 
 
 import flopy.utils.binaryfile as bf

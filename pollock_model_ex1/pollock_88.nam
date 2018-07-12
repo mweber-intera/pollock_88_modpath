@@ -8,4 +8,5 @@ OC                14  pollock_88.oc
 NWT               32  pollock_88.nwt 
 WEL               20  pollock_88.wel 
 CHD               24  pollock_88.chd 
+DATA(BINARY)      53  pollock_88.cbc REPLACE
 DATA(BINARY)      51  pollock_88.hds REPLACE
