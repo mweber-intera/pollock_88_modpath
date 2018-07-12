@@ -20,7 +20,7 @@ top = np.ones((nrow,ncol)) * 100
 botm = np.ones((nlay,nrow,ncol)) * 0
 delr, delc = 100, 100
 
-nper = 10
+nper = 15
 perlen = [500]
 steady = [False]
 nstp = [1]
@@ -98,17 +98,20 @@ if platform.system() == 'Darwin':
 
 mp = flopy.modpath.Modpath('pollock_88_mp',exe_name=mpexe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
 
+mp_ibound = np.zeros((nrow,ncol))
+mp_ibound[int(nrow/2),int(ncol/2)] = 1
 mpb = flopy.modpath.ModpathBas(mp,upw.hdry,ibound=mp_ibound,prsity=.3)
-
-mp_ibound = np.zeroes((nrow,ncol))
-mp_ibound[x,y] = 1
 
 start_time=[0]
 
+import Write_starting_locations
+srt_loc = 'starting_locs.loc'
+Write_starting_locations.write_file(os.path.join(model_ws,srt_loc),dis,start_time,10*4)
 
+sim = mp.create_mpsim(trackdir='forward', simtype='pathline', packages=srt_loc, start_time=(0, 0, 0))
+mp.write_input()
 
-
-
+mp.run_model(silent=False)
 
 
 
@@ -117,6 +120,10 @@ import flopy.utils.binaryfile as bf
 headobj = bf.HeadFile(os.path.join(model_ws,'pollock_88.hds'))
 times = headobj.get_times()
 print(times)
+
+pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'pollock_88_mp.mppth'))
+epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'pollock_88_mp.mpend'))
+
 
 head = headobj.get_data(totim=times[-1])
 fig, ax = plt.subplots()
@@ -129,9 +136,12 @@ modelmap = flopy.plot.ModelMap(model=mf, layer=0, ax=ax)
 lc = modelmap.plot_grid(alpha=.25)
 qm = modelmap.plot_bc('CHD', alpha=0.5)
 plt.clabel(CS, inline=1, fontsize=10)
-plt.imshow(head[0],cmap='cubehelix',extent=extent)
+# plt.imshow(head[0],cmap='cubehelix',extent=extent)
+# plt.colorbar()
 
-
-
+well_epd = epdobj.get_alldata()
+well_pathlines = pthobj.get_alldata()
+modelmap.plot_pathline(well_pathlines, travel_time='<10000', layer='all', colors='red')
+modelmap.plot_endpoint(well_epd, direction='ending', colorbar=False)
 
 plt.show()
