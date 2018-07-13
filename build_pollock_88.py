@@ -3,6 +3,7 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 import platform
+import imageio
 
 model_ws = os.path.join('pollock_model_ex1')
 if not os.path.exists(model_ws): os.mkdir(model_ws)
@@ -22,11 +23,11 @@ delr, delc = 100, 100
 
 nper = 15
 perlen = [500]
-steady = [False]
+steady = [True]
 nstp = [1]
 for sp in range(0,nper-1):
     perlen.append(500)
-    steady.append(False)
+    steady.append(True)
     nstp.append(1)
 laycbd = 0
 
@@ -118,7 +119,7 @@ mp.run_model(silent=False)
 import flopy.utils.binaryfile as bf
 
 headobj = bf.HeadFile(os.path.join(model_ws,'pollock_88.hds'))
-times = headobj.get_times()
+times = [0] + headobj.get_times()
 print(times)
 
 pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'pollock_88_mp.mppth'))
@@ -126,22 +127,35 @@ epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'pollock_88_mp.mpend'))
 
 
 head = headobj.get_data(totim=times[-1])
-fig, ax = plt.subplots()
-# plt.colorbar()
-# ax.scatter(X_chd, Y_chd)
+fig_list = []
+for time in times:
+    fig, ax = plt.subplots(figsize=(8,8))
+    extent=(0,Lx,0,Ly)
+    if time != 0:
+        CS = plt.contour(np.flipud(head[0]), extent=extent, color='k')
+        plt.clabel(CS, inline=1, fontsize=10)
 
-extent=(0,Lx,0,Ly)
-CS = plt.contour(np.flipud(head[0]), extent=extent, color='k')
-modelmap = flopy.plot.ModelMap(model=mf, layer=0, ax=ax)
-lc = modelmap.plot_grid(alpha=.25)
-qm = modelmap.plot_bc('CHD', alpha=0.5)
-plt.clabel(CS, inline=1, fontsize=10)
-# plt.imshow(head[0],cmap='cubehelix',extent=extent)
-# plt.colorbar()
+    modelmap = flopy.plot.ModelMap(model=mf, layer=0, ax=ax)
+    lc = modelmap.plot_grid(color='c',alpha=.25)
+    qm = modelmap.plot_bc('CHD', alpha=0.5)
+    # plt.imshow(head[0],cmap='cubehelix',extent=extent)
+    # plt.colorbar()
 
-well_epd = epdobj.get_alldata()
-well_pathlines = pthobj.get_alldata()
-modelmap.plot_pathline(well_pathlines, travel_time='<10000', layer='all', colors='red')
-modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False)
+    well_epd = epdobj.get_alldata()
+    well_pathlines = pthobj.get_alldata()
+    modelmap.plot_pathline(well_pathlines, travel_time=f'<={time}', layer='all', colors='red')
+    modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False)#,selection_direction='<500')
+    fig_name = os.path.join('figures',f'{int(time)}_days.png')
+    fig.text(0.15, 0.85,
+             f'Day = {int(time)}',
+             fontsize=16, color='k',
+             ha='left', va='bottom', alpha=1)
+    fig.savefig(fig_name)
+    fig_list.append(imageio.imread(fig_name))
+    plt.close()
 
-plt.show()
+
+imageio.mimsave(os.path.join('figures','final_gif.gif'),fig_list,duration=.25)
+
+
+# plt.show()
