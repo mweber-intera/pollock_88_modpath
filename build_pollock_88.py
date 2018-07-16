@@ -16,7 +16,7 @@ mf = flopy.modflow.Modflow('pollock_88',version='mfnwt',exe_name=exe,model_ws=mo
 
 
 nlay = 1 # number of layers
-nrow, ncol = 81,81 # number of rows and columns
+nrow, ncol = 80,80 # number of rows and columns
 top = np.ones((nrow,ncol)) * 100 # 2d array of size (nrow * ncol) * 100
 botm = np.ones((nlay,nrow,ncol)) * 0 # 2d array of size (nrow * ncol) * 0
 delr, delc = 100, 100 # hieght and width of each cell
@@ -38,7 +38,9 @@ dis = flopy.modflow.ModflowDis(mf,nlay,nrow,ncol,nper,delr,delc,0,top,botm,perle
 
 upw = flopy.modflow.ModflowUpw(mf,hk=10,ipakcb=53) # creat upw object 
 
-bas = flopy.modflow.ModflowBas(mf, ibound=1, strt=100.0) # create bas object, all cells are active, starting head = 100 ft
+ibound = np.zeros((nlay,nrow,ncol))
+ibound[0][:int(nrow/2),int(ncol/2):] = 1
+bas = flopy.modflow.ModflowBas(mf, ibound=ibound, strt=100.0) # create bas object, all cells are active, starting head = 100 ft
 
 spd = {} # initialize spd for oc
 for i in range(dis.nper):
@@ -47,10 +49,10 @@ oc = flopy.modflow.ModflowOc(mf, stress_period_data=spd, compact=True) # compact
 
 nwt = flopy.modflow.ModflowNwt(mf, maxiterout=5000, linmeth=2, iprnwt=1) # solver for modflow nwt
 
-Qcfd = 160000. # Q cf-days
+Qcfd = 160000./4 # Q cf-days
 wel_spd = {} 
 for sp in range(nper):
-    wel_spd[sp] = [0,int(nrow/2),int(ncol/2),Qcfd] # injection well is in center of the model
+    wel_spd[sp] = [0,int(nrow/2)-1,int(ncol/2),Qcfd] # injection well is in center of the model
 
 
 print(wel_spd) # {nper:[layer, row, column, Q],nper+1:[layer, row, column, Q],....} # make sure to use python indexing 
@@ -74,10 +76,13 @@ def createCircularMask(h, w, center=None, radius=None):
 
 mask = createCircularMask(ncol,nrow,radius=40)
 chd_locsX, chd_locsY = np.where(mask)[0], np.where(mask)[1] # get the x and y locations for the binary mask
+
+
 chd_dat = [] # initialize spress period data for constant head boundry 
 for i in range(len(chd_locsX)):
     cx,cy = chd_locsX[i], chd_locsY[i]
-    chd_dat.append([0,cx,cy,100,100]) # [layer, row, col, start_head, end head]
+    if ibound[0][cx,cy] == 1: # if ibound is active, then append to chd data
+        chd_dat.append([0,cx,cy,100,100]) # [layer, row, col, start_head, end head]
 
 chd_spd = {0:chd_dat} # only need do do in the first stress period since modflow uses the previous stress period if there is nothing in the current stress period.
 chd = flopy.modflow.ModflowChd(mf,stress_period_data=chd_spd)
