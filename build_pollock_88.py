@@ -15,55 +15,53 @@ mf = flopy.modflow.Modflow('pollock_88',version='mfnwt',exe_name=exe,model_ws=mo
 
 
 
-nlay = 1
-nrow, ncol = 81,81
-top = np.ones((nrow,ncol)) * 100
-botm = np.ones((nlay,nrow,ncol)) * 0
-delr, delc = 100, 100
+nlay = 1 # number of layers
+nrow, ncol = 81,81 # number of rows and columns
+top = np.ones((nrow,ncol)) * 100 # 2d array of size (nrow * ncol) * 100
+botm = np.ones((nlay,nrow,ncol)) * 0 # 2d array of size (nrow * ncol) * 0
+delr, delc = 100, 100 # hieght and width of each cell
+Lx, Ly = delr*ncol, delc*nrow # model width and hieght in ft
 
-nper = 15
-perlen = [500]
-steady = [True]
-nstp = [1]
+
+nper = 15 # number of stress periods
+perlen = [500] # number time unites in first stress period (this case 500 days)
+steady = [True] # steady state or transient in first stress period
+nstp = [1] # number of time steps in first stress period
 for sp in range(0,nper-1):
-    perlen.append(500)
-    steady.append(True)
-    nstp.append(1)
+    perlen.append(500) # number time unites in each stress period
+    steady.append(True) # steady state or transient in each stress period
+    nstp.append(1) # number of time steps in each stress period
 laycbd = 0
 
 
-dis = flopy.modflow.ModflowDis(mf,nlay,nrow,ncol,nper,delr,delc,0,top,botm,perlen,nstp,1,steady)
+dis = flopy.modflow.ModflowDis(mf,nlay,nrow,ncol,nper,delr,delc,0,top,botm,perlen,nstp,1,steady) # create dis object
 
-upw = flopy.modflow.ModflowUpw(mf,hk=10,ipakcb=53)
+upw = flopy.modflow.ModflowUpw(mf,hk=10,ipakcb=53) # creat upw object 
 
-bas = flopy.modflow.ModflowBas(mf, ibound=1, strt=100.0)
+bas = flopy.modflow.ModflowBas(mf, ibound=1, strt=100.0) # create bas object, all cells are active, starting head = 100 ft
 
-spd = {}
+spd = {} # initialize spd for oc
 for i in range(dis.nper):
     spd[(i, 0)] = ['save head', 'save budget']
-oc = flopy.modflow.ModflowOc(mf, stress_period_data=spd, compact=True)
+oc = flopy.modflow.ModflowOc(mf, stress_period_data=spd, compact=True) # compact = True to use in modpath later
 
-nwt = flopy.modflow.ModflowNwt(mf, maxiterout=5000, linmeth=2, iprnwt=1)
+nwt = flopy.modflow.ModflowNwt(mf, maxiterout=5000, linmeth=2, iprnwt=1) # solver for modflow nwt
 
-Qcfd = 160000.
-wel_spd = {}
+Qcfd = 160000. # Q cf-days
+wel_spd = {} 
 for sp in range(nper):
-    wel_spd[sp] = [0,int(nrow/2),int(ncol/2),Qcfd]
-
-print(wel_spd)
-wel = flopy.modflow.ModflowWel(mf,stress_period_data=wel_spd)
+    wel_spd[sp] = [0,int(nrow/2),int(ncol/2),Qcfd] # injection well is in center of the model
 
 
-def PointsInCircum(x,y, r,n=8):
-    a = [[np.cos(2*np.pi/n*i)*r,np.sin(2*np.pi/n*i)*r] for i in range(0,n+1)]
-    x0 = np.array([i[0] for i in a])
-    y0 = np.array([i[1] for i in a])
-    return x0+x, y0+y
+print(wel_spd) # {nper:[layer, row, column, Q],nper+1:[layer, row, column, Q],....} # make sure to use python indexing 
+wel = flopy.modflow.ModflowWel(mf,stress_period_data=wel_spd) # well package
 
-Lx, Ly = delr*ncol, delc*nrow
-x,y = Lx/2, Ly/2
+
+# this is the math used to make a circle with radius 4000 ft (40 cells)
+# the permiter of the cirlce will be constant head boundries that have a head = 100 ft 
 
 def createCircularMask(h, w, center=None, radius=None):
+    # creates a binary mask of the 2d array, True means the value is the circular paremter. 
     if center is None: # use the middle of the image
         center = [int(w/2), int(h/2)]
     if radius is None: # use the smallest distance between the center and image walls
@@ -75,18 +73,18 @@ def createCircularMask(h, w, center=None, radius=None):
     return mask
 
 mask = createCircularMask(ncol,nrow,radius=40)
-chd_locsX, chd_locsY = np.where(mask)[0], np.where(mask)[1]
-chd_dat = []
+chd_locsX, chd_locsY = np.where(mask)[0], np.where(mask)[1] # get the x and y locations for the binary mask
+chd_dat = [] # initialize spress period data for constant head boundry 
 for i in range(len(chd_locsX)):
     cx,cy = chd_locsX[i], chd_locsY[i]
-    chd_dat.append([0,cx,cy,100,100])
+    chd_dat.append([0,cx,cy,100,100]) # [layer, row, col, start_head, end head]
 
-chd_spd = {0:chd_dat}
+chd_spd = {0:chd_dat} # only need do do in the first stress period since modflow uses the previous stress period if there is nothing in the current stress period.
 chd = flopy.modflow.ModflowChd(mf,stress_period_data=chd_spd)
 
 
-mf.write_input()
-mf.run_model()
+mf.write_input() # write modflow files
+mf.run_model() # run model
 
 
 
@@ -99,63 +97,61 @@ if platform.system() == 'Darwin':
 
 mp = flopy.modpath.Modpath('pollock_88_mp',exe_name=mpexe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
 
-mp_ibound = np.zeros((nrow,ncol))
-mp_ibound[int(nrow/2),int(ncol/2)] = 1
-mpb = flopy.modpath.ModpathBas(mp,upw.hdry,ibound=mp_ibound,prsity=.3)
+mp_ibound = mf.bas6.ibound.array # use ibound from modflow model 
+mpb = flopy.modpath.ModpathBas(mp,upw.hdry,ibound=mp_ibound,prsity=.3) # make modpath bas object
 
 start_time=[0]
 
-import Write_starting_locations
-srt_loc = 'starting_locs.loc'
-Write_starting_locations.write_file(os.path.join(model_ws,srt_loc),dis,start_time,10*4)
+import Write_starting_locations # this is a script I made that write the starting location file, it is not a straight forward and is unique to this model but can be modified to create a different starting locations file.
+srt_loc = 'starting_locs.loc' # name starting locations file
+Write_starting_locations.write_file(os.path.join(model_ws,srt_loc),dis,start_time,10*4) # custom function in Write_starting_locations.py
 
-sim = mp.create_mpsim(trackdir='forward', simtype='pathline', packages=srt_loc, start_time=(0, 0, 0))
-mp.write_input()
+sim = mp.create_mpsim(trackdir='forward', simtype='pathline', packages=srt_loc, start_time=(0, 0, 0)) # create simulation file
+mp.write_input() # write files
 
-mp.run_model(silent=False)
+mp.run_model(silent=False) # run model
 
 
+
+# post proccesing
 
 import flopy.utils.binaryfile as bf
 
-headobj = bf.HeadFile(os.path.join(model_ws,'pollock_88.hds'))
-times = [0] + headobj.get_times()
-print(times)
+headobj = bf.HeadFile(os.path.join(model_ws,'pollock_88.hds')) # make head object with hds file
+times = [0] + headobj.get_times() # get the times (we made this in the begining with the dis)
+print(times) # should be every 500 days, but I added "0" to the begging so we can see when there is no pumping
 
-pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'pollock_88_mp.mppth'))
-epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'pollock_88_mp.mpend'))
+pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'pollock_88_mp.mppth')) # create pathline object
+epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'pollock_88_mp.mpend')) # create endpoint object
 
-
-head = headobj.get_data(totim=times[-1])
-fig_list = []
+fig_list = [] # initialize list of figure paths we will use to make a gif
 for time in times:
     fig, ax = plt.subplots(figsize=(8,8))
     extent=(0,Lx,0,Ly)
     if time != 0:
+        head = headobj.get_data(totim=times[-1])
         CS = plt.contour(np.flipud(head[0]), extent=extent, color='k')
         plt.clabel(CS, inline=1, fontsize=10)
+        # plt.imshow(head[0],cmap='cubehelix',extent=extent)
+        # plt.colorbar()
 
     modelmap = flopy.plot.ModelMap(model=mf, layer=0, ax=ax)
     lc = modelmap.plot_grid(color='c',alpha=.25)
     qm = modelmap.plot_bc('CHD', alpha=0.5)
-    # plt.imshow(head[0],cmap='cubehelix',extent=extent)
-    # plt.colorbar()
 
     well_epd = epdobj.get_alldata()
     well_pathlines = pthobj.get_alldata()
-    modelmap.plot_pathline(well_pathlines, travel_time=f'<={time}', layer='all', colors='red')
-    modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False)#,selection_direction='<500')
-    fig_name = os.path.join('figures',f'{int(time)}_days.png')
+    modelmap.plot_pathline(well_pathlines, travel_time=f'<={time}', layer='all', colors='red') # plot pathline <= time
+    modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
+    fig_name = os.path.join('figures',f'{int(time)}_days.png') # figure path to save to
     fig.text(0.15, 0.85,
              f'Day = {int(time)}',
              fontsize=16, color='k',
              ha='left', va='bottom', alpha=1)
     fig.savefig(fig_name)
-    fig_list.append(imageio.imread(fig_name))
+    fig_list.append(imageio.imread(fig_name)) # append imagio.imread() for each figure path
     plt.close()
 
 
-imageio.mimsave(os.path.join('figures','final_gif.gif'),fig_list,duration=.25)
+imageio.mimsave(os.path.join('figures','final_gif.gif'),fig_list,duration=.25) # now save a gif of all the figures in fig_list
 
-
-# plt.show()
