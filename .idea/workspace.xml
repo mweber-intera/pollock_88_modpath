@@ -21,12 +21,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="build_pollock_88.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build_pollock_88.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="137" column="60" lean-forward="true" selection-start-line="137" selection-start-column="60" selection-end-line="137" selection-end-column="60" />
+            <state relative-caret-position="92">
+              <caret line="98" column="40" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="40" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -37,7 +37,7 @@
       <file leaf-file-name="map.py" pinned="false" current-in-tab="false">
         <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/plot/map.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10">
+            <state relative-caret-position="12053">
               <caret line="711" column="20" selection-start-line="711" selection-start-column="20" selection-end-line="711" selection-end-column="20" />
             </state>
           </provider>
@@ -46,7 +46,7 @@
       <file leaf-file-name="Write_starting_locations.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Write_starting_locations.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="408">
               <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
@@ -92,7 +92,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -104,11 +103,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/Continuum/Miniconda3/envs/py27QGIS/python.exe" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -197,21 +197,21 @@
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32897604" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" weight="0.32897604" />
-      <window_info anchor="bottom" id="Python Console" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" weight="0.32897604" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -225,9 +225,36 @@
     <option name="LAST_COMMIT_MESSAGE" value="added file for writing starting location file" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/build_pollock_88.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2244">
+          <caret line="137" column="22" lean-forward="true" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/plot/map.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12053">
+          <caret line="711" column="20" selection-start-line="711" selection-start-column="20" selection-end-line="711" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Write_starting_locations.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="408">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Write_starting_locations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
           <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
@@ -237,15 +264,15 @@
     </entry>
     <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/plot/map.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10">
+        <state relative-caret-position="12053">
           <caret line="711" column="20" selection-start-line="711" selection-start-column="20" selection-end-line="711" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build_pollock_88.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="137" column="60" lean-forward="true" selection-start-line="137" selection-start-column="60" selection-end-line="137" selection-end-column="60" />
+        <state relative-caret-position="92">
+          <caret line="98" column="40" selection-start-line="98" selection-start-column="40" selection-end-line="98" selection-end-column="40" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>

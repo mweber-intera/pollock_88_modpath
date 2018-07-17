@@ -4,6 +4,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import platform
 import imageio
+import pandas as pd # pandas is a package that is used to work with dataframes (stolen from the R language) this will be
+# how we import csv files
+
 
 model_ws = os.path.join('pollock_model_ex1')
 if not os.path.exists(model_ws): os.mkdir(model_ws)
@@ -58,7 +61,7 @@ for sp in range(nper):
 print(wel_spd) # {nper:[layer, row, column, Q],nper+1:[layer, row, column, Q],....} # make sure to use python indexing 
 wel = flopy.modflow.ModflowWel(mf,stress_period_data=wel_spd) # well package
 
-
+''' # commented this out to instead use the csv Mary created for placing the chds
 # this is the math used to make a circle with radius 4000 ft (40 cells)
 # the permiter of the cirlce will be constant head boundries that have a head = 100 ft 
 
@@ -81,11 +84,29 @@ chd_locsX, chd_locsY = np.where(mask)[0], np.where(mask)[1] # get the x and y lo
 chd_dat = [] # initialize spress period data for constant head boundry 
 for i in range(len(chd_locsX)):
     cx,cy = chd_locsX[i], chd_locsY[i]
-    if ibound[0][cx,cy] == 1: # if ibound is active, then append to chd data
-        chd_dat.append([0,cx,cy,100,100]) # [layer, row, col, start_head, end head]
+    try:
+        if ibound[0][cx,cy] == 1: # if ibound is active, then append to chd data
+            chd_dat.append([0,cx,cy,100,100]) # [layer, row, col, start_head, end head]
+    except:
+        pass
+'''
+
+chd_df = pd.read_csv('chb_t1.csv') # read in csv with pandas
+print(chd_df.head()) # printing with .head() lets you see the first 5 rows of a dataframe
+
+chd_dat = []
+for i, vals in chd_df.iterrows(): # fancy for loop that returns the index in i, and the values in vals
+    row, col = vals # unpack row and col
+    col = col + 40 # shift col to the right 40 cells
+    chd_dat.append([0,int(row),int(col),100,100])
+
+
 
 chd_spd = {0:chd_dat} # only need do do in the first stress period since modflow uses the previous stress period if there is nothing in the current stress period.
+print(chd_spd)
 chd = flopy.modflow.ModflowChd(mf,stress_period_data=chd_spd)
+
+
 
 
 mf.write_input() # write modflow files
