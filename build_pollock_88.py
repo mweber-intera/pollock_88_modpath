@@ -19,7 +19,7 @@ mf = flopy.modflow.Modflow('pollock_88',version='mfnwt',exe_name=exe,model_ws=mo
 
 
 nlay = 1 # number of layers
-nrow, ncol = 80,80 # number of rows and columns
+nrow, ncol = 40,40 # number of rows and columns
 top = np.ones((nrow,ncol)) * 100 # 2d array of size (nrow * ncol) * 100
 botm = np.ones((nlay,nrow,ncol)) * 0 # 2d array of size (nrow * ncol) * 0
 delr, delc = 100, 100 # hieght and width of each cell
@@ -43,7 +43,7 @@ upw = flopy.modflow.ModflowUpw(mf,hk=10,ipakcb=53) # creat upw object
 
 ibound = np.zeros((nlay,nrow,ncol))
 ibound[0][:int(nrow/2),int(ncol/2):] = 1
-bas = flopy.modflow.ModflowBas(mf, ibound=ibound, strt=100.0) # create bas object, all cells are active, starting head = 100 ft
+bas = flopy.modflow.ModflowBas(mf, ibound=1, strt=100.0) # create bas object, all cells are active, starting head = 100 ft
 
 spd = {} # initialize spd for oc
 for i in range(dis.nper):
@@ -55,7 +55,7 @@ nwt = flopy.modflow.ModflowNwt(mf, maxiterout=5000, linmeth=2, iprnwt=1) # solve
 Qcfd = 160000./4 # Q cf-days
 wel_spd = {} 
 for sp in range(nper):
-    wel_spd[sp] = [0,int(nrow/2)-1,int(ncol/2),Qcfd] # injection well is in center of the model
+    wel_spd[sp] = [0,nrow-1,0,Qcfd] # injection well is in center of the model
 
 
 print(wel_spd) # {nper:[layer, row, column, Q],nper+1:[layer, row, column, Q],....} # make sure to use python indexing 
@@ -97,7 +97,7 @@ print(chd_df.head()) # printing with .head() lets you see the first 5 rows of a 
 chd_dat = []
 for i, vals in chd_df.iterrows(): # fancy for loop that returns the index in i, and the values in vals
     row, col = vals # unpack row and col
-    col = col + 40 # shift col to the right 40 cells
+    col = col  # shift col to the right 40 cells
     chd_dat.append([0,int(row),int(col),100,100])
 
 
@@ -135,7 +135,7 @@ Write_starting_locations.write_file(os.path.join(model_ws,srt_loc),dis,start_tim
 sim = mp.create_mpsim(trackdir='forward', simtype='pathline', packages=srt_loc, start_time=(0, 0, 0)) # create simulation file
 mp.write_input() # write files
 
-mp.run_model(silent=False) # run model
+# mp.run_model(silent=False) # run model
 
 
 

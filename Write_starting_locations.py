@@ -19,22 +19,29 @@ def find_row_col(dis,globx,globy):
         row = np.searchsorted(delr.cumsum(),gy,side='right')
 
         col = np.searchsorted(delc.cumsum(),gx,side='left')
-
+        col = ncol - col
         Lx_temp = delc[:col].sum()
         Ly_temp = delr[:row].sum()
 
+
+        # exit()
         locx = (gx-Lx_temp)/delc[0]
-        locy = 1+((Ly_temp-gy))/delr[0]
+        locy = Ly - (Ly_temp-gy)/delr[0]
 
         # print(gx,row)
         # print(gy, col)
         # print(Lx_temp,Ly_temp)
         # print(locx,locy)
         # exit()
-        rows.append(row)
-        cols.append(col)
-        locxs.append(locx)
-        locys.append(locy)
+        # if (row >= 0) and (row < nrow) and (col >= 0) and (col < ncol):  # make sure the points are in model domain
+        if (locx >=0) and (locy >= 0):
+            print(locx, col, Lx_temp)
+            print(locy, row, Ly_temp)
+            print('---')
+            rows.append(row)
+            cols.append(col)
+            locxs.append(locx)
+            locys.append(locy)
     return rows,cols,locxs,locys
 
 def create_pt_df(dis,strt_time,n=8):
@@ -50,7 +57,7 @@ def create_pt_df(dis,strt_time,n=8):
     # for something in rows # old way
     # x, y = PointsInCircum(.5, .5, .5, n)
 
-    globx, globy = PointsInCircum(Lx/2,Ly/2,150,n)
+    globx, globy = PointsInCircum(0,0,150,n)
 
     rows, cols, locxs, locys = find_row_col(dis,globx,globy)
 
@@ -58,7 +65,8 @@ def create_pt_df(dis,strt_time,n=8):
     # print(x,y)
     # exit()
     # for i in range(len(rows)):
-    for j in range(n):
+    for j in range(len(rows)):
+
         locx.append(locxs[j])
         locy.append(locys[j])
         pg.append(f'GP{gp_n+1:02}')

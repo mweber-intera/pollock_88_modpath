@@ -133,10 +133,10 @@ for time in times:
     fig, ax = plt.subplots(figsize=(8,5))
     extent=(0,Lx,0,Ly)
     if time != 0:
-        head = headobj.get_data(totim=times[-1])
-        # CS = plt.contour(np.flipud(head[0]), extent=extent, color='k')
+        head = headobj.get_data(totim=time)
+        # CS = plt.contour(np.flipud(head[0]), extent=extent, color='k',vmin=0,vmax=55)
         # plt.clabel(CS, inline=1, fontsize=10)
-        # plt.imshow(head[0],cmap='cubehelix',extent=extent)
+        plt.imshow(head[0],cmap='cubehelix',extent=extent,vmin=0)
         # plt.colorbar()
 
     modelmap = flopy.plot.ModelMap(model=mf, layer=0, ax=ax)
