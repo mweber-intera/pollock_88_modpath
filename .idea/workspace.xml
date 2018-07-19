@@ -22,11 +22,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="build_pollock_88.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build_pollock_88.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build_pollock_88.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-61">
-              <caret line="105" column="14" lean-forward="true" selection-start-line="105" selection-start-column="14" selection-end-line="105" selection-end-column="14" />
+            <state relative-caret-position="272">
+              <caret line="47" selection-start-line="47" selection-end-line="50" selection-end-column="111" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pollock_88_ex2.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pollock_88_ex2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -46,10 +58,11 @@
       <file leaf-file-name="Write_starting_locations.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Write_starting_locations.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+            <state relative-caret-position="330">
+              <caret line="117" column="46" selection-start-line="117" selection-start-column="46" selection-end-line="117" selection-end-column="46" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#296#1052#0" />
               </folding>
             </state>
           </provider>
@@ -67,7 +80,11 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>selection_direction</find>
+      <find />
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,8 +92,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Write_starting_locations.py" />
         <option value="$PROJECT_DIR$/build_pollock_88.py" />
+        <option value="$PROJECT_DIR$/test2.py" />
+        <option value="$PROJECT_DIR$/Write_starting_locations.py" />
+        <option value="$PROJECT_DIR$/pollock_88_ex2.py" />
       </list>
     </option>
   </component>
@@ -122,7 +141,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.build_pollock_88">
+  <component name="RunManager" selected="Python.pollock_88_ex2">
     <configuration name="Write_starting_locations" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pollock_88_modpath" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -159,12 +178,32 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="pollock_88_ex2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pollock_88_modpath" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pollock_88_ex2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <list>
       <item itemvalue="Python.build_pollock_88" />
       <item itemvalue="Python.Write_starting_locations" />
+      <item itemvalue="Python.pollock_88_ex2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.pollock_88_ex2" />
         <item itemvalue="Python.build_pollock_88" />
         <item itemvalue="Python.Write_starting_locations" />
       </list>
@@ -224,6 +263,11 @@
     <MESSAGE value="added file for writing starting location file" />
     <option name="LAST_COMMIT_MESSAGE" value="added file for writing starting location file" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/build_pollock_88.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -248,16 +292,7 @@
           <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Write_starting_locations.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#296#1052#0" />
           </folding>
         </state>
       </provider>
@@ -269,10 +304,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Write_starting_locations.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="117" column="46" selection-start-line="117" selection-start-column="46" selection-end-line="117" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#296#1052#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build_pollock_88.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-61">
-          <caret line="105" column="14" lean-forward="true" selection-start-line="105" selection-start-column="14" selection-end-line="105" selection-end-column="14" />
+        <state relative-caret-position="272">
+          <caret line="47" selection-start-line="47" selection-end-line="50" selection-end-column="111" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/utils/binaryfile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="201" selection-start-line="201" selection-end-line="201" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pollock_88_ex2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>

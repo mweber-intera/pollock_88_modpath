@@ -110,3 +110,25 @@ def write_file(file_nam,dis,strt_time,n,input_style=1):
             for j in columns:
                 file.write(f'{tempDF.iloc[z][j]}  ')
             file.write('\n')
+
+def write_file_ex2(file_nam,dis,strt_time,n,input_style=1):
+    df = pd.read_csv('particle_starting_locs_ex2.csv')
+    columns = ['ParticleID', 'GroupNumber', 'Grid', 'Layer', 'Row', 'Column', 'LocalX', 'LocalY', 'LocalZ',
+             'ReleaseTime', 'Label']
+    grps = df['GroupNumber'].unique().tolist()
+    # print(grps)
+
+    file = open(file_nam,'w')
+    file.write(f'1\n{len(grps)}\n')
+    for grp in grps:
+        tempDF = df[df['GroupNumber'] == grp]
+        grp_nam = tempDF.iloc[0]['Label']
+        file.write(f'{grp_nam}'+'\n')
+        file.write(f'{len(tempDF)}\n')
+    for grp in grps:
+        tempDF = df[df['GroupNumber'] == grp]
+        grp_nam = tempDF.iloc[0]['Label']
+        for z in range(len(tempDF)):
+            for j in columns:
+                file.write(f'{tempDF.iloc[z][j]}  ')
+            file.write('\n')

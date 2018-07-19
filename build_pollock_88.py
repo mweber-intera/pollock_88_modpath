@@ -174,6 +174,8 @@ for time in times:
              f'Day = {int(time)}',
              fontsize=16, color='k',
              ha='left', va='bottom', alpha=1)
+    plt.title('Pollock 1988 Ex. 1')
+    fig.tight_layout()
     fig.savefig(fig_name)
     fig_list.append(imageio.imread(fig_name)) # append imagio.imread() for each figure path
     plt.close()
