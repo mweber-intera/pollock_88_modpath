@@ -110,7 +110,7 @@ chd = flopy.modflow.ModflowChd(mf,stress_period_data=chd_spd)
 
 
 mf.write_input() # write modflow files
-mf.run_model() # run model
+# mf.run_model() # run model
 
 
 
@@ -135,7 +135,7 @@ Write_starting_locations.write_file(os.path.join(model_ws,srt_loc),dis,start_tim
 sim = mp.create_mpsim(trackdir='forward', simtype='pathline', packages=srt_loc, start_time=(0, 0, 0)) # create simulation file
 mp.write_input() # write files
 
-# mp.run_model(silent=False) # run model
+mp.run_model(silent=False) # run model
 
 
 
@@ -175,6 +175,8 @@ for time in times:
              fontsize=16, color='k',
              ha='left', va='bottom', alpha=1)
     plt.title('Pollock 1988 Ex. 1')
+    # ax.set_ylim([0,delc*2])
+    # ax.set_xlim([0,delc*2])
     fig.tight_layout()
     fig.savefig(fig_name)
     fig_list.append(imageio.imread(fig_name)) # append imagio.imread() for each figure path

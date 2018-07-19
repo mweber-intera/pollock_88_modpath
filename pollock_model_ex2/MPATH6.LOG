@@ -4,181 +4,92 @@
  Read MODPATH simulation file and prepare simulation data                                                                            
  Compute range of time steps. Prepare for time step loop                                                                             
  Begin time step loop.                                                                                                               
- Processing Time Step     1 Period     1.  Time =  1.00000E+00                                                                       
+ Processing Time Step     1 Period     1.  Time =  2.18000E+00                                                                       
+ Read, process, and load the data for this time step                                                                                 
+ Compute TSMAX                                                                                                                       
+ Begin TRACKING_INTERVAL_LOOP                                                                                                        
+ Call TRACK                                                                                                                          
+ Call TRACK                                                                                                                          
+ Exit TRACKING_INTERVAL_LOOP                                                                                                         
+ Processing Time Step     1 Period     2.  Time =  4.36000E+00                                                                       
  Read, process, and load the data for this time step                                                                                 
  Compute TSMAX                                                                                                                       
  Begin TRACKING_INTERVAL_LOOP                                                                                                        
  Call TRACK                                                                                                                          
  Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period     2.  Time =  2.00000E+00                                                                       
+ Processing Time Step     1 Period     3.  Time =  6.54000E+00                                                                       
  Read, process, and load the data for this time step                                                                                 
  Compute TSMAX                                                                                                                       
  Begin TRACKING_INTERVAL_LOOP                                                                                                        
  Call TRACK                                                                                                                          
  Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period     3.  Time =  3.00000E+00                                                                       
+ Processing Time Step     1 Period     4.  Time =  8.72000E+00                                                                       
  Read, process, and load the data for this time step                                                                                 
  Compute TSMAX                                                                                                                       
  Begin TRACKING_INTERVAL_LOOP                                                                                                        
  Call TRACK                                                                                                                          
  Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period     4.  Time =  4.00000E+00                                                                       
+ Processing Time Step     1 Period     5.  Time =  1.09000E+01                                                                       
  Read, process, and load the data for this time step                                                                                 
  Compute TSMAX                                                                                                                       
  Begin TRACKING_INTERVAL_LOOP                                                                                                        
  Call TRACK                                                                                                                          
  Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period     5.  Time =  5.00000E+00                                                                       
+ Processing Time Step     1 Period     6.  Time =  1.30800E+01                                                                       
  Read, process, and load the data for this time step                                                                                 
  Compute TSMAX                                                                                                                       
  Begin TRACKING_INTERVAL_LOOP                                                                                                        
  Call TRACK                                                                                                                          
  Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period     6.  Time =  6.00000E+00                                                                       
+ Processing Time Step     1 Period     7.  Time =  1.52600E+01                                                                       
  Read, process, and load the data for this time step                                                                                 
  Compute TSMAX                                                                                                                       
  Begin TRACKING_INTERVAL_LOOP                                                                                                        
  Call TRACK                                                                                                                          
  Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period     7.  Time =  7.00000E+00                                                                       
+ Processing Time Step     1 Period     8.  Time =  1.74400E+01                                                                       
  Read, process, and load the data for this time step                                                                                 
  Compute TSMAX                                                                                                                       
  Begin TRACKING_INTERVAL_LOOP                                                                                                        
  Call TRACK                                                                                                                          
  Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period     8.  Time =  8.00000E+00                                                                       
+ Processing Time Step     1 Period     9.  Time =  1.96200E+01                                                                       
  Read, process, and load the data for this time step                                                                                 
  Compute TSMAX                                                                                                                       
  Begin TRACKING_INTERVAL_LOOP                                                                                                        
  Call TRACK                                                                                                                          
  Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period     9.  Time =  9.00000E+00                                                                       
+ Processing Time Step     1 Period    10.  Time =  2.18000E+01                                                                       
  Read, process, and load the data for this time step                                                                                 
  Compute TSMAX                                                                                                                       
  Begin TRACKING_INTERVAL_LOOP                                                                                                        
  Call TRACK                                                                                                                          
  Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    10.  Time =  1.00000E+01                                                                       
+ Processing Time Step     1 Period    11.  Time =  2.39800E+01                                                                       
  Read, process, and load the data for this time step                                                                                 
  Compute TSMAX                                                                                                                       
  Begin TRACKING_INTERVAL_LOOP                                                                                                        
  Call TRACK                                                                                                                          
  Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    11.  Time =  1.10000E+01                                                                       
+ Processing Time Step     1 Period    12.  Time =  2.61600E+01                                                                       
  Read, process, and load the data for this time step                                                                                 
  Compute TSMAX                                                                                                                       
  Begin TRACKING_INTERVAL_LOOP                                                                                                        
  Call TRACK                                                                                                                          
  Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    12.  Time =  1.20000E+01                                                                       
+ Processing Time Step     1 Period    13.  Time =  2.83400E+01                                                                       
  Read, process, and load the data for this time step                                                                                 
  Compute TSMAX                                                                                                                       
  Begin TRACKING_INTERVAL_LOOP                                                                                                        
  Call TRACK                                                                                                                          
  Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    13.  Time =  1.30000E+01                                                                       
+ Processing Time Step     1 Period    14.  Time =  3.05200E+01                                                                       
  Read, process, and load the data for this time step                                                                                 
  Compute TSMAX                                                                                                                       
  Begin TRACKING_INTERVAL_LOOP                                                                                                        
  Call TRACK                                                                                                                          
  Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    14.  Time =  1.40000E+01                                                                       
- Read, process, and load the data for this time step                                                                                 
- Compute TSMAX                                                                                                                       
- Begin TRACKING_INTERVAL_LOOP                                                                                                        
- Call TRACK                                                                                                                          
- Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    15.  Time =  1.50000E+01                                                                       
- Read, process, and load the data for this time step                                                                                 
- Compute TSMAX                                                                                                                       
- Begin TRACKING_INTERVAL_LOOP                                                                                                        
- Call TRACK                                                                                                                          
- Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    16.  Time =  1.60000E+01                                                                       
- Read, process, and load the data for this time step                                                                                 
- Compute TSMAX                                                                                                                       
- Begin TRACKING_INTERVAL_LOOP                                                                                                        
- Call TRACK                                                                                                                          
- Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    17.  Time =  1.70000E+01                                                                       
- Read, process, and load the data for this time step                                                                                 
- Compute TSMAX                                                                                                                       
- Begin TRACKING_INTERVAL_LOOP                                                                                                        
- Call TRACK                                                                                                                          
- Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    18.  Time =  1.80000E+01                                                                       
- Read, process, and load the data for this time step                                                                                 
- Compute TSMAX                                                                                                                       
- Begin TRACKING_INTERVAL_LOOP                                                                                                        
- Call TRACK                                                                                                                          
- Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    19.  Time =  1.90000E+01                                                                       
- Read, process, and load the data for this time step                                                                                 
- Compute TSMAX                                                                                                                       
- Begin TRACKING_INTERVAL_LOOP                                                                                                        
- Call TRACK                                                                                                                          
- Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    20.  Time =  2.00000E+01                                                                       
- Read, process, and load the data for this time step                                                                                 
- Compute TSMAX                                                                                                                       
- Begin TRACKING_INTERVAL_LOOP                                                                                                        
- Call TRACK                                                                                                                          
- Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    21.  Time =  2.10000E+01                                                                       
- Read, process, and load the data for this time step                                                                                 
- Compute TSMAX                                                                                                                       
- Begin TRACKING_INTERVAL_LOOP                                                                                                        
- Call TRACK                                                                                                                          
- Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    22.  Time =  2.20000E+01                                                                       
- Read, process, and load the data for this time step                                                                                 
- Compute TSMAX                                                                                                                       
- Begin TRACKING_INTERVAL_LOOP                                                                                                        
- Call TRACK                                                                                                                          
- Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    23.  Time =  2.30000E+01                                                                       
- Read, process, and load the data for this time step                                                                                 
- Compute TSMAX                                                                                                                       
- Begin TRACKING_INTERVAL_LOOP                                                                                                        
- Call TRACK                                                                                                                          
- Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    24.  Time =  2.40000E+01                                                                       
- Read, process, and load the data for this time step                                                                                 
- Compute TSMAX                                                                                                                       
- Begin TRACKING_INTERVAL_LOOP                                                                                                        
- Call TRACK                                                                                                                          
- Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    25.  Time =  2.50000E+01                                                                       
- Read, process, and load the data for this time step                                                                                 
- Compute TSMAX                                                                                                                       
- Begin TRACKING_INTERVAL_LOOP                                                                                                        
- Call TRACK                                                                                                                          
- Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    26.  Time =  2.60000E+01                                                                       
- Read, process, and load the data for this time step                                                                                 
- Compute TSMAX                                                                                                                       
- Begin TRACKING_INTERVAL_LOOP                                                                                                        
- Call TRACK                                                                                                                          
- Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    27.  Time =  2.70000E+01                                                                       
- Read, process, and load the data for this time step                                                                                 
- Compute TSMAX                                                                                                                       
- Begin TRACKING_INTERVAL_LOOP                                                                                                        
- Call TRACK                                                                                                                          
- Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    28.  Time =  2.80000E+01                                                                       
- Read, process, and load the data for this time step                                                                                 
- Compute TSMAX                                                                                                                       
- Begin TRACKING_INTERVAL_LOOP                                                                                                        
- Call TRACK                                                                                                                          
- Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    29.  Time =  2.90000E+01                                                                       
- Read, process, and load the data for this time step                                                                                 
- Compute TSMAX                                                                                                                       
- Begin TRACKING_INTERVAL_LOOP                                                                                                        
- Call TRACK                                                                                                                          
- Exit TRACKING_INTERVAL_LOOP                                                                                                         
- Processing Time Step     1 Period    30.  Time =  3.00000E+01                                                                       
+ Processing Time Step     1 Period    15.  Time =  3.27000E+01                                                                       
  Read, process, and load the data for this time step                                                                                 
  Compute TSMAX                                                                                                                       
  Begin TRACKING_INTERVAL_LOOP                                                                                                        

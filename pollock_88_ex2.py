@@ -18,24 +18,27 @@ mf = flopy.modflow.Modflow('pollock_88_ex2',version='mfnwt',exe_name=exe,model_w
 
 nlay = 1 # number of layers
 nrow, ncol = 11,21 # number of rows and columns
-top = np.ones((nrow,ncol)) * 5 # 2d array of size (nrow * ncol) * 100
+top = np.ones((nrow,ncol)) * 1 # 2d array of size (nrow * ncol) * 100
 botm = np.ones((nlay,nrow,ncol)) * 0 # 2d array of size (nrow * ncol) * 0
 delr, delc = 5, 5 # height and width of each cell
 Lx, Ly = delr*ncol, delc*nrow # model width and height in ft
 
 nper = 30 # number of stress periods
-perlen = [1] # number time units in first stress period (this case 1 day)
-steady = [True] # steady state or transient in first stress period
+perlen = [2.18] # number time units in first stress period (this case 1 day)
+steady = [False] # steady state or transient in first stress period
 nstp = [1] # number of time steps in first stress period
 for sp in range(0,nper-1):
-    perlen.append(1) # number time units in each stress period
-    steady.append(True) # steady state or transient in each stress period
+    perlen.append(2.18) # number time units in each stress period
+    steady.append(False) # steady state or transient in each stress period
     nstp.append(1) # number of time steps in each stress period
 laycbd = 0
 
 dis = flopy.modflow.ModflowDis(mf,nlay,nrow,ncol,nper,delr,delc,0,top,botm,perlen,nstp,1,steady) # create dis object
 
-upw = flopy.modflow.ModflowUpw(mf,hk=45,ipakcb=53) # create upw object
+hk = np.ones((nlay,nrow,ncol)) * 45
+hk[0][0,:10] = 450
+hk[0][5,11:ncol] = 450
+upw = flopy.modflow.ModflowUpw(mf,hk=hk,ipakcb=53,ss=1e-5) # create upw object
 
 
 ibound = np.ones((nlay,nrow,ncol))
@@ -43,7 +46,7 @@ ibound[0][0:5, 10:] = 0
 ibound[0][0:9, 10] = 0
 strt = np.ones((nlay,nrow,ncol)) * 55
 strt[:,11:] = 25
-bas = flopy.modflow.ModflowBas(mf, ibound=ibound, strt=55) # create bas object, all cells are active, starting head = 100 ft
+bas = flopy.modflow.ModflowBas(mf, ibound=ibound, strt=strt) # create bas object, all cells are active, starting head = 100 ft
 
 
 spd = {} # initialize spd for oc
@@ -148,9 +151,9 @@ for time in times:
     well_pathlines = pthobj.get_alldata()
     modelmap.plot_pathline(well_pathlines, travel_time=f'<={time}', layer='all', colors='red') # plot pathline <= time
     modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
-    fig_name = os.path.join('figures_ex2',f'{int(time)}_days.png') # figure path to save to
+    fig_name = os.path.join('figures_ex2',f'{str(round(time,2)).replace(".","pt")}_days.png') # figure path to save to
     fig.text(0.15, 0.85,
-             f'Day = {int(time)}',
+             f'Day = {round(time,3)}',
              fontsize=16, color='k',
              ha='left', va='bottom', alpha=1)
     plt.title('Pollock 1988 Ex. 2')
@@ -161,3 +164,41 @@ for time in times:
 
 
 imageio.mimsave(os.path.join('figures_ex2','final_gif.gif'),fig_list,duration=.5) # now save a gif of all the figures in fig_list
+
+
+
+fig_list = [] # initialize list of figure paths we will use to make a gif
+for time in times:
+    fig, ax = plt.subplots(figsize=(8,5))
+    extent=(0,Lx,0,Ly)
+    if time != 0:
+        head = headobj.get_data(totim=time)
+        # CS = plt.contour(np.flipud(head[0]), extent=extent, color='k',vmin=0,vmax=55)
+        # plt.clabel(CS, inline=1, fontsize=10)
+        plt.imshow(head[0],cmap='cubehelix',extent=extent,vmin=0)
+        # plt.colorbar()
+
+    modelmap = flopy.plot.ModelMap(model=mf, layer=0, ax=ax)
+    lc = modelmap.plot_grid(color='c',alpha=.25)
+    qm = modelmap.plot_bc('CHD', alpha=0.5)
+    ib = modelmap.plot_ibound()
+
+    well_epd = epdobj.get_alldata()
+    well_pathlines = pthobj.get_alldata()
+    modelmap.plot_pathline(well_pathlines, travel_time=f'<={time}', layer='all', colors='red') # plot pathline <= time
+    modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
+    fig_name = os.path.join('figures_ex2',f'1c_{str(round(time,2)).replace(".","pt")}_days.png') # figure path to save to
+    fig.text(0.15, 0.85,
+             f'Day = {round(time,3)}',
+             fontsize=16, color='k',
+             ha='left', va='bottom', alpha=1)
+    plt.title('Pollock 1988 Ex. 2')
+    ax.set_ylim([0,7.5])
+    ax.set_xlim([0,7.5])
+    fig.tight_layout()
+    fig.savefig(fig_name)
+    fig_list.append(imageio.imread(fig_name)) # append imagio.imread() for each figure path
+    plt.close()
+
+
+imageio.mimsave(os.path.join('figures_ex2','one_cell.gif'),fig_list,duration=.5) # now save a gif of all the figures in fig_list

@@ -70,38 +70,38 @@
 
  STRESS PERIOD     LENGTH       TIME STEPS     MULTIPLIER FOR DELT    SS FLAG
  ----------------------------------------------------------------------------
-        1         1.000000          1                    1.000         SS
-        2         1.000000          1                    1.000         SS
-        3         1.000000          1                    1.000         SS
-        4         1.000000          1                    1.000         SS
-        5         1.000000          1                    1.000         SS
-        6         1.000000          1                    1.000         SS
-        7         1.000000          1                    1.000         SS
-        8         1.000000          1                    1.000         SS
-        9         1.000000          1                    1.000         SS
-       10         1.000000          1                    1.000         SS
-       11         1.000000          1                    1.000         SS
-       12         1.000000          1                    1.000         SS
-       13         1.000000          1                    1.000         SS
-       14         1.000000          1                    1.000         SS
-       15         1.000000          1                    1.000         SS
-       16         1.000000          1                    1.000         SS
-       17         1.000000          1                    1.000         SS
-       18         1.000000          1                    1.000         SS
-       19         1.000000          1                    1.000         SS
-       20         1.000000          1                    1.000         SS
-       21         1.000000          1                    1.000         SS
-       22         1.000000          1                    1.000         SS
-       23         1.000000          1                    1.000         SS
-       24         1.000000          1                    1.000         SS
-       25         1.000000          1                    1.000         SS
-       26         1.000000          1                    1.000         SS
-       27         1.000000          1                    1.000         SS
-       28         1.000000          1                    1.000         SS
-       29         1.000000          1                    1.000         SS
-       30         1.000000          1                    1.000         SS
+        1         2.180000          1                    1.000         TR
+        2         2.180000          1                    1.000         TR
+        3         2.180000          1                    1.000         TR
+        4         2.180000          1                    1.000         TR
+        5         2.180000          1                    1.000         TR
+        6         2.180000          1                    1.000         TR
+        7         2.180000          1                    1.000         TR
+        8         2.180000          1                    1.000         TR
+        9         2.180000          1                    1.000         TR
+       10         2.180000          1                    1.000         TR
+       11         2.180000          1                    1.000         TR
+       12         2.180000          1                    1.000         TR
+       13         2.180000          1                    1.000         TR
+       14         2.180000          1                    1.000         TR
+       15         2.180000          1                    1.000         TR
+       16         2.180000          1                    1.000         TR
+       17         2.180000          1                    1.000         TR
+       18         2.180000          1                    1.000         TR
+       19         2.180000          1                    1.000         TR
+       20         2.180000          1                    1.000         TR
+       21         2.180000          1                    1.000         TR
+       22         2.180000          1                    1.000         TR
+       23         2.180000          1                    1.000         TR
+       24         2.180000          1                    1.000         TR
+       25         2.180000          1                    1.000         TR
+       26         2.180000          1                    1.000         TR
+       27         2.180000          1                    1.000         TR
+       28         2.180000          1                    1.000         TR
+       29         2.180000          1                    1.000         TR
+       30         2.180000          1                    1.000         TR
 
- STEADY-STATE SIMULATION
+ TRANSIENT SIMULATION
 
 
 
@@ -116,7 +116,10 @@
 
  AQUIFER HEAD WILL BE SET TO  -999.99     AT ALL NO-FLOW NODES (IBOUND=0).
 
-             INITIAL HEAD =   55.0000     FOR LAYER   1
+
+
+                       INITIAL HEAD FOR LAYER   1
+ READING ON UNIT   13 WITH FORMAT: (21E15.6)           
  # OC package for  MODFLOW-NWT, generated by Flopy.
 
  OUTPUT CONTROL IS SPECIFIED ONLY AT TIME STEPS FOR WHICH OUTPUT IS DESIRED
@@ -183,9 +186,14 @@
  ---------------------------------------------------------------------------
     1      CONFINED      HARMONIC     1.000E+00    VERTICAL K  NON-WETTABLE
 
-    HYD. COND. ALONG ROWS =   45.0000     FOR LAYER   1
+
+
+              HYD. COND. ALONG ROWS FOR LAYER   1
+ READING ON UNIT   31 WITH FORMAT: (21E15.6)           
 
       VERTICAL HYD. COND. =   1.00000     FOR LAYER   1
+
+         SPECIFIC STORAGE =  1.000000E-05 FOR LAYER   1
 
  CHD -- TIME-VARIANT SPECIFIED-HEAD OPTION, VERSION 7, 5/2/2005
  INPUT READ FROM UNIT   24
@@ -196,14 +204,14 @@
 
      0 TIME-VARIANT SPECIFIED-HEAD PARAMETERS
 1
-                            STRESS PERIOD NO.    1, LENGTH =   1.000000    
+                            STRESS PERIOD NO.    1, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  CHD NO.   LAYER   ROW   COL    START HEAD        END HEAD         
  ------------------------------------------------------------------
@@ -234,10 +242,10 @@
  SOLVING FOR HEAD 
                                                    Max.-Head-Change                        Max.-Flux-Residual
   Residual-Control   Outer-Iter.   Inner-Iter.     Column Row Layer    Max.-Head-Change    Column Row Layer    Max.-Flux-Residual            L2-New               L2-Old           Solver-Max-Delh
-          0                 1           4            21    7     1      -0.3264733557E+02      12    7    1      -0.6750000000E+04      0.2134537421E+05      0.0000000000E+00     -0.3264733557E+02
-          0                 2           3            21    7     1       0.2819542732E+01      18    7    1       0.6750000101E+03      0.2134537452E+04      0.2134537421E+05      0.2819542732E+01
-          0                 3           3            21    7     1       0.1409785481E+00      20    7    1       0.3374998354E+02      0.1067268186E+03      0.2134537452E+04      0.1409785481E+00
-          0                 4           2            21    7     1       0.7047588833E-02      20    7    1       0.1687160829E+01      0.5335270960E+01      0.1067268186E+03      0.7047588833E-02
+          0                 1           4            21    7     1      -0.3283020592E+02      12    7    1      -0.2454545517E+04      0.7761954454E+04      0.0000000000E+00     -0.3283020592E+02
+          0                 2           3            21    7     1       0.2835336080E+01      18    7    1       0.2454545554E+03      0.7761954570E+03      0.7761954454E+04      0.2835336080E+01
+          0                 3           3            21    7     1       0.1417682243E+00      20    7    1       0.1227272155E+02      0.3880975317E+02      0.7761954570E+03      0.1417682243E+00
+          0                 4           2            21    7     1       0.7087065996E-02      20    7    1       0.6135130396E+00      0.1940098577E+01      0.3880975317E+02      0.7087065996E-02
 
     ------------------------------------------------
        NWT REQUIRED            4 OUTER ITERATIONS 
@@ -247,6 +255,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD    1   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   1
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   1
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   1
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   1
@@ -261,21 +270,21 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =        1790.4198         CONSTANT HEAD =        1790.4198
+             STORAGE =           0.4609               STORAGE =           0.2114
+       CONSTANT HEAD =         802.9364         CONSTANT HEAD =         368.3194
 
-            TOTAL IN =        1790.4198              TOTAL IN =        1790.4198
+            TOTAL IN =         803.3973              TOTAL IN =         368.5309
 
           OUT:                                     OUT:
           ----                                     ----
              STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =        1789.5765         CONSTANT HEAD =        1789.5765
+       CONSTANT HEAD =         802.7288         CONSTANT HEAD =         368.2242
 
-           TOTAL OUT =        1789.5765             TOTAL OUT =        1789.5765
+           TOTAL OUT =         802.7288             TOTAL OUT =         368.2242
 
-            IN - OUT =           0.8433              IN - OUT =           0.8433
+            IN - OUT =           0.6685              IN - OUT =           0.3067
 
- PERCENT DISCREPANCY =           0.05     PERCENT DISCREPANCY =           0.05
+ PERCENT DISCREPANCY =           0.08     PERCENT DISCREPANCY =           0.08
 
 
 
@@ -285,19 +294,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    1
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
 1
 1
-                            STRESS PERIOD NO.    2, LENGTH =   1.000000    
+                            STRESS PERIOD NO.    2, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -305,7 +314,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           2            21    7     1       0.4078472621E-03      16    7    1       0.8432498774E-01      0.2666574044E+00      0.5335270960E+01      0.4078472621E-03
+          0                 1           2             9   11     1      -0.7536703370E-03      12    7    1       0.2733153327E-01      0.8878124586E-01      0.1940098577E+01     -0.7536703370E-03
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -315,6 +324,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD    2   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   2
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   2
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   2
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   2
@@ -329,21 +339,21 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =        3580.8149         CONSTANT HEAD =        1790.3951
+             STORAGE =           0.4609               STORAGE =       7.3207E-06
+       CONSTANT HEAD =        1605.9797         CONSTANT HEAD =         368.3685
 
-            TOTAL IN =        3580.8149              TOTAL IN =        1790.3951
+            TOTAL IN =        1606.4407              TOTAL IN =         368.3685
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =        3580.0562         CONSTANT HEAD =        1790.4795
+             STORAGE =       4.6989E-07               STORAGE =       2.1555E-07
+       CONSTANT HEAD =        1605.7930         CONSTANT HEAD =         368.3781
 
-           TOTAL OUT =        3580.0562             TOTAL OUT =        1790.4795
+           TOTAL OUT =        1605.7930             TOTAL OUT =         368.3781
 
-            IN - OUT =           0.7588              IN - OUT =      -8.4351E-02
+            IN - OUT =           0.6477              IN - OUT =      -9.5215E-03
 
- PERCENT DISCREPANCY =           0.02     PERCENT DISCREPANCY =          -0.00
+ PERCENT DISCREPANCY =           0.04     PERCENT DISCREPANCY =          -0.00
 
 
 
@@ -353,19 +363,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    2
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 1.72800E+05  2880.0      48.000      2.0000     5.47570E-03
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 3.76704E+05  6278.4      104.64      4.3600     1.19370E-02
 1
 1
-                            STRESS PERIOD NO.    3, LENGTH =   1.000000    
+                            STRESS PERIOD NO.    3, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -373,7 +383,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1            21    7     1      -0.4079003239E-04      13    7    1      -0.8432425613E-02      0.2666528824E-01      0.2666574044E+00     -0.4079003239E-04
+          0                 1           1             9   11     1       0.7493366020E-04      12    7    1      -0.2733117810E-02      0.8877789482E-02      0.8878124586E-01      0.7493366020E-04
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -383,6 +393,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD    3   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   3
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   3
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   3
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   3
@@ -397,21 +408,21 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =        5371.2124         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       2.1628E-08
+       CONSTANT HEAD =        2409.0125         CONSTANT HEAD =         368.3636
 
-            TOTAL IN =        5371.2124              TOTAL IN =        1790.3973
+            TOTAL IN =        2409.4734              TOTAL IN =         368.3636
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =        5370.4453         CONSTANT HEAD =        1790.3892
+             STORAGE =       2.0599E-06               STORAGE =       7.2934E-07
+       CONSTANT HEAD =        2408.8237         CONSTANT HEAD =         368.3627
 
-           TOTAL OUT =        5370.4453             TOTAL OUT =        1790.3892
+           TOTAL OUT =        2408.8237             TOTAL OUT =         368.3627
 
-            IN - OUT =           0.7671              IN - OUT =       8.1787E-03
+            IN - OUT =           0.6497              IN - OUT =       9.4604E-04
 
- PERCENT DISCREPANCY =           0.01     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =           0.03     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -421,19 +432,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    3
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 2.59200E+05  4320.0      72.000      3.0000     8.21355E-03
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 5.65056E+05  9417.6      156.96      6.5400     1.79055E-02
 1
 1
-                            STRESS PERIOD NO.    4, LENGTH =   1.000000    
+                            STRESS PERIOD NO.    4, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -441,7 +452,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1            21    7     1       0.4081701572E-05      15    7    1       0.8432425802E-03      0.2663517701E-02      0.2666528824E-01      0.4081701572E-05
+          0                 1           1            10   11     1      -0.7174479860E-05      13    7    1       0.2731836853E-03      0.8816476749E-03      0.8877789482E-02     -0.7174479860E-05
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -451,6 +462,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD    4   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   4
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   4
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   4
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   4
@@ -465,21 +477,21 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =        7161.6099         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.1525E-08
+       CONSTANT HEAD =        3212.0461         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =        7161.6099              TOTAL IN =        1790.3973
+            TOTAL IN =        3212.5071              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =        7160.8438         CONSTANT HEAD =        1790.3982
+             STORAGE =       2.0652E-06               STORAGE =       2.4689E-09
+       CONSTANT HEAD =        3211.8577         CONSTANT HEAD =         368.3642
 
-           TOTAL OUT =        7160.8438             TOTAL OUT =        1790.3982
+           TOTAL OUT =        3211.8577             TOTAL OUT =         368.3642
 
-            IN - OUT =           0.7661              IN - OUT =      -8.5449E-04
+            IN - OUT =           0.6494              IN - OUT =      -9.1553E-05
 
- PERCENT DISCREPANCY =           0.01     PERCENT DISCREPANCY =          -0.00
+ PERCENT DISCREPANCY =           0.02     PERCENT DISCREPANCY =          -0.00
 
 
 
@@ -489,19 +501,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    4
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 3.45600E+05  5760.0      96.000      4.0000     1.09514E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 7.53408E+05  12557.      209.28      8.7200     2.38741E-02
 1
 1
-                            STRESS PERIOD NO.    5, LENGTH =   1.000000    
+                            STRESS PERIOD NO.    5, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -509,7 +521,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1            21    7     1      -0.4072049025E-06      15    7    1      -0.8432426148E-04      0.2661502730E-03      0.2663517701E-02     -0.4072049025E-06
+          0                 1           1            11   11     1       0.6964312301E-06      13    7    1      -0.2731815084E-04      0.8763100272E-04      0.8816476749E-03      0.6964312301E-06
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -519,6 +531,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD    5   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   5
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   5
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   5
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   5
@@ -533,21 +546,21 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =        8952.0068         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       4.5418E-09
+       CONSTANT HEAD =        4015.0798         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =        8952.0068              TOTAL IN =        1790.3973
+            TOTAL IN =        4015.5408              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =        8951.2412         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.0871E-06               STORAGE =       1.0019E-08
+       CONSTANT HEAD =        4014.8914         CONSTANT HEAD =         368.3640
 
-           TOTAL OUT =        8951.2412             TOTAL OUT =        1790.3973
+           TOTAL OUT =        4014.8914             TOTAL OUT =         368.3640
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6494              IN - OUT =       3.0518E-05
 
- PERCENT DISCREPANCY =           0.01     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =           0.02     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -557,19 +570,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    5
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 4.32000E+05  7200.0      120.00      5.0000     1.36893E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 9.41760E+05  15696.      261.60      10.900     2.98426E-02
 1
 1
-                            STRESS PERIOD NO.    6, LENGTH =   1.000000    
+                            STRESS PERIOD NO.    6, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -577,7 +590,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1            21    7     1       0.4062497011E-07      19    7    1       0.8432429240E-05      0.2659537538E-04      0.2661502730E-03      0.4062497011E-07
+          0                 1           1            21   11     1      -0.7234798797E-07      13    7    1       0.2731816039E-05      0.8717984899E-05      0.8763100272E-04     -0.7234798797E-07
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -587,6 +600,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD    6   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   6
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   6
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   6
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   6
@@ -601,19 +615,19 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       10742.4043         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.6186E-09
+       CONSTANT HEAD =        4818.1133         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       10742.4043              TOTAL IN =        1790.3973
+            TOTAL IN =        4818.5742              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       10741.6387         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.1000E-06               STORAGE =       5.9180E-09
+       CONSTANT HEAD =        4817.9248         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       10741.6387             TOTAL OUT =        1790.3973
+           TOTAL OUT =        4817.9248             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6494              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.01     PERCENT DISCREPANCY =           0.00
 
@@ -625,19 +639,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    6
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 5.18400E+05  8640.0      144.00      6.0000     1.64271E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 1.13011E+06  18835.      313.92      13.080     3.58111E-02
 1
 1
-                            STRESS PERIOD NO.    7, LENGTH =   1.000000    
+                            STRESS PERIOD NO.    7, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -645,7 +659,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1            21    7     1      -0.4054968278E-08      13    7    1      -0.8432452887E-06      0.2657475478E-05      0.2659537538E-04     -0.4054968278E-08
+          0                 1           1            21   11     1       0.7570853466E-08      13    7    1      -0.2731817403E-06      0.8681524527E-06      0.8717984899E-05      0.7570853466E-08
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -655,6 +669,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD    7   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   7
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   7
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   7
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   7
@@ -669,19 +684,19 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       12532.8018         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5874E-09
+       CONSTANT HEAD =        5621.1470         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       12532.8018              TOTAL IN =        1790.3973
+            TOTAL IN =        5621.6079              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       12532.0361         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.1129E-06               STORAGE =       5.9442E-09
+       CONSTANT HEAD =        5620.9585         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       12532.0361             TOTAL OUT =        1790.3973
+           TOTAL OUT =        5620.9585             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6494              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.01     PERCENT DISCREPANCY =           0.00
 
@@ -693,19 +708,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    7
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 6.04800E+05  10080.      168.00      7.0000     1.91650E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 1.31846E+06  21974.      366.24      15.260     4.17796E-02
 1
 1
-                            STRESS PERIOD NO.    8, LENGTH =   1.000000    
+                            STRESS PERIOD NO.    8, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -713,7 +728,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1            21    7     1       0.4048594354E-09      13    7    1       0.8432834875E-07      0.2655391124E-06      0.2657475478E-05      0.4048594354E-09
+          0                 1           1            21   11     1      -0.7890065501E-09      13    7    1       0.2731712812E-07      0.8653814268E-07      0.8681524527E-06     -0.7890065501E-09
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -723,6 +738,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD    8   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   8
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   8
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   8
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   8
@@ -737,19 +753,19 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       14323.1992         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5902E-09
+       CONSTANT HEAD =        6424.1807         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       14323.1992              TOTAL IN =        1790.3973
+            TOTAL IN =        6424.6416              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       14322.4336         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.1259E-06               STORAGE =       5.9418E-09
+       CONSTANT HEAD =        6423.9922         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       14322.4336             TOTAL OUT =        1790.3973
+           TOTAL OUT =        6423.9922             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6494              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.01     PERCENT DISCREPANCY =           0.00
 
@@ -761,19 +777,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    8
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 6.91200E+05  11520.      192.00      8.0000     2.19028E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 1.50682E+06  25114.      418.56      17.440     4.77481E-02
 1
 1
-                            STRESS PERIOD NO.    9, LENGTH =   1.000000    
+                            STRESS PERIOD NO.    9, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -781,7 +797,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1            21    7     1      -0.4041638141E-10      19    7    1      -0.8438291843E-08      0.2653399603E-07      0.2655391124E-06     -0.4041638141E-10
+          0                 1           1            21   11     1       0.8170424348E-10      13    7    1      -0.2731212589E-08      0.8634190062E-08      0.8653814268E-07      0.8170424348E-10
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -791,6 +807,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD    9   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   9
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   9
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   9
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD   9
@@ -805,21 +822,21 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       16113.5967         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =        7227.2144         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       16113.5967              TOTAL IN =        1790.3973
+            TOTAL IN =        7227.6753              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       16112.8311         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.1388E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =        7227.0259         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       16112.8311             TOTAL OUT =        1790.3973
+           TOTAL OUT =        7227.0259             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6494              IN - OUT =           0.0000
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =           0.01     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -829,19 +846,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD    9
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 7.77600E+05  12960.      216.00      9.0000     2.46407E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 1.69517E+06  28253.      470.88      19.620     5.37166E-02
 1
 1
-                            STRESS PERIOD NO.   10, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   10, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -849,7 +866,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1            21    7     1       0.4036948559E-11      17    7    1       0.8458300726E-09      0.2648869086E-08      0.2653399603E-07      0.4036948559E-11
+          0                 1           1            21   11     1      -0.8366995996E-11      15    7    1       0.2728484105E-09      0.8616431773E-09      0.8634190062E-08     -0.8366995996E-11
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -859,6 +876,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   10   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  10
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  10
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  10
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  10
@@ -873,21 +891,21 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       17903.9941         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =        8030.2480         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       17903.9941              TOTAL IN =        1790.3973
+            TOTAL IN =        8030.7090              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       17903.2285         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.1518E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =        8030.0596         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       17903.2285             TOTAL OUT =        1790.3973
+           TOTAL OUT =        8030.0596             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6494              IN - OUT =           0.0000
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =           0.01     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -897,19 +915,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   10
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 8.64000E+05  14400.      240.00      10.000     2.73785E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 1.88352E+06  31392.      523.20      21.800     5.96852E-02
 1
 1
-                            STRESS PERIOD NO.   11, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   11, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -917,7 +935,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1            20   11     1      -0.4689582062E-12      15    7    1      -0.8913048077E-10      0.2693578770E-09      0.2648869086E-08     -0.4689582062E-12
+          0                 1           1            21   11     1       0.8753886516E-12      15    7    1      -0.2819433575E-10      0.8802866420E-10      0.8616431773E-09      0.8753886516E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -927,6 +945,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   11   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  11
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  11
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  11
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  11
@@ -941,21 +960,21 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       19694.3906         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =        8833.2812         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       19694.3906              TOTAL IN =        1790.3973
+            TOTAL IN =        8833.7422              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       19693.6250         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.1647E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =        8833.0938         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       19693.6250             TOTAL OUT =        1790.3973
+           TOTAL OUT =        8833.0938             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =           0.01     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -965,19 +984,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   11
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 9.50400E+05  15840.      264.00      11.000     3.01164E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 2.07187E+06  34531.      575.52      23.980     6.56537E-02
 1
 1
-                            STRESS PERIOD NO.   12, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   12, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -985,7 +1004,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1            21   10     1       0.1289635067E-12       2    8    1      -0.2182787284E-10      0.8122556596E-10      0.2693578770E-09      0.1289635067E-12
+          0                 1           1             1    8     1      -0.2501110433E-12      15    7    1       0.4547473509E-11      0.1797490516E-10      0.8802866420E-10     -0.2501110433E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -995,6 +1014,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   12   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  12
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  12
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  12
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  12
@@ -1009,21 +1029,21 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       21484.7871         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =        9636.3145         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       21484.7871              TOTAL IN =        1790.3973
+            TOTAL IN =        9636.7754              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       21484.0215         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.1777E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =        9636.1270         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       21484.0215             TOTAL OUT =        1790.3973
+           TOTAL OUT =        9636.1270             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =           0.01     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1033,19 +1053,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   12
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 1.03680E+06  17280.      288.00      12.000     3.28542E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 2.26022E+06  37670.      627.84      26.160     7.16222E-02
 1
 1
-                            STRESS PERIOD NO.   13, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   13, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -1053,7 +1073,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1             8   11     1      -0.1172395516E-12       9    2    1       0.1455191523E-10      0.6788998728E-10      0.8122556596E-10     -0.1172395516E-12
+          0                 1           1             1   10     1       0.3751665650E-12       4    4    1      -0.4547473509E-11      0.1524476625E-10      0.1797490516E-10      0.3751665650E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -1063,6 +1083,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   13   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  13
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  13
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  13
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  13
@@ -1077,21 +1098,21 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       23275.1836         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       10439.3477         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       23275.1836              TOTAL IN =        1790.3973
+            TOTAL IN =       10439.8086              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       23274.4180         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.1907E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       10439.1602         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       23274.4180             TOTAL OUT =        1790.3973
+           TOTAL OUT =       10439.1602             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =           0.01     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1101,19 +1122,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   13
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 1.12320E+06  18720.      312.00      13.000     3.55921E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 2.44858E+06  40810.      680.16      28.340     7.75907E-02
 1
 1
-                            STRESS PERIOD NO.   14, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   14, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -1121,7 +1142,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1             8   11     1       0.1797673124E-12       8   11    1       0.1637090463E-10      0.7211438491E-10      0.6788998728E-10      0.1797673124E-12
+          0                 1           1             3   10     1      -0.4220623856E-12       4    4    1       0.3637978807E-11      0.1577358731E-10      0.1524476625E-10     -0.4220623856E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -1131,6 +1152,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   14   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  14
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  14
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  14
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  14
@@ -1145,21 +1167,21 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       25065.5801         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       11242.3809         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       25065.5801              TOTAL IN =        1790.3973
+            TOTAL IN =       11242.8418              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       25064.8145         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.2036E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       11242.1934         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       25064.8145             TOTAL OUT =        1790.3973
+           TOTAL OUT =       11242.1934             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =           0.01     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1169,19 +1191,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   14
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 1.20960E+06  20160.      336.00      14.000     3.83299E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 2.63693E+06  43949.      732.48      30.520     8.35592E-02
 1
 1
-                            STRESS PERIOD NO.   15, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   15, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -1189,7 +1211,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1             5    5     1       0.1250555217E-12       3    2    1      -0.1455191523E-10      0.7417262469E-10      0.7211438491E-10      0.1250555217E-12
+          0                 1           1             5    8     1       0.1094235815E-12       5    8    1       0.4547473509E-11      0.1524259021E-10      0.1577358731E-10      0.1094235815E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -1199,6 +1221,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   15   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  15
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  15
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  15
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  15
@@ -1213,21 +1236,21 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       26855.9766         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       12045.4141         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       26855.9766              TOTAL IN =        1790.3973
+            TOTAL IN =       12045.8750              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       26855.2109         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.2166E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       12045.2266         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       26855.2109             TOTAL OUT =        1790.3973
+           TOTAL OUT =       12045.2266             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =           0.01     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1237,19 +1260,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   15
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 1.29600E+06  21600.      360.00      15.000     4.10678E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 2.82528E+06  47088.      784.80      32.700     8.95277E-02
 1
 1
-                            STRESS PERIOD NO.   16, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   16, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -1257,7 +1280,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1            10    6     1       0.7815970104E-13       4    4    1      -0.2546585165E-10      0.7892192352E-10      0.7417262469E-10      0.7815970104E-13
+          0                 1           1             2    7     1       0.2501110433E-12       2    3    1       0.3637978807E-11      0.1653324948E-10      0.1524259021E-10      0.2501110433E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -1267,6 +1290,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   16   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  16
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  16
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  16
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  16
@@ -1281,21 +1305,21 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       28646.3730         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       12848.4473         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       28646.3730              TOTAL IN =        1790.3973
+            TOTAL IN =       12848.9082              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       28645.6074         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.2295E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       12848.2598         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       28645.6074             TOTAL OUT =        1790.3973
+           TOTAL OUT =       12848.2598             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
- PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
+ PERCENT DISCREPANCY =           0.01     PERCENT DISCREPANCY =           0.00
 
 
 
@@ -1305,19 +1329,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   16
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 1.38240E+06  23040.      384.00      16.000     4.38056E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 3.01363E+06  50227.      837.12      34.880     9.54962E-02
 1
 1
-                            STRESS PERIOD NO.   17, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   17, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -1325,7 +1349,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1             6   11     1       0.2032152227E-12       2    5    1       0.1818989404E-10      0.6521146777E-10      0.7892192352E-10      0.2032152227E-12
+          0                 1           1             6    5     1      -0.1953992526E-12       4    3    1      -0.3637978807E-11      0.1446570025E-10      0.1653324948E-10     -0.1953992526E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -1335,6 +1359,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   17   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  17
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  17
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  17
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  17
@@ -1349,19 +1374,19 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       30436.7695         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       13651.4805         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       30436.7695              TOTAL IN =        1790.3973
+            TOTAL IN =       13651.9414              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       30436.0039         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.2425E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       13651.2930         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       30436.0039             TOTAL OUT =        1790.3973
+           TOTAL OUT =       13651.2930             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -1373,19 +1398,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   17
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 1.46880E+06  24480.      408.00      17.000     4.65435E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 3.20198E+06  53366.      889.44      37.060     0.10146    
 1
 1
-                            STRESS PERIOD NO.   18, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   18, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -1393,7 +1418,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1            11   11     1       0.1016076114E-12       3    2    1      -0.1455191523E-10      0.7275389158E-10      0.6521146777E-10      0.1016076114E-12
+          0                 1           1             4   10     1       0.3048228341E-12       4    4    1       0.4547473509E-11      0.1799174694E-10      0.1446570025E-10      0.3048228341E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -1403,6 +1428,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   18   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  18
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  18
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  18
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  18
@@ -1417,19 +1443,19 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       32227.1660         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       14454.5137         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       32227.1660              TOTAL IN =        1790.3973
+            TOTAL IN =       14454.9746              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       32226.4004         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.2554E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       14454.3262         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       32226.4004             TOTAL OUT =        1790.3973
+           TOTAL OUT =       14454.3262             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -1441,19 +1467,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   18
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 1.55520E+06  25920.      432.00      18.000     4.92813E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 3.39034E+06  56506.      941.76      39.240     0.10743    
 1
 1
-                            STRESS PERIOD NO.   19, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   19, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -1461,7 +1487,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1             5   10     1      -0.2970068640E-12       4    6    1      -0.1455191523E-10      0.6213919133E-10      0.7275389158E-10     -0.2970068640E-12
+          0                 1           1             1   10     1      -0.2735589536E-12       8    5    1      -0.4547473509E-11      0.1607459939E-10      0.1799174694E-10     -0.2735589536E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -1471,6 +1497,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   19   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  19
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  19
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  19
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  19
@@ -1485,19 +1512,19 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       34017.5625         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       15257.5469         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       34017.5625              TOTAL IN =        1790.3973
+            TOTAL IN =       15258.0078              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       34016.7969         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.2684E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       15257.3594         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       34016.7969             TOTAL OUT =        1790.3973
+           TOTAL OUT =       15257.3594             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -1509,19 +1536,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   19
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 1.64160E+06  27360.      456.00      19.000     5.20192E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 3.57869E+06  59645.      994.08      41.420     0.11340    
 1
 1
-                            STRESS PERIOD NO.   20, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   20, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -1529,7 +1556,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1             1   11     1       0.1094235815E-12       8    3    1      -0.1818989404E-10      0.7419492554E-10      0.6213919133E-10      0.1094235815E-12
+          0                 1           1             1   11     1       0.1406874619E-12       6    3    1      -0.3637978807E-11      0.1497348335E-10      0.1607459939E-10      0.1406874619E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -1539,6 +1566,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   20   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  20
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  20
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  20
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  20
@@ -1553,19 +1581,19 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       35807.9609         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       16060.5801         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       35807.9609              TOTAL IN =        1790.3973
+            TOTAL IN =       16061.0410              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       35807.1953         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.2813E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       16060.3926         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       35807.1953             TOTAL OUT =        1790.3973
+           TOTAL OUT =       16060.3926             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -1577,19 +1605,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   20
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 1.72800E+06  28800.      480.00      20.000     5.47570E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 3.76704E+06  62784.      1046.4      43.600     0.11937    
 1
 1
-                            STRESS PERIOD NO.   21, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   21, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -1597,7 +1625,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1             1   11     1      -0.1406874619E-12       8    4    1      -0.1455191523E-10      0.6670385682E-10      0.7419492554E-10     -0.1406874619E-12
+          0                 1           1             1   11     1      -0.4376943258E-12       5    6    1      -0.3637978807E-11      0.1433955807E-10      0.1497348335E-10     -0.4376943258E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -1607,6 +1635,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   21   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  21
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  21
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  21
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  21
@@ -1621,19 +1650,19 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       37598.3594         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       16863.6133         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       37598.3594              TOTAL IN =        1790.3973
+            TOTAL IN =       16864.0742              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       37597.5938         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.2943E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       16863.4258         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       37597.5938             TOTAL OUT =        1790.3973
+           TOTAL OUT =       16863.4258             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -1645,19 +1674,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   21
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 1.81440E+06  30240.      504.00      21.000     5.74949E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 3.95539E+06  65923.      1098.7      45.780     0.12534    
 1
 1
-                            STRESS PERIOD NO.   22, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   22, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -1665,7 +1694,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1             1   10     1       0.3673505949E-12       4    3    1       0.1818989404E-10      0.7029046734E-10      0.6670385682E-10      0.3673505949E-12
+          0                 1           1             4    9     1       0.4924061165E-12       4    9    1       0.4547473509E-11      0.1605459271E-10      0.1433955807E-10      0.4924061165E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -1675,6 +1704,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   22   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  22
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  22
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  22
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  22
@@ -1689,19 +1719,19 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       39388.7578         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       17666.6465         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       39388.7578              TOTAL IN =        1790.3973
+            TOTAL IN =       17667.1074              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       39387.9922         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.3072E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       17666.4590         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       39387.9922             TOTAL OUT =        1790.3973
+           TOTAL OUT =       17666.4590             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -1713,19 +1743,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   22
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 1.90080E+06  31680.      528.00      22.000     6.02327E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 4.14374E+06  69062.      1151.0      47.960     0.13131    
 1
 1
-                            STRESS PERIOD NO.   23, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   23, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -1733,7 +1763,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1             3    9     1      -0.2657429835E-12       6    3    1      -0.1455191523E-10      0.7175792161E-10      0.7029046734E-10     -0.2657429835E-12
+          0                 1           1             4    9     1      -0.1250555217E-12       2    6    1       0.3637978807E-11      0.1495076417E-10      0.1605459271E-10     -0.1250555217E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -1743,6 +1773,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   23   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  23
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  23
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  23
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  23
@@ -1757,19 +1788,19 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       41179.1562         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       18469.6797         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       41179.1562              TOTAL IN =        1790.3973
+            TOTAL IN =       18470.1406              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       41178.3906         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.3202E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       18469.4922         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       41178.3906             TOTAL OUT =        1790.3973
+           TOTAL OUT =       18469.4922             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -1781,19 +1812,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   23
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 1.98720E+06  33120.      552.00      23.000     6.29706E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 4.33210E+06  72202.      1203.4      50.140     0.13728    
 1
 1
-                            STRESS PERIOD NO.   24, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   24, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -1801,7 +1832,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1             9   10     1       0.2188471629E-12       1    6    1      -0.1455191523E-10      0.6479790729E-10      0.7175792161E-10      0.2188471629E-12
+          0                 1           1             3   10     1       0.3282707444E-12       5    6    1       0.3637978807E-11      0.1316617784E-10      0.1495076417E-10      0.3282707444E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -1811,6 +1842,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   24   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  24
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  24
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  24
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  24
@@ -1825,19 +1857,19 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       42969.5547         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       19272.7129         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       42969.5547              TOTAL IN =        1790.3973
+            TOTAL IN =       19273.1738              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       42968.7891         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.3331E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       19272.5254         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       42968.7891             TOTAL OUT =        1790.3973
+           TOTAL OUT =       19272.5254             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -1849,19 +1881,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   24
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 2.07360E+06  34560.      576.00      24.000     6.57084E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 4.52045E+06  75341.      1255.7      52.320     0.14324    
 1
 1
-                            STRESS PERIOD NO.   25, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   25, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -1869,7 +1901,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1             1   11     1      -0.2188471629E-12       3    5    1      -0.1818989404E-10      0.6308380083E-10      0.6479790729E-10     -0.2188471629E-12
+          0                 1           1             6    9     1      -0.3204547743E-12       7    2    1      -0.3637978807E-11      0.1534111237E-10      0.1316617784E-10     -0.3204547743E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -1879,6 +1911,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   25   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  25
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  25
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  25
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  25
@@ -1893,19 +1926,19 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       44759.9531         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       20075.7461         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       44759.9531              TOTAL IN =        1790.3973
+            TOTAL IN =       20076.2070              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       44759.1875         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.3461E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       20075.5586         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       44759.1875             TOTAL OUT =        1790.3973
+           TOTAL OUT =       20075.5586             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -1917,19 +1950,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   25
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 2.16000E+06  36000.      600.00      25.000     6.84463E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 4.70880E+06  78480.      1308.0      54.500     0.14921    
 1
 1
-                            STRESS PERIOD NO.   26, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   26, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -1937,7 +1970,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1             5    8     1       0.8597567114E-13       8    2    1      -0.1455191523E-10      0.6488083028E-10      0.6308380083E-10      0.8597567114E-13
+          0                 1           1             2    8     1      -0.9379164125E-13       9    4    1      -0.4547473509E-11      0.1517849285E-10      0.1534111237E-10     -0.9379164125E-13
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -1947,6 +1980,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   26   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  26
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  26
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  26
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  26
@@ -1961,19 +1995,19 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       46550.3516         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       20878.7793         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       46550.3516              TOTAL IN =        1790.3973
+            TOTAL IN =       20879.2402              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       46549.5859         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.3590E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       20878.5918         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       46549.5859             TOTAL OUT =        1790.3973
+           TOTAL OUT =       20878.5918             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -1985,19 +2019,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   26
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 2.24640E+06  37440.      624.00      26.000     7.11841E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 4.89715E+06  81619.      1360.3      56.680     0.15518    
 1
 1
-                            STRESS PERIOD NO.   27, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   27, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -2005,7 +2039,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1             1    9     1       0.2188471629E-12       4    3    1      -0.1455191523E-10      0.6566022657E-10      0.6488083028E-10      0.2188471629E-12
+          0                 1           1             6    8     1      -0.1563194021E-12       4    3    1      -0.3637978807E-11      0.1543805738E-10      0.1517849285E-10     -0.1563194021E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -2015,6 +2049,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   27   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  27
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  27
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  27
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  27
@@ -2029,19 +2064,19 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       48340.7500         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       21681.8125         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       48340.7500              TOTAL IN =        1790.3973
+            TOTAL IN =       21682.2734              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       48339.9844         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.3720E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       21681.6250         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       48339.9844             TOTAL OUT =        1790.3973
+           TOTAL OUT =       21681.6250             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -2053,19 +2088,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   27
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 2.33280E+06  38880.      648.00      27.000     7.39220E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 5.08550E+06  84758.      1412.6      58.860     0.16115    
 1
 1
-                            STRESS PERIOD NO.   28, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   28, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -2073,7 +2108,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1             1   11     1       0.1719513423E-12       6    7    1       0.2182787284E-10      0.6661699473E-10      0.6566022657E-10      0.1719513423E-12
+          0                 1           1             6   10     1       0.5314859671E-12       5    6    1       0.3637978807E-11      0.1522658380E-10      0.1543805738E-10      0.5314859671E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -2083,6 +2118,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   28   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  28
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  28
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  28
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  28
@@ -2097,19 +2133,19 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       50131.1484         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       22484.8457         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       50131.1484              TOTAL IN =        1790.3973
+            TOTAL IN =       22485.3066              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       50130.3828         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.3850E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       22484.6582         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       50130.3828             TOTAL OUT =        1790.3973
+           TOTAL OUT =       22484.6582             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -2121,19 +2157,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   28
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 2.41920E+06  40320.      672.00      28.000     7.66598E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 5.27386E+06  87898.      1465.0      61.040     0.16712    
 1
 1
-                            STRESS PERIOD NO.   29, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   29, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -2141,7 +2177,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1             2   11     1      -0.2032152227E-12       7    3    1      -0.1455191523E-10      0.7303757780E-10      0.6661699473E-10     -0.2032152227E-12
+          0                 1           1             6    8     1      -0.5080380568E-12       8    3    1      -0.3637978807E-11      0.1663368491E-10      0.1522658380E-10     -0.5080380568E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -2151,6 +2187,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   29   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  29
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  29
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  29
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  29
@@ -2165,19 +2202,19 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       51921.5469         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       23287.8789         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       51921.5469              TOTAL IN =        1790.3973
+            TOTAL IN =       23288.3398              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       51920.7812         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.3979E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       23287.6914         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       51920.7812             TOTAL OUT =        1790.3973
+           TOTAL OUT =       23287.6914             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -2189,19 +2226,19 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   29
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 2.50560E+06  41760.      696.00      29.000     7.93977E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 5.46221E+06  91037.      1517.3      63.220     0.17309    
 1
 1
-                            STRESS PERIOD NO.   30, LENGTH =   1.000000    
+                            STRESS PERIOD NO.   30, LENGTH =   2.180000    
                             -----------------------------------------------
 
                               NUMBER OF TIME STEPS =     1
 
                                MULTIPLIER FOR DELT =     1.000
 
-                            INITIAL TIME STEP SIZE =   1.000000    
+                            INITIAL TIME STEP SIZE =   2.180000    
 
  REUSING NON-PARAMETER SPECIFIED-HEAD DATA FROM LAST STRESS PERIOD
 
@@ -2209,7 +2246,7 @@
      20 TIME-VARIANT SPECIFIED-HEAD CELLS
  
  SOLVING FOR HEAD 
-          0                 1           1             9    4     1       0.1016076114E-12       9    4    1       0.1455191523E-10      0.6813323416E-10      0.7303757780E-10      0.1016076114E-12
+          0                 1           1             2   11     1       0.2188471629E-12       6    5    1       0.4547473509E-11      0.1534737376E-10      0.1663368491E-10      0.2188471629E-12
 
     ------------------------------------------------
        NWT REQUIRED            1 OUTER ITERATIONS 
@@ -2219,6 +2256,7 @@
  OUTPUT CONTROL FOR STRESS PERIOD   30   TIME STEP    1
     SAVE HEAD FOR ALL LAYERS
     SAVE BUDGET
+ UBDSV1 SAVING "         STORAGE" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  30
  UBDSV2 SAVING "   CONSTANT HEAD" ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  30
  UBDSV1 SAVING "FLOW RIGHT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  30
  UBDSV1 SAVING "FLOW FRONT FACE " ON UNIT  53 AT TIME STEP  1, STRESS PERIOD  30
@@ -2233,19 +2271,19 @@
 
            IN:                                      IN:
            ---                                      ---
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       53711.9453         CONSTANT HEAD =        1790.3973
+             STORAGE =           0.4609               STORAGE =       7.5900E-09
+       CONSTANT HEAD =       24090.9121         CONSTANT HEAD =         368.3641
 
-            TOTAL IN =       53711.9453              TOTAL IN =        1790.3973
+            TOTAL IN =       24091.3730              TOTAL IN =         368.3641
 
           OUT:                                     OUT:
           ----                                     ----
-             STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       53711.1797         CONSTANT HEAD =        1790.3973
+             STORAGE =       2.4109E-06               STORAGE =       5.9420E-09
+       CONSTANT HEAD =       24090.7246         CONSTANT HEAD =         368.3641
 
-           TOTAL OUT =       53711.1797             TOTAL OUT =        1790.3973
+           TOTAL OUT =       24090.7246             TOTAL OUT =         368.3641
 
-            IN - OUT =           0.7656              IN - OUT =           0.0000
+            IN - OUT =           0.6484              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -2257,11 +2295,11 @@
          TIME SUMMARY AT END OF TIME STEP    1 IN STRESS PERIOD   30
                     SECONDS     MINUTES      HOURS       DAYS        YEARS
                     -----------------------------------------------------------
-   TIME STEP LENGTH  86400.      1440.0      24.000      1.0000     2.73785E-03
- STRESS PERIOD TIME  86400.      1440.0      24.000      1.0000     2.73785E-03
-         TOTAL TIME 2.59200E+06  43200.      720.00      30.000     8.21355E-02
+   TIME STEP LENGTH 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+ STRESS PERIOD TIME 1.88352E+05  3139.2      52.320      2.1800     5.96851E-03
+         TOTAL TIME 5.65056E+06  94176.      1569.6      65.400     0.17906    
 1
 
- Run end date and time (yyyy/mm/dd hh:mm:ss): 2018/07/19 11:08:18
- Elapsed run time:  0.078 Seconds
+ Run end date and time (yyyy/mm/dd hh:mm:ss): 2018/07/19 16:28:25
+ Elapsed run time:  0.072 Seconds
 

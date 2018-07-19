@@ -17,16 +17,17 @@ def find_row_col(dis,globx,globy):
     for i in range(len(globx)):
         gx,gy = globx[i], globy[i]
         row = np.searchsorted(delr.cumsum(),gy,side='right')
+        row = nrow - row
 
         col = np.searchsorted(delc.cumsum(),gx,side='left')
-        col = ncol - col
+        # col = ncol - col
         Lx_temp = delc[:col].sum()
-        Ly_temp = delr[:row].sum()
+        Ly_temp = Ly - delr[:row].sum()
 
 
         # exit()
-        locx = (gx-Lx_temp)/delc[0]
-        locy = Ly - (Ly_temp-gy)/delr[0]
+        locx = (gx - Lx_temp)/delc[0]
+        locy = (1-(Ly_temp-gy))/delr[0]
 
         # print(gx,row)
         # print(gy, col)
@@ -34,11 +35,11 @@ def find_row_col(dis,globx,globy):
         # print(locx,locy)
         # exit()
         # if (row >= 0) and (row < nrow) and (col >= 0) and (col < ncol):  # make sure the points are in model domain
-        if (locx >=0) and (locy >= 0):
+        if (locx >= 0) and (locy >= 0):# and(locx <=1) and (locy <= 1):
             print(locx, col, Lx_temp)
             print(locy, row, Ly_temp)
             print('---')
-            rows.append(row)
+            rows.append(row-1)
             cols.append(col)
             locxs.append(locx)
             locys.append(locy)
