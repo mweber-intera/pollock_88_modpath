@@ -14,32 +14,40 @@ gw_codes = os.path.join('gw_codes')
 exe = os.path.join(gw_codes,'mfnwt.exe')
 if platform.system() == 'Darwin':
     exe = 'mfnwt' # assuming you have mfnwt in your path
+
 mf = flopy.modflow.Modflow('pollock_88_ex2',version='mfnwt',exe_name=exe,model_ws=model_ws)
+
+if mf.version == 'mfnwt':
+    mf.exe_name = os.path.join('gw_codes','mfnwt.exe')
+elif mf.version == 'mf2005':
+    mf.exe_name = os.path.join('gw_codes','mf2005.exe')
 
 nlay = 1 # number of layers
 nrow, ncol = 11,21 # number of rows and columns
-top = np.ones((nrow,ncol)) * 1 # 2d array of size (nrow * ncol) * 100
+top = np.ones((nrow,ncol)) * 25 # 2d array of size (nrow * ncol) * 100
 botm = np.ones((nlay,nrow,ncol)) * 0 # 2d array of size (nrow * ncol) * 0
 delr, delc = 5, 5 # height and width of each cell
 Lx, Ly = delr*ncol, delc*nrow # model width and height in ft
 
 nper = 30 # number of stress periods
-perlen = [2.18] # number time units in first stress period (this case 1 day)
-steady = [False] # steady state or transient in first stress period
+perlen = [1] # number time units in first stress period (this case 1 day)
+steady = [True] # steady state or transient in first stress period
 nstp = [1] # number of time steps in first stress period
 for sp in range(0,nper-1):
-    perlen.append(2.18) # number time units in each stress period
-    steady.append(False) # steady state or transient in each stress period
+    perlen.append(1) # number time units in each stress period
+    steady.append(True) # steady state or transient in each stress period
     nstp.append(1) # number of time steps in each stress period
 laycbd = 0
 
 dis = flopy.modflow.ModflowDis(mf,nlay,nrow,ncol,nper,delr,delc,0,top,botm,perlen,nstp,1,steady) # create dis object
 
 hk = np.ones((nlay,nrow,ncol)) * 45
-hk[0][0,:10] = 450
-hk[0][5,11:ncol] = 450
-upw = flopy.modflow.ModflowUpw(mf,hk=hk,ipakcb=53,ss=1e-5) # create upw object
-
+hk[0][0,:10] = 4500
+hk[0][5,11:ncol] = 4500
+if mf.version == 'mfnwt':
+    upw = flopy.modflow.ModflowUpw(mf,hk=hk,ipakcb=53,ss=1e-5,vka=45) # create upw object
+elif mf.version == 'mf2005':
+    lpf = flopy.modflow.ModflowLpf(mf,hk=hk,ipakcb=53)
 
 ibound = np.ones((nlay,nrow,ncol))
 ibound[0][0:5, 10:] = 0
@@ -90,8 +98,13 @@ print(lrcd)
 chd = flopy.modflow.ModflowChd(mf, stress_period_data=lrcd)
 
 
-
-nwt = flopy.modflow.ModflowNwt(mf, maxiterout=5000, linmeth=2, iprnwt=1) # solver for modflow nwt
+if mf.version == 'mfnwt':
+    nwt = flopy.modflow.ModflowNwt(mf, maxiterout=5000, linmeth=2, iprnwt=1) # solver for modflow nwt
+    # nwt = flopy.modflow.ModflowNwt(mf)
+elif mf.version == 'mf2005':
+    pcg = flopy.modflow.ModflowPcg(mf)
+elif mf.version == 'mf2k':
+    pcg = flopy.modflow.ModflowPcg(mf)
 
 
 mf.write_input() # write modflow files
@@ -107,7 +120,7 @@ if platform.system() == 'Darwin':
 mp = flopy.modpath.Modpath('test2',exe_name=mpexe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
 
 mp_ibound = mf.bas6.ibound.array # use ibound from modflow model
-mpb = flopy.modpath.ModpathBas(mp,upw.hdry,ibound=mp_ibound,prsity=.3) # make modpath bas object
+mpb = flopy.modpath.ModpathBas(mp,-1e30,ibound=mp_ibound,prsity=.3) # make modpath bas object
 
 start_time=[0]
 
@@ -189,7 +202,7 @@ for time in times:
     modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
     fig_name = os.path.join('figures_ex2',f'1c_{str(round(time,2)).replace(".","pt")}_days.png') # figure path to save to
     fig.text(0.15, 0.85,
-             f'Day = {round(time,3)}',
+             f'Day = {str(round(time,3))}',
              fontsize=16, color='k',
              ha='left', va='bottom', alpha=1)
     plt.title('Pollock 1988 Ex. 2')

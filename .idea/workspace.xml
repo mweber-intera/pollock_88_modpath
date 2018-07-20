@@ -25,8 +25,8 @@
       <file leaf-file-name="build_pollock_88.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build_pollock_88.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="619">
-              <caret line="178" column="24" selection-start-line="178" selection-start-column="24" selection-end-line="178" selection-end-column="24" />
+            <state relative-caret-position="-1224">
+              <caret line="16" column="52" lean-forward="true" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -37,8 +37,8 @@
       <file leaf-file-name="pollock_88_ex2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pollock_88_ex2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="306">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -46,11 +46,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="zonal_bud_ex2.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="read_pth_file.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/read_pth_file.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zonal_bud_ex2.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/zonal_bud_ex2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="279">
+              <caret line="66" column="40" lean-forward="true" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -58,7 +70,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Write_starting_locations.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="zonbud.py" pinned="false" current-in-tab="false">
+        <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/utils/zonbud.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="1634" column="44" selection-start-line="1634" selection-start-column="39" selection-end-line="1634" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Write_starting_locations.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Write_starting_locations.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
@@ -95,10 +116,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test2.py" />
-        <option value="$PROJECT_DIR$/zonal_bud_ex2.py" />
-        <option value="$PROJECT_DIR$/pollock_88_ex2.py" />
-        <option value="$PROJECT_DIR$/build_pollock_88.py" />
         <option value="$PROJECT_DIR$/Write_starting_locations.py" />
+        <option value="$PROJECT_DIR$/zonal_bud_ex2.py" />
+        <option value="$PROJECT_DIR$/build_pollock_88.py" />
+        <option value="$PROJECT_DIR$/pollock_88_ex2.py" />
+        <option value="$PROJECT_DIR$/read_pth_file.py" />
       </list>
     </option>
   </component>
@@ -144,7 +166,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.build_pollock_88">
+  <component name="RunManager" selected="Python.zonal_bud_ex2">
     <configuration name="Write_starting_locations" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pollock_88_modpath" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -199,16 +221,56 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="read_pth_file" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pollock_88_modpath" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/read_pth_file.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="zonal_bud_ex2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pollock_88_modpath" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/zonal_bud_ex2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <list>
       <item itemvalue="Python.build_pollock_88" />
       <item itemvalue="Python.Write_starting_locations" />
       <item itemvalue="Python.pollock_88_ex2" />
+      <item itemvalue="Python.zonal_bud_ex2" />
+      <item itemvalue="Python.read_pth_file" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.zonal_bud_ex2" />
+        <item itemvalue="Python.read_pth_file" />
+        <item itemvalue="Python.pollock_88_ex2" />
         <item itemvalue="Python.build_pollock_88" />
         <item itemvalue="Python.Write_starting_locations" />
-        <item itemvalue="Python.pollock_88_ex2" />
       </list>
     </recent_temporary>
   </component>
@@ -323,20 +385,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pollock_88_ex2.py">
+    <entry file="file://$PROJECT_DIR$/Write_starting_locations.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="425">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
           <folding>
-            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zonal_bud_ex2.py">
+    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/utils/zonbud.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="333">
+          <caret line="1634" column="44" selection-start-line="1634" selection-start-column="39" selection-end-line="1634" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pollock_88_ex2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
@@ -345,20 +414,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/build_pollock_88.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="619">
-          <caret line="178" column="24" selection-start-line="178" selection-start-column="24" selection-end-line="178" selection-end-column="24" />
+        <state relative-caret-position="-1224">
+          <caret line="16" column="52" lean-forward="true" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Write_starting_locations.py">
+    <entry file="file://$PROJECT_DIR$/read_pth_file.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zonal_bud_ex2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="66" column="40" lean-forward="true" selection-start-line="66" selection-start-column="40" selection-end-line="66" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>

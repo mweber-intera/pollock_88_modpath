@@ -137,8 +137,6 @@ mp.write_input() # write files
 
 mp.run_model(silent=False) # run model
 
-
-
 # post proccesing
 
 import flopy.utils.binaryfile as bf
