@@ -130,7 +130,7 @@ start_time=[0]
 
 import Write_starting_locations # this is a script I made that write the starting location file, it is not a straight forward and is unique to this model but can be modified to create a different starting locations file.
 srt_loc = 'starting_locs.loc' # name starting locations file
-Write_starting_locations.write_file(os.path.join(model_ws,srt_loc),dis,start_time,10*4) # custom function in Write_starting_locations.py
+Write_starting_locations.write_file(os.path.join(model_ws,srt_loc),dis,start_time,27) # custom function in Write_starting_locations.py
 
 sim = mp.create_mpsim(trackdir='forward', simtype='pathline', packages=srt_loc, start_time=(0, 0, 0)) # create simulation file
 mp.write_input() # write files

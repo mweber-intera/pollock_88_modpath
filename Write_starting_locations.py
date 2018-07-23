@@ -58,7 +58,7 @@ def create_pt_df(dis,strt_time,n=8):
     # for something in rows # old way
     # x, y = PointsInCircum(.5, .5, .5, n)
 
-    globx, globy = PointsInCircum(0,0,150,n)
+    globx, globy = PointsInCircum(50,50,150,n)
 
     rows, cols, locxs, locys = find_row_col(dis,globx,globy)
 

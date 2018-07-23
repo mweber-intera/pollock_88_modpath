@@ -128,7 +128,16 @@ import Write_starting_locations # note to mary: edit this for test2
 srt_loc = 'starting_locs_ex2.loc' # name starting locations file
 Write_starting_locations.write_file_ex2(os.path.join(model_ws,srt_loc),dis,start_time,10*4) # custom function in Write_starting_locations.py
 
-sim = mp.create_mpsim(trackdir='forward', simtype='pathline', packages=srt_loc, start_time=(0, 0, 0)) # create simulation file
+sim = mp.create_mpsim(trackdir='forward', simtype='timeseries', packages=srt_loc, start_time=(0, 0, 0)) # create simulation file
+
+sim.time_ct = 10
+time_pts =[]
+for tp in range(sim.time_ct):
+    time_pts.append(tp*2.18)
+
+sim.time_pts = time_pts
+
+print(sim)
 mp.write_input() # write files
 
 mp.run_model(silent=False) # run model
@@ -180,34 +189,34 @@ imageio.mimsave(os.path.join('figures_ex2','final_gif.gif'),fig_list,duration=.5
 
 
 
+names = ['Time_Point_Index','Cumulative_Time_Step','Tracking_Time','Particle_ID','Particle_Group','Global_X','Global_Y',
+         'Global_Z','Grid','Layer','Row','Column','Local_X','Local_Y','Local_Z']
+ts_df = pd.read_csv(os.path.join(model_ws,'test2.mp.tim_ser'),skiprows=3,names = names,delim_whitespace=True)
+print(ts_df.loc[ts_df['Particle_ID']==1])
 fig_list = [] # initialize list of figure paths we will use to make a gif
-for time in times:
+for time in time_pts:
     fig, ax = plt.subplots(figsize=(8,5))
     extent=(0,Lx,0,Ly)
-    if time != 0:
-        head = headobj.get_data(totim=time)
-        # CS = plt.contour(np.flipud(head[0]), extent=extent, color='k',vmin=0,vmax=55)
-        # plt.clabel(CS, inline=1, fontsize=10)
-        plt.imshow(head[0],cmap='cubehelix',extent=extent,vmin=0)
-        # plt.colorbar()
 
     modelmap = flopy.plot.ModelMap(model=mf, layer=0, ax=ax)
     lc = modelmap.plot_grid(color='c',alpha=.25)
     qm = modelmap.plot_bc('CHD', alpha=0.5)
     ib = modelmap.plot_ibound()
 
-    well_epd = epdobj.get_alldata()
-    well_pathlines = pthobj.get_alldata()
-    modelmap.plot_pathline(well_pathlines, travel_time=f'<={time}', layer='all', colors='red') # plot pathline <= time
-    modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
+    # well_epd = epdobj.get_alldata()
+    # well_pathlines = pthobj.get_alldata()
+    # modelmap.plot_pathline(well_pathlines, travel_time=f'<={time}', layer='all', colors='red') # plot pathline <= time
+    # modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
+    tempdf = ts_df.loc[(ts_df['Tracking_Time'] >= time-.5) & (ts_df['Tracking_Time'] <= time+.5)]
+    ax.scatter(tempdf['Global_X'],tempdf['Global_Y'])
     fig_name = os.path.join('figures_ex2',f'1c_{str(round(time,2)).replace(".","pt")}_days.png') # figure path to save to
     fig.text(0.15, 0.85,
              f'Day = {str(round(time,3))}',
              fontsize=16, color='k',
              ha='left', va='bottom', alpha=1)
     plt.title('Pollock 1988 Ex. 2')
-    ax.set_ylim([0,7.5])
-    ax.set_xlim([0,7.5])
+    ax.set_ylim([0,10])
+    ax.set_xlim([0,10])
     fig.tight_layout()
     fig.savefig(fig_name)
     fig_list.append(imageio.imread(fig_name)) # append imagio.imread() for each figure path

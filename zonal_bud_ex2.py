@@ -13,11 +13,13 @@ gw_codes = os.path.join('gw_codes')
 exe = os.path.join(gw_codes,'mfnwt.exe')
 if platform.system() == 'Darwin':
     exe = 'mfnwt' # assuming you have mfnwt in your path
+
 mf = flopy.modflow.Modflow.load('pollock_88_ex2.nam',version='mfnwt',exe_name=exe,model_ws=model_ws,load_only=['dis'])
 dis = mf.dis
 nlay, nrow, ncol = dis.nlay, dis.nrow, dis.ncol
 delr, delc = dis.delr.array, dis.delc.array
 thicknes = dis.thickness.array
+
 # make a zonal budget text file
 # start with making an array of size nrow * ncol
 zb = np.ones((nrow,ncol))
@@ -58,7 +60,7 @@ zb_DF = pd.DataFrame(zb_DF.get_dataframes())
 zb_DF.reset_index(inplace=True)
 
 print(zb_DF.head())
-zb_DF.to_csv(os.path.join(model_ws,'zonal_budget.csv'))
+# zb_DF.to_csv(os.path.join(model_ws,'zonal_budget.csv'))
 
 
 

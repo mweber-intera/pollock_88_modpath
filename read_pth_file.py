@@ -14,7 +14,7 @@ stress_periods = mppthDF['Cumulative_TimeStep'].unique().tolist()
 print(stress_periods)
 times = np.array(stress_periods) * 500
 print(times)
-def dist(x1,y1,x2,y2):
+def dist(x1,y1,x2,y2): # distance formula
     return np.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
 mean_rd = {}

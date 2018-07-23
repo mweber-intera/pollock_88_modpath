@@ -320,7 +320,7 @@ Allocating and reading data for grid  1
    FLOW RATES BETWEEN CELLS HAVE BEEN READ
  THE BUDGET INDEX FOR GRID   1 WAS SUCCESSFULLY CREATED.
  
-PATHLINE ANALYSIS (ISIMTYPE = 2)
+TIME SERIES ANALYSIS (ISIMTYPE = 3)
 FORWARD TRACKING (ITRACKDIR =  1)
 STOP PARTICLES WHEN THEY ENTER WEAK SINK CELLS. (ISINK = 2)
 LET PARTICLES PASS THROUGH WEAK SOURCE CELLS FOR BACKTRACKING SIMULATIONS (ISOURCE = 1)
@@ -328,7 +328,7 @@ DO NOT SAVE ADVECTIVE OBSERVATIONS FOR TIME SERIES SIMULATIONS (IADVOBS =  1)
  
 PARTICLE OUTPUT FILES:
 ENDPOINT FILE:  test2.mpend                                                                                                                                                                                             
-PATHLINE FILE:  test2.mppth                                                                                                                                                                                             
+TIME SERIES FILE:  test2.mp.tim_ser                                                                                                                                                                                        
  
 REFERENCE TIME CALCULATED FOR: KPER =     1  KSTP =     1  RELATIVE POSITION WITHIN TIME STEP = 0.0000000
 COMPUTED REFERENCE TIME =   0.0000000E+00
@@ -338,8 +338,8 @@ EXTEND INITIAL OR FINAL STEADY-STATE TIMESTEP AND CONTINUE TRACKING (ISTOPT =  2
  
 TOTAL NUMBER OF PARTICLES FOR ALL GROUPS =          5
  
-     1Time points will be read from a list.
-    0.10000E+01
+    10Time points will be read from a list.
+    0.00000E+00    0.21800E+01    0.43600E+01    0.65400E+01    0.87200E+01    0.10900E+02    0.13080E+02    0.15260E+02    0.17440E+02    0.19620E+02
  
 DO NOT PERFORM BUDGET CHECKS (IBDOPT =  1)
  
