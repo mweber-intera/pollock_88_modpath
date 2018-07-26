@@ -34,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pollock_88_ex2.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pollock_88_ex2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pollock_88_ex2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="138" lean-forward="true" selection-start-line="132" selection-end-line="138" />
+            <state relative-caret-position="126">
+              <caret line="126" column="38" selection-start-line="126" selection-start-column="38" selection-end-line="126" selection-end-column="38" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -49,8 +49,17 @@
       <file leaf-file-name="mpbas.py" pinned="false" current-in-tab="false">
         <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modpath/mpbas.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="724">
-              <caret line="105" column="30" selection-start-line="105" selection-start-column="26" selection-end-line="105" selection-end-column="30" />
+            <state relative-caret-position="316">
+              <caret line="81" column="14" selection-start-line="105" selection-start-column="26" selection-end-line="105" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mfbcf.py" pinned="false" current-in-tab="true">
+        <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modflow/mfbcf.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="316">
+              <caret line="128" column="69" selection-start-line="128" selection-start-column="69" selection-end-line="128" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -133,13 +142,13 @@
       <find>5,</find>
       <find>SimulationType</find>
       <find>time_ser_file</find>
-      <find>nper</find>
       <find>== 3</find>
       <find>ref_time</find>
       <find>time_ct</find>
       <find>ref_time_per_stp</find>
       <find>time_pts</find>
       <find>create_pt_df</find>
+      <find>nper</find>
     </findStrings>
     <replaceStrings>
       <replace>4,</replace>
@@ -207,7 +216,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.read_pth_file">
+  <component name="RunManager" selected="Python.pollock_88_ex2">
     <configuration name="Write_starting_locations" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pollock_88_modpath" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -307,9 +316,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.pollock_88_ex2" />
         <item itemvalue="Python.read_pth_file" />
         <item itemvalue="Python.build_pollock_88" />
-        <item itemvalue="Python.pollock_88_ex2" />
         <item itemvalue="Python.zonal_bud_ex2" />
         <item itemvalue="Python.Write_starting_locations" />
       </list>
@@ -345,7 +354,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" weight="0.32897604" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32897604" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32897604" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -481,13 +490,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modpath/mpbas.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
-          <caret line="105" column="30" selection-start-line="105" selection-start-column="26" selection-end-line="105" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modpath/mp.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -544,11 +546,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pollock_88_ex2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="138" lean-forward="true" selection-start-line="132" selection-end-line="138" />
+        <state relative-caret-position="126">
+          <caret line="126" column="38" selection-start-line="126" selection-start-column="38" selection-end-line="126" selection-end-column="38" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modpath/mpbas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="81" column="14" selection-start-line="105" selection-start-column="26" selection-end-line="105" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modflow/mfbcf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="128" column="69" selection-start-line="128" selection-start-column="69" selection-end-line="128" selection-end-column="69" />
         </state>
       </provider>
     </entry>
