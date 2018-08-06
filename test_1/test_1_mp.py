@@ -48,7 +48,7 @@ mp_ibound = mf.bas6.ibound.array # use ibound from modflow model
 mpb = flopy.modpath.ModpathBas(mp,-1e30,ibound=mp_ibound,prsity =.3) # make modpath bas object
 
 
-backwards = True
+backwards = False
 write_loc_file(starting_loc,backwards=backwards)
 
 
@@ -122,14 +122,14 @@ well_pathlines = pthobj.get_alldata()
 modelmap.plot_pathline(well_pathlines, travel_time=None, layer='all', colors='red') # plot pathline <= time
 modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
 modelmap.plot_bc('wel',color='k')
-ax.plot(x+31000+100,y+20000-50,lw=4,color='g')
-ax.plot(x+31000+100,yinv+20000-100+50,lw=4,color='g',label='Analytical Solution')
+ax.plot(x+31000+25,y+10000-25,lw=4,color='g')
+ax.plot(x+31000+25,yinv+10000-25,lw=4,color='g',label='Analytical Solution')
 
 ax.plot([0,1],[0,1],'r',label='Modpath Pathlines')
 # ax.adjustable='datalim'
 ax.legend(fancybox=True,framealpha=1,loc='upper left')
 ax.set_aspect(5)#, 'datalim')
-ax.set_ylim([19750,20205])
+ax.set_ylim([19750*.5,20205*.5])
 ax.set_xlim([30000,31400])
 fig.tight_layout()
 if backwards:

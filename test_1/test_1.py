@@ -13,12 +13,12 @@ mf = flopy.modflow.Modflow(modelname, version='mf2k', exe_name =exe,model_ws=mod
 
 #DIS
 Lx = 40000.
-Ly = 40000.
+Ly = 40000./2
 ztop = 200.
 zbot = 0
 nlay = 1
-nrow = 400
-ncol = 400
+nrow = int(400)
+ncol = 400*2
 delr = Lx/ncol
 delc = Ly/nrow
 delv = (ztop - zbot) / nlay
@@ -26,6 +26,7 @@ botm = np.linspace(ztop, zbot, nlay + 1)
 nper = 10 # lets add some more stress periods, RKK
 perlen = 1
 
+print(ncol)
 dis = flopy.modflow.ModflowDis(mf, nlay, nrow, ncol, delr=delr, delc=delc, top=ztop, botm=botm[1:],nper=nper,perlen=perlen)
 
 #BAS for 64-bit
@@ -54,7 +55,7 @@ pcg = flopy.modflow.ModflowPcg(mf)
 #WEL
 Qgpm = -2.5
 Qcfd = Qgpm * (60*24) / 7.4018
-wel_spd = {0:[0,int(nrow/2),310,Qcfd]}
+wel_spd = {0:[0,int(nrow/2),int(310*2),Qcfd]}
 wel = flopy.modflow.ModflowWel(mf,stress_period_data=wel_spd,ipakcb=53)
 
 #write the modflow input files
@@ -91,4 +92,4 @@ cs = modelmap.contour_array(head, levels=levels)
 quiver = modelmap.plot_discharge(frf, fff, head=head)
 plt.savefig('test_1b.png')
 
-import test_1_mp
+# import test_1_mp
