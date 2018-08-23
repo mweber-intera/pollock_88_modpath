@@ -4,26 +4,23 @@ import numpy as np
 import matplotlib.pyplot as plt
 import platform
 import imageio
-import pandas as pd # pandas is a package that is used to work with dataframes (stolen from the R language) this will be
-# how we import csv files
+import pandas as pd
 
 
 model_ws = os.path.join('pollock_model_ex1')
 if not os.path.exists(model_ws): os.mkdir(model_ws)
 gw_codes = os.path.join('gw_codes')
-exe = os.path.join(gw_codes,'mfnwt.exe')
-if platform.system() == 'Darwin':
-    exe = 'mfnwt' # assuming you have mfnwt in your path
-mf = flopy.modflow.Modflow('pollock_88',version='mfnwt',exe_name=exe,model_ws=model_ws)
+exe = os.path.join(gw_codes,'mf2k-chprc08spl.exe')
+mf = flopy.modflow.Modflow('pollock_88', version='mf2k', exe_name =exe,model_ws=model_ws)
 
 
-
+# DIS
 nlay = 1 # number of layers
 nrow, ncol = 40,40 # number of rows and columns
 top = np.ones((nrow,ncol)) * 100 # 2d array of size (nrow * ncol) * 100
 botm = np.ones((nlay,nrow,ncol)) * 0 # 2d array of size (nrow * ncol) * 0
 delr, delc = 100, 100 # hieght and width of each cell
-Lx, Ly = delr*ncol, delc*nrow # model width and hieght in ft
+Lx, Ly = delr*ncol, delc*nrow # model width and height in ft
 
 
 nper = 15 # number of stress periods
@@ -36,22 +33,28 @@ for sp in range(0,nper-1):
     nstp.append(1) # number of time steps in each stress period
 laycbd = 0
 
-
 dis = flopy.modflow.ModflowDis(mf,nlay,nrow,ncol,nper,delr,delc,0,top,botm,perlen,nstp,1,steady) # create dis object
 
-upw = flopy.modflow.ModflowUpw(mf,hk=10,ipakcb=53) # creat upw object 
-
+# BAS
 ibound = np.zeros((nlay,nrow,ncol))
 ibound[0][:int(nrow/2),int(ncol/2):] = 1
 bas = flopy.modflow.ModflowBas(mf, ibound=1, strt=100.0) # create bas object, all cells are active, starting head = 100 ft
 
+#LPF change hydraulic conductivity here
+lpf = flopy.modflow.ModflowLpf(mf, hk=10, vka=10., ipakcb=53)
+
+#PCG
+#I've seen examples of all three solvers being used
+pcg = flopy.modflow.ModflowPcg(mf)
+
+# OC
 spd = {} # initialize spd for oc
 for i in range(dis.nper):
     spd[(i, 0)] = ['save head', 'save budget']
 oc = flopy.modflow.ModflowOc(mf, stress_period_data=spd, compact=True) # compact = True to use in modpath later
 
-nwt = flopy.modflow.ModflowNwt(mf, maxiterout=5000, linmeth=2, iprnwt=1) # solver for modflow nwt
 
+# WEL
 Qcfd = 160000./4 # Q cf-days
 wel_spd = {} 
 for sp in range(nper):
@@ -61,36 +64,7 @@ for sp in range(nper):
 print(wel_spd) # {nper:[layer, row, column, Q],nper+1:[layer, row, column, Q],....} # make sure to use python indexing 
 wel = flopy.modflow.ModflowWel(mf,stress_period_data=wel_spd) # well package
 
-''' # commented this out to instead use the csv Mary created for placing the chds
-# this is the math used to make a circle with radius 4000 ft (40 cells)
-# the permiter of the cirlce will be constant head boundries that have a head = 100 ft 
-
-def createCircularMask(h, w, center=None, radius=None):
-    # creates a binary mask of the 2d array, True means the value is the circular paremter. 
-    if center is None: # use the middle of the image
-        center = [int(w/2), int(h/2)]
-    if radius is None: # use the smallest distance between the center and image walls
-        radius = min(center[0], center[1], w-center[0], h-center[1])
-
-    Y, X = np.ogrid[:h, :w]
-    dist_from_center = np.sqrt((X - center[0])**2 + (Y-center[1])**2)
-    mask = (dist_from_center < radius+1) & (dist_from_center >= radius)
-    return mask
-
-mask = createCircularMask(ncol,nrow,radius=40)
-chd_locsX, chd_locsY = np.where(mask)[0], np.where(mask)[1] # get the x and y locations for the binary mask
-
-
-chd_dat = [] # initialize spress period data for constant head boundry 
-for i in range(len(chd_locsX)):
-    cx,cy = chd_locsX[i], chd_locsY[i]
-    try:
-        if ibound[0][cx,cy] == 1: # if ibound is active, then append to chd data
-            chd_dat.append([0,cx,cy,100,100]) # [layer, row, col, start_head, end head]
-    except:
-        pass
-'''
-
+# CHD
 chd_df = pd.read_csv('chb_t1.csv') # read in csv with pandas
 print(chd_df.head()) # printing with .head() lets you see the first 5 rows of a dataframe
 
@@ -106,11 +80,11 @@ chd_spd = {0:chd_dat} # only need do do in the first stress period since modflow
 print(chd_spd)
 chd = flopy.modflow.ModflowChd(mf,stress_period_data=chd_spd)
 
+# write modflow files
+mf.write_input()
 
-
-
-mf.write_input() # write modflow files
-# mf.run_model() # run model
+# Run the MODFLOW model
+mf.run_model()
 
 
 
@@ -123,27 +97,117 @@ if platform.system() == 'Darwin':
 
 mp = flopy.modpath.Modpath('pollock_88_mp',exe_name=mpexe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
 
-mp_ibound = mf.bas6.ibound.array # use ibound from modflow model 
-mpb = flopy.modpath.ModpathBas(mp,upw.hdry,ibound=mp_ibound,prsity=.3) # make modpath bas object
-
+mp_ibound = mf.bas6.ibound.array # use ibound from modflow model
+mpb = flopy.modpath.ModpathBas(mp,-1e30,ibound=mp_ibound,prsity =.3) # make modpath bas object
 start_time=[0]
 
-import Write_starting_locations # this is a script I made that write the starting location file, it is not a straight forward and is unique to this model but can be modified to create a different starting locations file.
+import Write_starting_locations # this is a script I made that write the starting location file
 srt_loc = 'starting_locs.loc' # name starting locations file
-Write_starting_locations.write_file(os.path.join(model_ws,srt_loc),dis,start_time,27) # custom function in Write_starting_locations.py
+Write_starting_locations.write_file(os.path.join(model_ws,srt_loc),dis,start_time,27)
 
-sim = mp.create_mpsim(trackdir='forward', simtype='pathline', packages=srt_loc, start_time=(0, 0, 0)) # create simulation file
+sim = flopy.modpath.mpsim.ModpathSim(model=mp, option_flags=[2,1,2,1,2,2,2,3,1,1,1,1], time_ct = 3, time_pts = [2500, 5000, 7500], strt_file='starting_locs.loc')
 mp.write_input() # write files
 
 mp.run_model(silent=False) # run model
 
-# post proccesing
+# import digitized data csv
+digitized = pd.read_csv('figure_7_distances.csv')
 
+
+# import modpath results
+with open(os.path.join('pollock_model_ex1','pollock_88_mp.mppth'), 'r') as f:
+    lines_after_header = f.readlines()[3:]
+    step = []
+    step2 = []
+    step3 = []
+    step4 = []
+    for line in lines_after_header:
+        step4.append(line.split()[0])
+        step.append(float(line.split()[4]))
+        step2.append(float(line.split()[5]))
+        step3.append(float(line.split()[6]))
+df = pd.DataFrame({'ParticleID':step4,
+                   'Time':step,
+                   'GlobalX':step2,
+                   'GlobalY':step3})
+
+
+
+# equation for calculating the line length
+def calc_line_length(globalx, globaly):
+    line_length = np.sqrt((globalx**2)+(globaly**2))
+    return line_length
+
+# get the 0 day average from mppth
+xlist0d = df.loc[(df['Time']==0.000000000000000E+00), ['ParticleID','Time','GlobalX','GlobalY']]
+print(xlist0d)
+
+# get the 2500 day average from mppth
+xlist25h = df.loc[(df['Time']==0.250000000000000E+04), ['ParticleID','Time','GlobalX','GlobalY']]
+xlist25h['length']=np.sqrt((xlist25h['GlobalX']**2)+(xlist25h['GlobalY']**2))
+av_len_25h = np.average(xlist25h['length'])
+print(av_len_25h)
+
+# get the 5000 day average from mppth
+xlist5k = df.loc[(df['Time']==0.500000000000000E+04), ['ParticleID','Time','GlobalX','GlobalY']]
+xlist5k['length']=np.sqrt((xlist5k['GlobalX']**2)+(xlist5k['GlobalY']**2))
+av_len_5k = np.average(xlist5k['length'])
+print(av_len_5k)
+
+# get the 7500 day average from mppth
+xlist75h = df.loc[(df['Time']==0.750000000000000E+04), ['ParticleID','Time','GlobalX','GlobalY']]
+xlist75h['length']=np.sqrt((xlist75h['GlobalX']**2)+(xlist75h['GlobalY']**2))
+av_len_75h = np.average(xlist75h['length'])
+print(av_len_75h)
+
+mppth_all = [av_len_25h, av_len_5k, av_len_75h]
+
+# get the 2500 day average from digitized file
+dig_xlist25h = digitized.loc[(digitized['days']==2500), ['distance']]
+dig_av_len_25h = np.average(dig_xlist25h['distance'])
+print(dig_av_len_25h)
+
+# get the 5000 day average from digitized file
+dig_xlist5k = digitized.loc[(digitized['days']==5000), ['distance']]
+dig_av_len_5k = np.average(dig_xlist5k['distance'])
+print(dig_av_len_5k)
+
+# get the 7500 day average from digitized file
+dig_xlist75h = digitized.loc[(digitized['days']==7500), ['distance']]
+dig_av_len_75h = np.average(dig_xlist75h['distance'])
+print(dig_av_len_75h)
+
+dig_all = [dig_av_len_25h, dig_av_len_5k, dig_av_len_75h]
+
+# calculate percent difference
+perd_tc1 = []
+perdl=[perd_tc1.append(((dig_all[i] - mppth_all[i])/(dig_all[i]+mppth_all[i]/2))*100) for i in range(0,len(mppth_all))]
+print(perd_tc1)
+
+# determine pass/fail
+
+pf_tc1 = []
+
+for item in perd_tc1:
+    if abs(item) > 10.:
+        pf_tc1.append('fail')
+    else:
+        pf_tc1.append('pass')
+
+# compile everything
+
+dictionary = {'Time':[2500, 5000, 7500], 'digitized':dig_all, 'this_run':mppth_all, 'Percent_difference':perd_tc1, 'Pass/Fail':pf_tc1}
+output=pd.DataFrame(dictionary)
+print(output)
+out_csv = 'tc1_results.csv'
+output.to_csv(out_csv)
+
+# make figures
 import flopy.utils.binaryfile as bf
 
 headobj = bf.HeadFile(os.path.join(model_ws,'pollock_88.hds')) # make head object with hds file
-times = [0] + headobj.get_times() # get the times (we made this in the begining with the dis)
-print(times) # should be every 500 days, but I added "0" to the begging so we can see when there is no pumping
+times = [2500, 5000, 7500] # get the times
+print(times) # should be every 500 days
 
 pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'pollock_88_mp.mppth')) # create pathline object
 epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'pollock_88_mp.mpend')) # create endpoint object
@@ -179,7 +243,3 @@ for time in times:
     fig.savefig(fig_name)
     fig_list.append(imageio.imread(fig_name)) # append imagio.imread() for each figure path
     plt.close()
-
-
-imageio.mimsave(os.path.join('figures','final_gif.gif'),fig_list,duration=.25) # now save a gif of all the figures in fig_list
-

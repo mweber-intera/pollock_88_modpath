@@ -3,7 +3,7 @@ import os
 import numpy as np
 
 def PointsInCircum(x,y, r,n=8):
-    a = [[np.cos(2*np.pi/n*i)*r,np.sin(2*np.pi/n*i)*r] for i in range(0,n+1)]
+    a = [[np.cos(2*np.pi/n*i)*r,np.sin(2*np.pi/n*i)*r] for i in range(0,n)]
     x0 = np.array([i[0] for i in a])
     y0 = np.array([i[1] for i in a])
     return x0+x, y0+y
