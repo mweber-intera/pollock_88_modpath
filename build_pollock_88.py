@@ -28,7 +28,7 @@ perlen = [500] # number time unites in first stress period (this case 500 days)
 steady = [True] # steady state or transient in first stress period
 nstp = [1] # number of time steps in first stress period
 for sp in range(0,nper-1):
-    perlen.append(500) # number time unites in each stress period
+    perlen.append(500) # number time units in each stress period
     steady.append(True) # steady state or transient in each stress period
     nstp.append(1) # number of time steps in each stress period
 laycbd = 0
@@ -189,7 +189,7 @@ print(perd_tc1)
 pf_tc1 = []
 
 for item in perd_tc1:
-    if abs(item) > 10.:
+    if abs(item) > 5.:
         pf_tc1.append('fail')
     else:
         pf_tc1.append('pass')
