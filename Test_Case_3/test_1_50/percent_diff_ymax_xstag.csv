@@ -1,2 +1,2 @@
-,analytical_xstag,modpath_xstag,Percent_difference_xstag,analytical_ymax,modpath_ymax,Percent_difference_ymax
-0,51.087847075914354,55.25363438440036,-7.8347362690082925,160.49720506141134,148.44351506420026,7.803238104909053
+,analytical_xstag,modpath_xstag,Percent_difference_xstag,Xstag_Status,analytical_ymax,modpath_ymax,Percent_difference_ymax,Ymax_Status,modpath_ymin,Percent_difference_ymin,Ymin_Status
+0,3065.270824554861,4387.774974575601,-35.48895808945746,fail,9629.83230368468,7443.261841622101,25.61422602667068,fail,-7426.954771634169,25.829923564421716,fail

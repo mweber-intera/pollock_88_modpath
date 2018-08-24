@@ -5,13 +5,13 @@ import os
 import matplotlib.pyplot as plt
 
 modelname = 'test_1'
-exe = os.path.join('gw_codes','mf2k-chprc08spl.exe') # moved the exes here for clean up, RKK
-mp6_exe = os.path.join('gw_codes','mp6.exe')
+exe = os.path.join('../gw_codes','mf2k-chprc08spl.exe') # moved the exes here for clean up, RKK
+mp6_exe = os.path.join('../gw_codes','mp6.exe')
 model_ws = os.path.join('workspace') # moved model here to keep things orginized, RKK
 mf = flopy.modflow.Modflow.load('test_1.nam',model_ws=model_ws)
 
 
-def write_loc_file(file_nam,strt_time=0,input_style=1,backwards=False):
+def write_loc_file(file_nam,strt_time=0,input_style=1,backwards=True):
     if backwards:
         df = pd.read_csv('particle_starting_locs_backwards.csv')
     else:
@@ -48,7 +48,7 @@ mp_ibound = mf.bas6.ibound.array # use ibound from modflow model
 mpb = flopy.modpath.ModpathBas(mp,-1e30,ibound=mp_ibound,prsity =.3) # make modpath bas object
 
 
-backwards = False
+backwards = True
 write_loc_file(starting_loc,backwards=backwards)
 
 
@@ -60,7 +60,7 @@ else:
 
 mp.write_input()
 mp.run_model(silent=False)
-Qgpm = 2.5
+Qgpm = 150
 Qcfd = Qgpm * (60*24) / 7.48052
 b = 175.25
 hk = 10
@@ -128,9 +128,9 @@ ax.plot(x+31000+25,yinv+10000-25,lw=4,color='g',label='Analytical Solution')
 ax.plot([0,1],[0,1],'r',label='Modpath Pathlines')
 # ax.adjustable='datalim'
 ax.legend(fancybox=True,framealpha=1,loc='upper left')
-ax.set_aspect(5)#, 'datalim')
-ax.set_ylim([19750*.5,20205*.5])
-ax.set_xlim([30000,31400])
+ax.set_aspect(1)#, 'datalim')
+ax.set_ylim([0,20000])
+ax.set_xlim([0,40000])
 fig.tight_layout()
 if backwards:
     plt.title('Backward Simulation')

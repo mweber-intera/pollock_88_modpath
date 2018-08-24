@@ -6,7 +6,7 @@ import os
 
 #note: change the version from modflow 2005 to mf2k. Guessed at the version code, because I couldn't figure out the help
 modelname = 'test_1'
-exe = os.path.join('gw_codes','mf2k-chprc08spl.exe') # moved the exes here for clean up, RKK
+exe = os.path.join("../gw_codes",'mf2k-chprc08spl.exe') # moved the exes here for clean up, RKK
 model_ws = os.path.join('workspace') # moved model here to keep things orginized, RKK
 mf = flopy.modflow.Modflow(modelname, version='mf2k', exe_name =exe,model_ws=model_ws)
 #m = flopy.modflow.Modflow.add_output_file(self=mf, unit=50, fname=modelname, extension='.cbb', binflag=True)
@@ -53,7 +53,7 @@ oc = flopy.modflow.ModflowOc(mf, stress_period_data=spd, compact=True)
 pcg = flopy.modflow.ModflowPcg(mf)
 
 #WEL
-Qgpm = -2.5
+Qgpm = -150
 Qcfd = Qgpm * (60*24) / 7.4018
 wel_spd = {0:[0,int(nrow/2),int(310*2),Qcfd]}
 wel = flopy.modflow.ModflowWel(mf,stress_period_data=wel_spd,ipakcb=53)

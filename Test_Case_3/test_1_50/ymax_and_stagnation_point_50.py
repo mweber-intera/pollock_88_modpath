@@ -4,7 +4,7 @@ import numpy as np
 import os
 
 model_ws = os.path.join('workspace')
-
+final_file = os.path.join('../', 'pass_fail.csv')
 # ymax
 # step 1: identify maximum y value from endpoint pathfile
 
@@ -26,11 +26,13 @@ maxy = max(floaty)
 print(maxy)
 mymax = maxy-well_y
 print(mymax)
+miny = min(floaty)
+mymin = miny-well_y
 
 
 # step 2: calculate difference between ymax and mymax
 import fetter
-Qgpm = 2.5
+Qgpm = 150
 Qcfd = Qgpm * (60*24) / 7.48052
 b = 175.25
 hk = 10
@@ -41,6 +43,10 @@ ymax = fetter.ymax_uc(Qcfd,hk,h1,h2,L)
 
 percent_difference_ymax = ((ymax - mymax)/((ymax+mymax)/2))*100
 print(percent_difference_ymax)
+
+percent_difference_ymin = (((0-ymax) - mymin)/(((0-ymax)+mymin)/2))*100
+print(percent_difference_ymin)
+
 
 # stagnation point
 # step 1: identify maximum x value from pathline file
@@ -114,17 +120,45 @@ perd=[]
 pd1=[perd.append(((c_list[i] - loc_x[i])/(c_list[i]+loc_x[i]/2))*100) for i in range(0,len(c_list))]
 print(perd)
 
-dictionary = {'analytical_local_x':c_list, 'modpath_local_x':loc_x, 'modpath_local_y':loc_y, 'modpath_global_x':mp_x, 'modpath_global_y':mp_y, 'percent_difference':perd}
+# define pass/fail criteria
+if abs(percent_difference_xstag) > 20:
+    xstag_pf = 'fail'
+else:
+    xstag_pf = 'pass'
+print(xstag_pf)
+
+if abs(percent_difference_ymax) > 20:
+    ymax_pf = 'fail'
+else:
+    ymax_pf = 'pass'
+print(ymax_pf)
+
+if abs(percent_difference_ymin) > 20:
+    ymin_pf = 'fail'
+else:
+    ymin_pf = 'pass'
+print(ymax_pf)
+
+dictionary = {'analytical_local_x':c_list, 'modpath_local_x':loc_x, 'modpath_local_y':loc_y, 'modpath_global_x':mp_x,
+              'modpath_global_y':mp_y, 'percent_difference':perd}
 output=pd.DataFrame(dictionary)
 print(output)
 out_csv = 'percent_diff_shape.csv'
 output.to_csv(out_csv)
 
-dictionary2 = {'analytical_xstag':xstag, 'modpath_xstag':mmaxx, 'Percent_difference_xstag':percent_difference_xstag, 'analytical_ymax':ymax, 'modpath_ymax':mymax, 'Percent_difference_ymax':percent_difference_ymax}
+dictionary2 = {'analytical_xstag':xstag, 'modpath_xstag':mmaxx, 'Percent_difference_xstag':percent_difference_xstag,
+               'Xstag_Status':xstag_pf, 'analytical_ymax':ymax, 'modpath_ymax':mymax,
+               'Percent_difference_ymax':percent_difference_ymax, 'Ymax_Status':ymax_pf,
+               'modpath_ymin':mymin, 'Percent_difference_ymin':percent_difference_ymin, 'Ymin_Status':ymin_pf}
 output2=pd.DataFrame(dictionary2, index=[0])
 print(dictionary2)
 out_csv2 = 'percent_diff_ymax_xstag.csv'
 output2.to_csv(out_csv2)
+
+# dictionary3 = [percent_difference_xstag, ymax_pf,ymin_pf]
+#
+# with open(final_file, 'a') as fd:
+#     fd.write (dictionary3)
 
 # should probably write that to a csv as well
 # should probably set it up such that it gives you a wrong number when you have the wrong sign
