@@ -1,0 +1,16 @@
+{
+	"TRANSFORMATION" : {
+	"XOFF" : 5661262.80,
+	"YOFF" : 19619929.74438977241516113,
+	"ROT" : 0.0
+	},
+   "FLOW_MODEL_TYPE" : {
+      "MODFLOW" : {
+         "GSF_FILE" : {
+           "TYPE" : "STRUCTURED_DIS"
+         },
+         "NAME_FILE" : "test_3.nam"
+      }
+   },
+   "OUTPUT_FILENAME" : "mp3du_test_3.gsf"
+}

@@ -1,0 +1,56 @@
+[
+	{
+		"Program Information" : 
+		{
+			"Developer" : "S.S. Papadopulos & Assoc. Inc.",
+			"Title" : "writeP3DOutput",
+			"Version" : 
+			{
+				"Date" : "01/2018",
+				"Number" : "1.0.0"
+			}
+		}
+	},
+	{
+		"Timing" : 
+		{
+			"Elapsed" : 
+			{
+				"minutes" : 6.37926067e-002,
+				"seconds" : 3.82755640e+000
+			},
+			"Finished" : "Mon Aug 27 12:27:21 2018\n",
+			"Started" : "Mon Aug 27 12:27:17 2018\n"
+		}
+	},
+	{
+		"OUTPUTS" : 
+		{
+			"ASCII_TABLE" : 
+			{
+				"FILE_NAME" : "NAME_OF_OUTPUT.dat"
+			},
+			"COUNT" : 5,
+			"ENDPOINTS" : 
+			{
+				"FILE_NAME" : "endpoint.shp"
+			},
+			"PATHLINE_WHOLE" : 
+			{
+				"FILE_NAME" : "five_v2_Pathline.shp"
+			},
+			"POINTS_IN_TIME" : 
+			{
+				"FILE_NAME" : "NAME_03_OF_OUTPUT.shp"
+			},
+			"SUMMARY" : null,
+			"TYPES" : [          "SUMMARY",      "ASCII_TABLE",   "POINTS_IN_TIME",         "ENDPOINT",   "PATHLINE_WHOLE" ]
+		}
+	},
+	{
+		"Warning(s)" : null
+	},
+	{
+		"Error(s)" : null
+	}
+]

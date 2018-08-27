@@ -1,0 +1,21 @@
+{
+   "MP3DU_BIN" : "Example1A_PATHLINE.bin",
+   "OUTPUTS" : [
+     { "SUMMARY" : {
+     } },
+     { "ASCII_TABLE" : {
+        "FILE_NAME" : "NAME_OF_OUTPUT.dat"
+      } },
+      { "POINTS_IN_TIME" : {
+        "FILE_NAME" : "NAME_03_OF_OUTPUT.shp",
+        "TIME_CONVERSION" : 2.7397E-03,
+        "TIME_DT" : 10.0
+      } },      
+      { "ENDPOINT" : {
+        "FILE_NAME" : "endpoint.shp"
+      } },
+     { "PATHLINE_WHOLE" : {
+       "FILENAME" : "five_v2_Pathline.shp"
+     } }
+   ]
+}
