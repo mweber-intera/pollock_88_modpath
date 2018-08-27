@@ -1,0 +1,817 @@
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =     1
+Initial time =  0.0000000E+00 Final time =  0.0000000E+00 Time interval =  0.0000000E+00
+Stress Period =    1 Time Step =    1
+Layer   1 Row   1 Column   3 Grid   1
+Initial local coordinates (X, Y, Z):    0.5000000   0.0000000   0.5000000
+Final local coordinates (X, Y, Z):      0.5000000   0.0000000   0.5000000
+This particle has passed through         1 Cells (CELLCOUNT)
+Particle exits across face 3
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.5500000E+02
+Cell corner: XMIN =  0.1000000E+02  YMIN =  0.5000000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.0000000E+00  Face 2: QX2 =  0.0000000E+00
+     Face 3: QY1 = -0.8038600E+03  Face 4: QY2 =  0.0000000E+00
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.0000000E+00  Face 2: VX2 =  0.0000000E+00
+     Face 3: VY1 = -0.2143627E+02  Face 4: VY2 =  0.0000000E+00
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.8038600E+03 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =     2
+Initial time =  0.0000000E+00 Final time =  0.2340913E+00 Time interval =  0.2340913E+00
+Stress Period =    1 Time Step =    1
+Layer   1 Row   2 Column   3 Grid   1
+Initial local coordinates (X, Y, Z):    0.5000000   1.0000000   0.5000000
+Final local coordinates (X, Y, Z):      0.5201701   0.0000000   0.5000000
+This particle has passed through         2 Cells (CELLCOUNT)
+Particle exits across face 3
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.5463916E+02
+Cell corner: XMIN =  0.1000000E+02  YMIN =  0.4500000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.1321056E+02  Face 2: QX2 =  0.1898436E+02
+     Face 3: QY1 = -0.7980862E+03  Face 4: QY2 = -0.8038600E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.3522815E+00  Face 2: VX2 =  0.5062496E+00
+     Face 3: VY1 = -0.2128230E+02  Face 4: VY2 = -0.2143627E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =     3
+Initial time =  0.2340913E+00 Final time =  0.4716682E+00 Time interval =  0.2375770E+00
+Stress Period =    1 Time Step =    1
+Layer   1 Row   3 Column   3 Grid   1
+Initial local coordinates (X, Y, Z):    0.5201701   1.0000000   0.5000000
+Final local coordinates (X, Y, Z):      0.5832618   0.0000000   0.5000000
+This particle has passed through         3 Cells (CELLCOUNT)
+Particle exits across face 3
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.5392974E+02
+Cell corner: XMIN =  0.1000000E+02  YMIN =  0.4000000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.4004613E+02  Face 2: QX2 =  0.5771659E+02
+     Face 3: QY1 = -0.7804157E+03  Face 4: QY2 = -0.7980862E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.1067897E+01  Face 2: VX2 =  0.1539109E+01
+     Face 3: VY1 = -0.2081109E+02  Face 4: VY2 = -0.2128230E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =     4
+Initial time =  0.4716682E+00 Final time =  0.7168158E+00 Time interval =  0.2451476E+00
+Stress Period =    1 Time Step =    1
+Layer   1 Row   4 Column   3 Grid   1
+Initial local coordinates (X, Y, Z):    0.5832618   1.0000000   0.5000000
+Final local coordinates (X, Y, Z):      0.6991281   0.0000000   0.5000000
+This particle has passed through         4 Cells (CELLCOUNT)
+Particle exits across face 3
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.5323604E+02
+Cell corner: XMIN =  0.1000000E+02  YMIN =  0.3500000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.6879836E+02  Face 2: QX2 =  0.9973046E+02
+     Face 3: QY1 = -0.7494836E+03  Face 4: QY2 = -0.7804157E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.1834623E+01  Face 2: VX2 =  0.2659479E+01
+     Face 3: VY1 = -0.1998623E+02  Face 4: VY2 = -0.2081109E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =     5
+Initial time =  0.7168158E+00 Final time =  0.9750645E+00 Time interval =  0.2582487E+00
+Stress Period =    1 Time Step =    1
+Layer   1 Row   5 Column   3 Grid   1
+Initial local coordinates (X, Y, Z):    0.6991281   1.0000000   0.5000000
+Final local coordinates (X, Y, Z):      0.8880295   0.0000000   0.5000000
+This particle has passed through         5 Cells (CELLCOUNT)
+Particle exits across face 3
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.5256984E+02
+Cell corner: XMIN =  0.1000000E+02  YMIN =  0.3000000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.1003875E+03  Face 2: QX2 =  0.1467722E+03
+     Face 3: QY1 = -0.7030989E+03  Face 4: QY2 = -0.7494836E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.2677000E+01  Face 2: VX2 =  0.3913926E+01
+     Face 3: VY1 = -0.1874930E+02  Face 4: VY2 = -0.1998623E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =     6
+Initial time =  0.9750645E+00 Final time =  0.1000000E+01 Time interval =  0.2493549E-01
+Stress Period =    1 Time Step =    1
+Layer   1 Row   6 Column   3 Grid   1
+Initial local coordinates (X, Y, Z):    0.8880295   1.0000000   0.5000000
+Final local coordinates (X, Y, Z):      0.9137422   0.9068961   0.5000000
+This particle has passed through         6 Cells (CELLCOUNT)
+Particle remains within the current cell.
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.5194486E+02
+Cell corner: XMIN =  0.1000000E+02  YMIN =  0.2500000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.1351195E+03  Face 2: QX2 =  0.1997516E+03
+     Face 3: QY1 = -0.6384667E+03  Face 4: QY2 = -0.7030989E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.3603186E+01  Face 2: VX2 =  0.5326709E+01
+     Face 3: VY1 = -0.1702578E+02  Face 4: VY2 = -0.1874930E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =     7
+Initial time =  0.1000000E+01 Final time =  0.1082120E+01 Time interval =  0.8211972E-01
+Stress Period =    2 Time Step =    1
+Layer   1 Row   6 Column   3 Grid   1
+Initial local coordinates (X, Y, Z):    0.9137422   0.9068961   0.5000000
+Final local coordinates (X, Y, Z):      1.0000000   0.6058788   0.5000000
+This particle has passed through         6 Cells (CELLCOUNT)
+Particle exits across face 2
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.5194490E+02
+Cell corner: XMIN =  0.1000000E+02  YMIN =  0.2500000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.1351176E+03  Face 2: QX2 =  0.1997489E+03
+     Face 3: QY1 = -0.6384579E+03  Face 4: QY2 = -0.7030892E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.3603136E+01  Face 2: VX2 =  0.5326636E+01
+     Face 3: VY1 = -0.1702555E+02  Face 4: VY2 = -0.1874905E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =     8
+Initial time =  0.1082120E+01 Final time =  0.1241094E+01 Time interval =  0.1589744E+00
+Stress Period =    2 Time Step =    1
+Layer   1 Row   6 Column   4 Grid   1
+Initial local coordinates (X, Y, Z):    0.0000000   0.6058788   0.5000000
+Final local coordinates (X, Y, Z):      0.1736882   0.0000000   0.5000000
+This particle has passed through         7 Cells (CELLCOUNT)
+Particle exits across face 3
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.5176735E+02
+Cell corner: XMIN =  0.1500000E+02  YMIN =  0.2500000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.1997489E+03  Face 2: QX2 =  0.2590302E+03
+     Face 3: QY1 = -0.6967866E+03  Face 4: QY2 = -0.7560679E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.5326636E+01  Face 2: VX2 =  0.6907471E+01
+     Face 3: VY1 = -0.1858097E+02  Face 4: VY2 = -0.2016181E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =     9
+Initial time =  0.1241094E+01 Final time =  0.1527683E+01 Time interval =  0.2865886E+00
+Stress Period =    2 Time Step =    1
+Layer   1 Row   7 Column   4 Grid   1
+Initial local coordinates (X, Y, Z):    0.1736882   1.0000000   0.5000000
+Final local coordinates (X, Y, Z):      0.6179548   0.0000000   0.5000000
+This particle has passed through         8 Cells (CELLCOUNT)
+Particle exits across face 3
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.5114798E+02
+Cell corner: XMIN =  0.1500000E+02  YMIN =  0.2000000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.2580775E+03  Face 2: QX2 =  0.3413871E+03
+     Face 3: QY1 = -0.6134770E+03  Face 4: QY2 = -0.6967866E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.6882066E+01  Face 2: VX2 =  0.9103655E+01
+     Face 3: VY1 = -0.1635939E+02  Face 4: VY2 = -0.1858097E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    10
+Initial time =  0.1527683E+01 Final time =  0.1702697E+01 Time interval =  0.1750139E+00
+Stress Period =    2 Time Step =    1
+Layer   1 Row   8 Column   4 Grid   1
+Initial local coordinates (X, Y, Z):    0.6179548   1.0000000   0.5000000
+Final local coordinates (X, Y, Z):      1.0000000   0.4563559   0.5000000
+This particle has passed through         9 Cells (CELLCOUNT)
+Particle exits across face 2
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.5060267E+02
+Cell corner: XMIN =  0.1500000E+02  YMIN =  0.1500000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.3188605E+03  Face 2: QX2 =  0.4311201E+03
+     Face 3: QY1 = -0.5012173E+03  Face 4: QY2 = -0.6134770E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.8502946E+01  Face 2: VX2 =  0.1149654E+02
+     Face 3: VY1 = -0.1336580E+02  Face 4: VY2 = -0.1635939E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    11
+Initial time =  0.1702697E+01 Final time =  0.1841751E+01 Time interval =  0.1390544E+00
+Stress Period =    2 Time Step =    1
+Layer   1 Row   8 Column   5 Grid   1
+Initial local coordinates (X, Y, Z):    0.0000000   0.4563559   0.5000000
+Final local coordinates (X, Y, Z):      0.3335544   0.0000000   0.5000000
+This particle has passed through        10 Cells (CELLCOUNT)
+Particle exits across face 3
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.5021945E+02
+Cell corner: XMIN =  0.2000000E+02  YMIN =  0.1500000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.4311201E+03  Face 2: QX2 =  0.5444887E+03
+     Face 3: QY1 = -0.5898415E+03  Face 4: QY2 = -0.7032101E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.1149654E+02  Face 2: VX2 =  0.1451970E+02
+     Face 3: VY1 = -0.1572911E+02  Face 4: VY2 = -0.1875227E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    12
+Initial time =  0.1841751E+01 Final time =  0.2000000E+01 Time interval =  0.1582490E+00
+Stress Period =    2 Time Step =    1
+Layer   1 Row   9 Column   5 Grid   1
+Initial local coordinates (X, Y, Z):    0.3335544   1.0000000   0.5000000
+Final local coordinates (X, Y, Z):      0.8508349   0.5341050   0.5000000
+This particle has passed through        11 Cells (CELLCOUNT)
+Particle remains within the current cell.
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.4969514E+02
+Cell corner: XMIN =  0.2000000E+02  YMIN =  0.1000000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.5197443E+03  Face 2: QX2 =  0.6785922E+03
+     Face 3: QY1 = -0.4309936E+03  Face 4: QY2 = -0.5898415E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.1385985E+02  Face 2: VX2 =  0.1809579E+02
+     Face 3: VY1 = -0.1149316E+02  Face 4: VY2 = -0.1572911E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    13
+Initial time =  0.2000000E+01 Final time =  0.2041952E+01 Time interval =  0.4195213E-01
+Stress Period =    3 Time Step =    1
+Layer   1 Row   9 Column   5 Grid   1
+Initial local coordinates (X, Y, Z):    0.8508349   0.5341050   0.5000000
+Final local coordinates (X, Y, Z):      1.0000000   0.4207164   0.5000000
+This particle has passed through        11 Cells (CELLCOUNT)
+Particle exits across face 2
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.4969514E+02
+Cell corner: XMIN =  0.2000000E+02  YMIN =  0.1000000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.5197450E+03  Face 2: QX2 =  0.6785931E+03
+     Face 3: QY1 = -0.4309941E+03  Face 4: QY2 = -0.5898423E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.1385987E+02  Face 2: VX2 =  0.1809582E+02
+     Face 3: VY1 = -0.1149318E+02  Face 4: VY2 = -0.1572913E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    14
+Initial time =  0.2041952E+01 Final time =  0.2176974E+01 Time interval =  0.1350221E+00
+Stress Period =    3 Time Step =    1
+Layer   1 Row   9 Column   6 Grid   1
+Initial local coordinates (X, Y, Z):    0.0000000   0.4207164   0.5000000
+Final local coordinates (X, Y, Z):      0.5209738   0.0000000   0.5000000
+This particle has passed through        12 Cells (CELLCOUNT)
+Particle exits across face 3
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.4909195E+02
+Cell corner: XMIN =  0.2500000E+02  YMIN =  0.1000000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.6785931E+03  Face 2: QX2 =  0.8545359E+03
+     Face 3: QY1 = -0.5480032E+03  Face 4: QY2 = -0.7239459E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.1809582E+02  Face 2: VX2 =  0.2278762E+02
+     Face 3: VY1 = -0.1461342E+02  Face 4: VY2 = -0.1930522E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    15
+Initial time =  0.2176974E+01 Final time =  0.2180000E+01 Time interval =  0.3025793E-02
+Stress Period =    3 Time Step =    1
+Layer   1 Row  10 Column   6 Grid   1
+Initial local coordinates (X, Y, Z):    0.5209738   1.0000000   0.5000000
+Final local coordinates (X, Y, Z):      0.5359655   0.9911746   0.5000000
+This particle has passed through        13 Cells (CELLCOUNT)
+Particle remains within the current cell.
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.4860483E+02
+Cell corner: XMIN =  0.2500000E+02  YMIN =  0.5000000E+01
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.7956021E+03  Face 2: QX2 =  0.1048024E+04
+     Face 3: QY1 = -0.2955815E+03  Face 4: QY2 = -0.5480032E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.2121606E+02  Face 2: VX2 =  0.2794730E+02
+     Face 3: VY1 = -0.7882172E+01  Face 4: VY2 = -0.1461342E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    16
+Initial time =  0.2180000E+01 Final time =  0.2268036E+01 Time interval =  0.8803640E-01
+Stress Period =    3 Time Step =    1
+Layer   1 Row  10 Column   6 Grid   1
+Initial local coordinates (X, Y, Z):    0.5359655   0.9911746   0.5000000
+Final local coordinates (X, Y, Z):      1.0000000   0.7495211   0.5000000
+This particle has passed through        13 Cells (CELLCOUNT)
+Particle exits across face 2
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.4860483E+02
+Cell corner: XMIN =  0.2500000E+02  YMIN =  0.5000000E+01
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.7956021E+03  Face 2: QX2 =  0.1048024E+04
+     Face 3: QY1 = -0.2955815E+03  Face 4: QY2 = -0.5480032E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.2121606E+02  Face 2: VX2 =  0.2794730E+02
+     Face 3: VY1 = -0.7882172E+01  Face 4: VY2 = -0.1461342E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    17
+Initial time =  0.2268036E+01 Final time =  0.2423247E+01 Time interval =  0.1552110E+00
+Stress Period =    3 Time Step =    1
+Layer   1 Row  10 Column   7 Grid   1
+Initial local coordinates (X, Y, Z):    0.0000000   0.7495211   0.5000000
+Final local coordinates (X, Y, Z):      1.0000000   0.2743332   0.5000000
+This particle has passed through        14 Cells (CELLCOUNT)
+Particle exits across face 2
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.4767326E+02
+Cell corner: XMIN =  0.3000000E+02  YMIN =  0.5000000E+01
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.1048024E+04  Face 2: QX2 =  0.1383554E+04
+     Face 3: QY1 = -0.4059611E+03  Face 4: QY2 = -0.7414911E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.2794730E+02  Face 2: VX2 =  0.3689477E+02
+     Face 3: VY1 = -0.1082563E+02  Face 4: VY2 = -0.1977310E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    18
+Initial time =  0.2423247E+01 Final time =  0.2502060E+01 Time interval =  0.7881238E-01
+Stress Period =    3 Time Step =    1
+Layer   1 Row  10 Column   8 Grid   1
+Initial local coordinates (X, Y, Z):    0.0000000   0.2743332   0.5000000
+Final local coordinates (X, Y, Z):      0.6468523   0.0000000   0.5000000
+This particle has passed through        15 Cells (CELLCOUNT)
+Particle exits across face 3
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.4644343E+02
+Cell corner: XMIN =  0.3500000E+02  YMIN =  0.5000000E+01
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.1383554E+04  Face 2: QX2 =  0.1881223E+04
+     Face 3: QY1 = -0.5867720E+03  Face 4: QY2 = -0.1084441E+04
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.3689477E+02  Face 2: VX2 =  0.5016595E+02
+     Face 3: VY1 = -0.1564725E+02  Face 4: VY2 = -0.2891844E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    19
+Initial time =  0.2502060E+01 Final time =  0.2534427E+01 Time interval =  0.3236673E-01
+Stress Period =    3 Time Step =    1
+Layer   1 Row  11 Column   8 Grid   1
+Initial local coordinates (X, Y, Z):    0.6468523   1.0000000   0.5000000
+Final local coordinates (X, Y, Z):      1.0000000   0.9036708   0.5000000
+This particle has passed through        16 Cells (CELLCOUNT)
+Particle exits across face 2
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.4592186E+02
+Cell corner: XMIN =  0.3500000E+02  YMIN =  0.0000000E+00
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.1564365E+04  Face 2: QX2 =  0.2151136E+04
+     Face 3: QY1 =  0.0000000E+00  Face 4: QY2 = -0.5867720E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.4171639E+02  Face 2: VX2 =  0.5736364E+02
+     Face 3: VY1 =  0.0000000E+00  Face 4: VY2 = -0.1564725E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    20
+Initial time =  0.2534427E+01 Final time =  0.2607795E+01 Time interval =  0.7336851E-01
+Stress Period =    3 Time Step =    1
+Layer   1 Row  11 Column   9 Grid   1
+Initial local coordinates (X, Y, Z):    0.0000000   0.9036708   0.5000000
+Final local coordinates (X, Y, Z):      1.0000000   0.6462881   0.5000000
+This particle has passed through        17 Cells (CELLCOUNT)
+Particle exits across face 2
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.4400973E+02
+Cell corner: XMIN =  0.4000000E+02  YMIN =  0.0000000E+00
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.2151136E+04  Face 2: QX2 =  0.3007822E+04
+     Face 3: QY1 =  0.0000000E+00  Face 4: QY2 = -0.8566853E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.5736364E+02  Face 2: VX2 =  0.8020858E+02
+     Face 3: VY1 =  0.0000000E+00  Face 4: VY2 = -0.2284494E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    21
+Initial time =  0.2607795E+01 Final time =  0.2661130E+01 Time interval =  0.5333454E-01
+Stress Period =    3 Time Step =    1
+Layer   1 Row  11 Column  10 Grid   1
+Initial local coordinates (X, Y, Z):    0.0000000   0.6462881   0.5000000
+Final local coordinates (X, Y, Z):      1.0000000   0.4767520   0.5000000
+This particle has passed through        18 Cells (CELLCOUNT)
+Particle exits across face 2
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.4133611E+02
+Cell corner: XMIN =  0.4500000E+02  YMIN =  0.0000000E+00
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.3007822E+04  Face 2: QX2 =  0.4077423E+04
+     Face 3: QY1 =  0.0000000E+00  Face 4: QY2 = -0.1069601E+04
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.8020858E+02  Face 2: VX2 =  0.1087313E+03
+     Face 3: VY1 =  0.0000000E+00  Face 4: VY2 = -0.2852269E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    22
+Initial time =  0.2661130E+01 Final time =  0.2707181E+01 Time interval =  0.4605137E-01
+Stress Period =    3 Time Step =    1
+Layer   1 Row  11 Column  11 Grid   1
+Initial local coordinates (X, Y, Z):    0.0000000   0.4767520   0.5000000
+Final local coordinates (X, Y, Z):      1.0000000   0.4781310   0.5000000
+This particle has passed through        19 Cells (CELLCOUNT)
+Particle exits across face 2
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.3771174E+02
+Cell corner: XMIN =  0.5000000E+02  YMIN =  0.0000000E+00
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.4077423E+04  Face 2: QX2 =  0.4065663E+04
+     Face 3: QY1 =  0.0000000E+00  Face 4: QY2 =  0.1175998E+02
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.1087313E+03  Face 2: VX2 =  0.1084177E+03
+     Face 3: VY1 =  0.0000000E+00  Face 4: VY2 =  0.3135994E+00
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    23
+Initial time =  0.2707181E+01 Final time =  0.2761099E+01 Time interval =  0.5391783E-01
+Stress Period =    3 Time Step =    1
+Layer   1 Row  11 Column  12 Grid   1
+Initial local coordinates (X, Y, Z):    0.0000000   0.4781310   0.5000000
+Final local coordinates (X, Y, Z):      1.0000000   0.6591743   0.5000000
+This particle has passed through        20 Cells (CELLCOUNT)
+Particle exits across face 2
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.3409782E+02
+Cell corner: XMIN =  0.5500000E+02  YMIN =  0.0000000E+00
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.4065663E+04  Face 2: QX2 =  0.2949022E+04
+     Face 3: QY1 =  0.0000000E+00  Face 4: QY2 =  0.1116641E+04
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.1084177E+03  Face 2: VX2 =  0.7864059E+02
+     Face 3: VY1 =  0.0000000E+00  Face 4: VY2 =  0.2977709E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    24
+Initial time =  0.2761099E+01 Final time =  0.2836989E+01 Time interval =  0.7588977E-01
+Stress Period =    3 Time Step =    1
+Layer   1 Row  11 Column  13 Grid   1
+Initial local coordinates (X, Y, Z):    0.0000000   0.6591743   0.5000000
+Final local coordinates (X, Y, Z):      1.0000000   0.9495934   0.5000000
+This particle has passed through        21 Cells (CELLCOUNT)
+Particle exits across face 2
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.3147646E+02
+Cell corner: XMIN =  0.6000000E+02  YMIN =  0.0000000E+00
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.2949022E+04  Face 2: QX2 =  0.2047107E+04
+     Face 3: QY1 =  0.0000000E+00  Face 4: QY2 =  0.9019149E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.7864059E+02  Face 2: VX2 =  0.5458952E+02
+     Face 3: VY1 =  0.0000000E+00  Face 4: VY2 =  0.2405106E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    25
+Initial time =  0.2836989E+01 Final time =  0.2852625E+01 Time interval =  0.1563640E-01
+Stress Period =    3 Time Step =    1
+Layer   1 Row  11 Column  14 Grid   1
+Initial local coordinates (X, Y, Z):    0.0000000   0.9495934   0.5000000
+Final local coordinates (X, Y, Z):      0.1663770   1.0000000   0.5000000
+This particle has passed through        22 Cells (CELLCOUNT)
+Particle exits across face 4
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.2965681E+02
+Cell corner: XMIN =  0.6500000E+02  YMIN =  0.0000000E+00
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.2047107E+04  Face 2: QX2 =  0.1426903E+04
+     Face 3: QY1 =  0.0000000E+00  Face 4: QY2 =  0.6202044E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.5458952E+02  Face 2: VX2 =  0.3805074E+02
+     Face 3: VY1 =  0.0000000E+00  Face 4: VY2 =  0.1653878E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    26
+Initial time =  0.2852625E+01 Final time =  0.2961028E+01 Time interval =  0.1084026E+00
+Stress Period =    3 Time Step =    1
+Layer   1 Row  10 Column  14 Grid   1
+Initial local coordinates (X, Y, Z):    0.1663770   0.0000000   0.5000000
+Final local coordinates (X, Y, Z):      1.0000000   0.4202177   0.5000000
+This particle has passed through        23 Cells (CELLCOUNT)
+Particle exits across face 2
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.2910552E+02
+Cell corner: XMIN =  0.6500000E+02  YMIN =  0.5000000E+01
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.1765397E+04  Face 2: QX2 =  0.1230354E+04
+     Face 3: QY1 =  0.6202044E+03  Face 4: QY2 =  0.1155247E+04
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.4707725E+02  Face 2: VX2 =  0.3280944E+02
+     Face 3: VY1 =  0.1653878E+02  Face 4: VY2 =  0.3080659E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    27
+Initial time =  0.2961028E+01 Final time =  0.3000000E+01 Time interval =  0.3897240E-01
+Stress Period =    3 Time Step =    1
+Layer   1 Row  10 Column  15 Grid   1
+Initial local coordinates (X, Y, Z):    0.0000000   0.4202177   0.5000000
+Final local coordinates (X, Y, Z):      0.2465574   0.5436546   0.5000000
+This particle has passed through        24 Cells (CELLCOUNT)
+Particle remains within the current cell.
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.2801187E+02
+Cell corner: XMIN =  0.7000000E+02  YMIN =  0.5000000E+01
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.1230354E+04  Face 2: QX2 =  0.8766177E+03
+     Face 3: QY1 =  0.4236559E+03  Face 4: QY2 =  0.7773924E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.3280944E+02  Face 2: VX2 =  0.2337647E+02
+     Face 3: VY1 =  0.1129749E+02  Face 4: VY2 =  0.2073046E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    28
+Initial time =  0.3000000E+01 Final time =  0.3123372E+01 Time interval =  0.1233720E+00
+Stress Period =    4 Time Step =    1
+Layer   1 Row  10 Column  15 Grid   1
+Initial local coordinates (X, Y, Z):    0.2465574   0.5436546   0.5000000
+Final local coordinates (X, Y, Z):      0.9176029   1.0000000   0.5000000
+This particle has passed through        24 Cells (CELLCOUNT)
+Particle exits across face 4
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.2801187E+02
+Cell corner: XMIN =  0.7000000E+02  YMIN =  0.5000000E+01
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.1230354E+04  Face 2: QX2 =  0.8766176E+03
+     Face 3: QY1 =  0.4236558E+03  Face 4: QY2 =  0.7773923E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.3280944E+02  Face 2: VX2 =  0.2337647E+02
+     Face 3: VY1 =  0.1129749E+02  Face 4: VY2 =  0.2073046E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    29
+Initial time =  0.3123372E+01 Final time =  0.3146889E+01 Time interval =  0.2351730E-01
+Stress Period =    4 Time Step =    1
+Layer   1 Row   9 Column  15 Grid   1
+Initial local coordinates (X, Y, Z):    0.9176029   0.0000000   0.5000000
+Final local coordinates (X, Y, Z):      1.0000000   0.0987626   0.5000000
+This particle has passed through        25 Cells (CELLCOUNT)
+Particle exits across face 2
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.2732086E+02
+Cell corner: XMIN =  0.7000000E+02  YMIN =  0.1000000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.8524995E+03  Face 2: QX2 =  0.6485744E+03
+     Face 3: QY1 =  0.7773923E+03  Face 4: QY2 =  0.9813173E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.2273332E+02  Face 2: VX2 =  0.1729532E+02
+     Face 3: VY1 =  0.2073046E+02  Face 4: VY2 =  0.2616846E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    30
+Initial time =  0.3146889E+01 Final time =  0.3410675E+01 Time interval =  0.2637853E+00
+Stress Period =    4 Time Step =    1
+Layer   1 Row   9 Column  16 Grid   1
+Initial local coordinates (X, Y, Z):    0.0000000   0.0987626   0.5000000
+Final local coordinates (X, Y, Z):      0.8105675   1.0000000   0.5000000
+This particle has passed through        26 Cells (CELLCOUNT)
+Particle exits across face 4
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.2674435E+02
+Cell corner: XMIN =  0.7500000E+02  YMIN =  0.1000000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.6485744E+03  Face 2: QX2 =  0.4767997E+03
+     Face 3: QY1 =  0.5493491E+03  Face 4: QY2 =  0.7211238E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.1729532E+02  Face 2: VX2 =  0.1271466E+02
+     Face 3: VY1 =  0.1464931E+02  Face 4: VY2 =  0.1922997E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    31
+Initial time =  0.3410675E+01 Final time =  0.3527745E+01 Time interval =  0.1170708E+00
+Stress Period =    4 Time Step =    1
+Layer   1 Row   8 Column  16 Grid   1
+Initial local coordinates (X, Y, Z):    0.8105675   0.0000000   0.5000000
+Final local coordinates (X, Y, Z):      1.0000000   0.4636971   0.5000000
+This particle has passed through        27 Cells (CELLCOUNT)
+Particle exits across face 2
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.2610335E+02
+Cell corner: XMIN =  0.7500000E+02  YMIN =  0.1500000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.3883809E+03  Face 2: QX2 =  0.2945981E+03
+     Face 3: QY1 =  0.7211238E+03  Face 4: QY2 =  0.8149067E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.1035682E+02  Face 2: VX2 =  0.7855948E+01
+     Face 3: VY1 =  0.1922997E+02  Face 4: VY2 =  0.2173084E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    32
+Initial time =  0.3527745E+01 Final time =  0.3695892E+01 Time interval =  0.1681467E+00
+Stress Period =    4 Time Step =    1
+Layer   1 Row   8 Column  17 Grid   1
+Initial local coordinates (X, Y, Z):    0.0000000   0.4636971   0.5000000
+Final local coordinates (X, Y, Z):      0.2548090   1.0000000   0.5000000
+This particle has passed through        28 Cells (CELLCOUNT)
+Particle exits across face 4
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.2584148E+02
+Cell corner: XMIN =  0.8000000E+02  YMIN =  0.1500000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.2945981E+03  Face 2: QX2 =  0.2134723E+03
+     Face 3: QY1 =  0.5389222E+03  Face 4: QY2 =  0.6200480E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.7855948E+01  Face 2: VX2 =  0.5692594E+01
+     Face 3: VY1 =  0.1437126E+02  Face 4: VY2 =  0.1653461E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    33
+Initial time =  0.3695892E+01 Final time =  0.3991952E+01 Time interval =  0.2960598E+00
+Stress Period =    4 Time Step =    1
+Layer   1 Row   7 Column  17 Grid   1
+Initial local coordinates (X, Y, Z):    0.2548090   0.0000000   0.5000000
+Final local coordinates (X, Y, Z):      0.3984895   1.0000000   0.5000000
+This particle has passed through        29 Cells (CELLCOUNT)
+Particle exits across face 4
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.2529033E+02
+Cell corner: XMIN =  0.8000000E+02  YMIN =  0.2000000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.9973931E+02  Face 2: QX2 =  0.7301231E+02
+     Face 3: QY1 =  0.6200480E+03  Face 4: QY2 =  0.6467758E+03
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.2659715E+01  Face 2: VX2 =  0.1946995E+01
+     Face 3: VY1 =  0.1653461E+02  Face 4: VY2 =  0.1724736E+02
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK =  0.0000000E+00 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+************************************************************************************************************************
+Particle ID =         2   Tracking segment =    34
+Initial time =  0.3991952E+01 Final time =  0.3991952E+01 Time interval =  0.0000000E+00
+Stress Period =    4 Time Step =    1
+Layer   1 Row   6 Column  17 Grid   1
+Initial local coordinates (X, Y, Z):    0.3984895   0.0000000   0.5000000
+Final local coordinates (X, Y, Z):      0.3984895   0.0000000   0.5000000
+This particle has passed through        30 Cells (CELLCOUNT)
+Particle remains within the current cell.
+Cell dimensions:  DX =  0.5000000E+01 DY =  0.5000000E+01 BOTTOM-CB =  0.0000000E+00 BOTTOM =  0.0000000E+00 TOP =  0.2500000E+02 HEAD =  0.2500000E+02
+Cell corner: XMIN =  0.8000000E+02  YMIN =  0.2500000E+02
+Layer type: LAYTYP =    0
+The cell does not have an underlying quasi-3d confining bed (LAYCBD = 0)
+IBOUND =         1 ZONE =         1
+Pososity =  0.3000000E+00 Retardation factor =  0.1000000E+01
+Cell face volumetric flow rates:
+     Face 1: QX1 =  0.0000000E+00  Face 2: QX2 =  0.0000000E+00
+     Face 3: QY1 =  0.6467758E+03  Face 4: QY2 =  0.0000000E+00
+     Face 5: QZ1 =  0.0000000E+00  Face 6: QZ2 =  0.0000000E+00
+Cell face velocity:
+     Face 1: VX1 =  0.0000000E+00  Face 2: VX2 =  0.0000000E+00
+     Face 3: VY1 =  0.1724736E+02  Face 4: VY2 =  0.0000000E+00
+     Face 5: VZ1 =  0.0000000E+00  Face 6: VZ2 =  0.0000000E+00
+Internal sinks: QSINK = -0.6467758E+03 Internal sources: QSOURCE =  0.0000000E+00 Storage: QSTO =  0.0000000E+00
+The particle status was changed from active to inactive: STATUS =         2

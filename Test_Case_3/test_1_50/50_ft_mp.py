@@ -5,8 +5,8 @@ import os
 import matplotlib.pyplot as plt
 
 modelname = 'test_1'
-exe = os.path.join('../gw_codes','mf2k-chprc08spl.exe') # moved the exes here for clean up, RKK
-mp6_exe = os.path.join('../gw_codes','mp6.exe')
+exe = os.path.join('../../gw_codes','mf2k-chprc08spl.exe') # moved the exes here for clean up, RKK
+mp6_exe = os.path.join('../../gw_codes','mp6.exe')
 model_ws = os.path.join('workspace') # moved model here to keep things orginized, RKK
 mf = flopy.modflow.Modflow.load('test_1.nam',model_ws=model_ws)
 
@@ -63,10 +63,10 @@ mp.run_model(silent=False)
 Qgpm = 150
 Qcfd = Qgpm * (60*24) / 7.48052
 b = 175.25
-hk = 10
-h1, h2 = 200, 167.35
+hk = 10000
+h1, h2 = 200, 199.5
 L = 40000
-grad = (167.35-200)/(40000)
+grad = (199.5-200)/(40000)
 
 import fetter
 

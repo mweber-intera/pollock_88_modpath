@@ -6,7 +6,7 @@ import os
 
 #note: change the version from modflow 2005 to mf2k. Guessed at the version code, because I couldn't figure out the help
 modelname = 'test_1'
-exe = os.path.join("../gw_codes",'mf2k-chprc08spl.exe') # moved the exes here for clean up, RKK
+exe = os.path.join("../../gw_codes",'mf2k-chprc08spl.exe') # moved the exes here for clean up, RKK
 model_ws = os.path.join('workspace') # moved model here to keep things orginized, RKK
 mf = flopy.modflow.Modflow(modelname, version='mf2k', exe_name =exe,model_ws=model_ws)
 #m = flopy.modflow.Modflow.add_output_file(self=mf, unit=50, fname=modelname, extension='.cbb', binflag=True)
@@ -35,11 +35,11 @@ ibound[:, :, 0] = -1
 ibound[:, :, -1] = -1
 strt = np.ones((nlay, nrow, ncol), dtype=np.float32)
 strt[:, :, 0] = 200.
-strt[:, :, -1] = 167.35
+strt[:, :, -1] = 199.5
 bas = flopy.modflow.ModflowBas(mf, ibound=ibound, strt=strt)
 
 #LPF change hydraulic conductivity here
-lpf = flopy.modflow.ModflowLpf(mf, hk=10, vka=10., ipakcb=53)
+lpf = flopy.modflow.ModflowLpf(mf, hk=10000, vka=10000., ipakcb=53)
 
 #OC
 spd = {} # slight change to oc so we can save heads and budget for all stress periods

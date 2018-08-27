@@ -4,7 +4,7 @@ import numpy as np
 import os
 
 model_ws = os.path.join('workspace')
-final_file = os.path.join('../', 'pass_fail.csv')
+final_file = os.path.join('../../', 'pass_fail.csv')
 # ymax
 # step 1: identify maximum y value from endpoint pathfile
 
@@ -35,10 +35,10 @@ import fetter
 Qgpm = 150
 Qcfd = Qgpm * (60*24) / 7.48052
 b = 175.25
-hk = 10
-h1, h2 = 200, 167.35
+hk = 10000
+h1, h2 = 200, 199.5
 L = 40000
-grad = (167.35-200)/(40000)
+grad = (199.5-200)/(40000)
 ymax = fetter.ymax_uc(Qcfd,hk,h1,h2,L)
 
 percent_difference_ymax = ((ymax - mymax)/((ymax+mymax)/2))*100

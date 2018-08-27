@@ -2,26 +2,17 @@ import flopy
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-import platform
 import imageio
-import pandas as pd # pandas is a package that is used to work with dataframes (stolen from the R language) this will be
-# how we import csv files
+import pandas as pd
+import geopandas as gpd
 
 
-model_ws = os.path.join('pollock_model_ex2')
-if not os.path.exists(model_ws): os.mkdir(model_ws)
-gw_codes = os.path.join('gw_codes')
-exe = os.path.join(gw_codes,'mfnwt.exe')
-if platform.system() == 'Darwin':
-    exe = 'mfnwt' # assuming you have mfnwt in your path
+modelname = 'test_2'
+exe = os.path.join("..\gw_codes",'mf2k-chprc08spl.exe')
+model_ws = os.path.join('workspace')
+mf = flopy.modflow.Modflow(modelname, version='mf2k', exe_name =exe,model_ws=model_ws)
 
-mf = flopy.modflow.Modflow('pollock_88_ex2',version='mfnwt',exe_name=exe,model_ws=model_ws)
-
-if mf.version == 'mfnwt':
-    mf.exe_name = os.path.join('gw_codes','mfnwt.exe')
-elif mf.version == 'mf2005':
-    mf.exe_name = os.path.join('gw_codes','mf2005.exe')
-
+# DIS
 nlay = 1 # number of layers
 nrow, ncol = 11,21 # number of rows and columns
 top = np.ones((nrow,ncol)) * 25 # 2d array of size (nrow * ncol) * 100
@@ -41,14 +32,14 @@ laycbd = 0
 
 dis = flopy.modflow.ModflowDis(mf,nlay,nrow,ncol,nper,delr,delc,0,top,botm,perlen,nstp,1,steady) # create dis object
 
+
+# LPF
 hk = np.ones((nlay,nrow,ncol)) * 45
 hk[0][0,:10] = 4500
 hk[0][5,11:ncol] = 4500
-if mf.version == 'mfnwt':
-    upw = flopy.modflow.ModflowUpw(mf,hk=hk,ipakcb=53,ss=1e-5,vka=45) # create upw object
-elif mf.version == 'mf2005':
-    lpf = flopy.modflow.ModflowLpf(mf,hk=hk,ipakcb=53)
+lpf = flopy.modflow.ModflowLpf(mf,hk=hk,ipakcb=53)
 
+# BAS
 ibound = np.ones((nlay,nrow,ncol))
 ibound[0][0:5, 10:] = 0
 ibound[0][0:9, 10] = 0
@@ -56,36 +47,13 @@ strt = np.ones((nlay,nrow,ncol)) * 55
 strt[:,11:] = 25
 bas = flopy.modflow.ModflowBas(mf, ibound=ibound, strt=strt) # create bas object, all cells are active, starting head = 100 ft
 
-
+# OC
 spd = {} # initialize spd for oc
 for i in range(dis.nper):
     spd[(i, 0)] = ['save head', 'save budget']
 oc = flopy.modflow.ModflowOc(mf, stress_period_data=spd, compact=True) # compact = True to use in modpath later
 
-''' Made some changes, with two for loops, that itterate the columns we want since both sets of chds are in 2 rows
-#make a chb array, use it as a mask, make the ones we use as 1, make the ones we don't use 0
-west = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-east = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
-#lrcd = {0: [[0, 0, west, 55, 55], [0, 5, east, 25, 25]]}
-lrcd = {0: [[0, 0, 0, 55, 55], [0, 0, 1, 55, 55], [0, 0, 2, 55, 55],
-            [0, 0, 3, 55, 55], [0, 0, 4, 55, 55], [0, 0, 5, 55, 55],
-            [0, 0, 6, 55, 55], [0, 0, 7, 55, 55], [0, 0, 8, 55, 55],
-            [0, 0, 9, 55, 55], [0, 0, 10, 55, 55], [0, 0, 11, 55, 55],
-            [0, 4, 10, 55, 55], [0, 4, 11, 55, 55], [0, 4, 12, 55, 55],
-            [0, 4, 13, 55, 55], [0, 4, 14, 55, 55], [0, 4, 15, 55, 55],
-            [0, 4, 16, 55, 55], [0, 4, 17, 55, 55],
-            [0, 4, 18, 55, 55], [0, 4, 19, 55, 55], [0, 4, 20, 55, 55]]}
-'''
-
-
-#so i know the above is a nightmare, but I tried doing a range using a colon, I tried using variables, and it hated it both times
-#also the above is only for stress period zero, but the flopy tutorial says that "if the number of lists is smaller
-#than the number of stress periods, then the last list of chds will apply until the end of the simulation"
-#obviously this needs to be checked
-
-#chd_spd = {0: stress_period_data} # only need do do in the first stress period since modflow uses the previous stress period if there is nothing in the current stress period.
-#print(chd_spd)
-
+# CHD
 lrcd = {0:[]}
 cols = np.arange(0,10)
 for c in cols:
@@ -97,45 +65,38 @@ for c in cols:
 print(lrcd)
 chd = flopy.modflow.ModflowChd(mf, stress_period_data=lrcd)
 
-
-if mf.version == 'mfnwt':
-    nwt = flopy.modflow.ModflowNwt(mf, maxiterout=5000, linmeth=2, iprnwt=1) # solver for modflow nwt
-    # nwt = flopy.modflow.ModflowNwt(mf)
-elif mf.version == 'mf2005':
-    pcg = flopy.modflow.ModflowPcg(mf)
-elif mf.version == 'mf2k':
-    pcg = flopy.modflow.ModflowPcg(mf)
-
+#PCG
+#I've seen examples of all three solvers being used
+pcg = flopy.modflow.ModflowPcg(mf)
 
 mf.write_input() # write modflow files
-mf.run_model(silent=False) # run model
+success, buff = mf.run_model(silent=False)
 
-# exit()
-#modpath time!
 
-mpexe = os.path.join(gw_codes,'mp6.exe')
-if platform.system() == 'Darwin':
-    mpexe = 'mp6' # assuming you have mp6 in your path
 
-mp = flopy.modpath.Modpath('test2',exe_name=mpexe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
+#modpath
+
+mpexe = os.path.join("..\gw_codes",'mp6.exe')
+
+mp = flopy.modpath.Modpath('test_2',exe_name=mpexe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
 
 mp_ibound = mf.bas6.ibound.array # use ibound from modflow model
 mpb = flopy.modpath.ModpathBas(mp,-1e30,ibound=mp_ibound,prsity=.3) # make modpath bas object
 
 start_time=[0]
 
-import Write_starting_locations # note to mary: edit this for test2
-srt_loc = 'starting_locs_ex2.loc' # name starting locations file
+import Write_starting_locations
+srt_loc = 'starting_locs_ex2.loc'
 Write_starting_locations.write_file_ex2(os.path.join(model_ws,srt_loc),dis,start_time,10*4) # custom function in Write_starting_locations.py
 
-sim = mp.create_mpsim(trackdir='forward', simtype='timeseries', packages=srt_loc, start_time=(0, 0, 0)) # create simulation file
+sim = mp.create_mpsim(trackdir='forward', simtype='pathline', packages=srt_loc, start_time=(0, 0, 0)) # create simulation file
 
-sim.time_ct = 10
-time_pts =[]
-for tp in range(sim.time_ct):
-    time_pts.append(tp*2.18)
-
-sim.time_pts = time_pts
+# sim.time_ct = 10
+# time_pts =[]
+# for tp in range(sim.time_ct):
+#     time_pts.append(tp*2.18)
+#
+# sim.time_pts = time_pts
 
 print(sim)
 mp.write_input() # write files
@@ -146,12 +107,12 @@ mp.run_model(silent=False) # run model
 
 import flopy.utils.binaryfile as bf
 
-headobj = bf.HeadFile(os.path.join(model_ws,'pollock_88_ex2.hds')) # make head object with hds file
-times = [0] + headobj.get_times() # get the times (we made this in the begining with the dis)
-print(times) # should be every 500 days, but I added "0" to the begging so we can see when there is no pumping
+headobj = bf.HeadFile(os.path.join(model_ws,'test_2.hds')) # make head object with hds file
+times = [0] + headobj.get_times() # get the times
+print(times)
 
-pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'test2.mppth')) # create pathline object
-epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'test2.mpend')) # create endpoint object
+pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'test_2.mppth')) # create pathline object
+epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'test_2.mpend')) # create endpoint object
 
 fig_list = [] # initialize list of figure paths we will use to make a gif
 for time in times:
@@ -191,7 +152,7 @@ imageio.mimsave(os.path.join('figures_ex2','final_gif.gif'),fig_list,duration=.5
 
 names = ['Time_Point_Index','Cumulative_Time_Step','Tracking_Time','Particle_ID','Particle_Group','Global_X','Global_Y',
          'Global_Z','Grid','Layer','Row','Column','Local_X','Local_Y','Local_Z']
-ts_df = pd.read_csv(os.path.join(model_ws,'test2.mp.tim_ser'),skiprows=3,names = names,delim_whitespace=True)
+ts_df = pd.read_csv(os.path.join(model_ws,'test_2.mp.tim_ser'),skiprows=3,names = names,delim_whitespace=True)
 print(ts_df.loc[ts_df['Particle_ID']==1])
 fig_list = [] # initialize list of figure paths we will use to make a gif
 for time in time_pts:
