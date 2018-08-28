@@ -23,7 +23,7 @@ delr = Lx/ncol
 delc = Ly/nrow
 delv = (ztop - zbot) / nlay
 botm = np.linspace(ztop, zbot, nlay + 1)
-nper = 10 # lets add some more stress periods, RKK
+nper = 5 # lets add some more stress periods, RKK
 perlen = 1
 
 print(ncol)
