@@ -110,7 +110,6 @@ import flopy.utils.binaryfile as bf
 
 headobj = bf.HeadFile(os.path.join(model_ws,'test_2.hds')) # make head object with hds file
 times = [0] + headobj.get_times() # get the times
-print(times)
 
 pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'test_2.mppth')) # create pathline object
 epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'test_2.mpend')) # create endpoint object
