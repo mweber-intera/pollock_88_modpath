@@ -1,0 +1,33 @@
+{
+   "FLOW_MODEL_TYPE" : {
+      "MODFLOW" : {
+         "GSF_FILE" : {
+           "TYPE" : "GSF_V.1.1.0",
+           "FILE_NAME" : "mp3du_test_3.gsf"
+         },
+         "OUTPUT_PRECISION": "SINGLE",
+         "IFACE" : [ { "WEL" : 0 }, { "CHD" : 7 } ],
+         "NAME_FILE" : "test_3.nam",
+         "THREAD_COUNT" : 3
+      }
+   },
+   "SIMULATIONS" : [
+      { "PATHLINE" : {
+          "NAME" : "Example1A",
+          "THREAD_COUNT" : 3,
+          "INITIAL_STEPSIZE" : 1.0,
+          "DIRECTION" : "BACKWARD",
+          "CAPTURE_RADIUS" : 0.05,
+          "SIMULATION_END_TIME" : 0.0,
+          "OPTIONS" : [ "DISPERSION" ],
+          "PARTICLE_START_LOCATIONS" : {
+            "SHAPEFILE" : {
+              "FILE_NAME" : "starting_circle.shp",
+              "CELLID_ATTR" : "P3D_CellID",
+              "TIME_ATTR" : "TREL2",
+              "ZLOC_ATTR" : "ZLOC"
+            }
+          }
+      } }
+   ]
+}
