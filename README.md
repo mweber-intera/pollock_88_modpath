@@ -22,6 +22,7 @@ Once this is installed, the following command will install all required packages
 ```
 conda env create -f environment.yml
 ```
+This will create a new environment called "modpath_qa"
 
 To activate your new environment:
 ```
@@ -42,7 +43,7 @@ Particles are placed radially around the well cell in the bottom left corner and
 
 ![alt text](https://github.com/rosskush/pollock_88_modpath/blob/master//Test_Case_1/output/figures/7500_days.png)
 
-To run this example follow these steps in terminal or bash after moving to this directory:
+To run this example follow these steps in a terminal or bash after moving to this directory:
 
 (if not active already, activate the modpath_qa conda enviroment):
 ```
@@ -70,3 +71,24 @@ cd Test_Case_2
 ./runme.bat
 ```
 This will produce a directory called output that plot figures and pass/fail statistics will be placed.
+
+
+## Test Case 3
+Test Case 3 compares an analytical well capture zone solution described by Grubb in 1993 to the results from a backwards particle track in modpath6, this example assumes a homgenous unconfined system with a single extraction well.
+
+![alt text](https://github.com/rosskush/pollock_88_modpath/blob/master//Test_Case_3/output/backwards.png)
+
+
+To run this example follow these steps in a terminal or bash after moving to this directory:
+
+(if not active already, activate the modpath_qa conda enviroment):
+```
+source activate modpath_qa
+cd Test_Case_3
+./runme.bat
+```
+This will produce a directory called output that plot figures and pass/fail statistics will be placed.
+
+
+
+
