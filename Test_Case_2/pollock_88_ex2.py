@@ -137,7 +137,7 @@ for time in times:
     modelmap.plot_pathline(well_pathlines, travel_time=f'<={time}', layer='all', colors='red') # plot pathline <= time
     modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
     fig_name = os.path.join(figures,f'{str(round(time,2)).replace(".","pt")}_days.png') # figure path to save to
-    fig.text(0.15, .95,
+    fig.text(0.15, .925,
              f'Day = {round(time,3)}',
              fontsize=16, color='k',
              ha='left', va='bottom', alpha=1)
