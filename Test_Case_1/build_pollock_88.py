@@ -2,14 +2,12 @@ import flopy
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-import platform
-import imageio
 import pandas as pd
 
 
 model_ws = os.path.join('pollock_model_ex1')
 if not os.path.exists(model_ws): os.mkdir(model_ws)
-gw_codes = os.path.join('gw_codes')
+gw_codes = os.path.join('..','gw_codes')
 exe = os.path.join(gw_codes,'mf2k-chprc08spl.exe')
 mf = flopy.modflow.Modflow('pollock_88', version='mf2k', exe_name =exe,model_ws=model_ws)
 
@@ -61,12 +59,12 @@ for sp in range(nper):
     wel_spd[sp] = [0,nrow-1,0,Qcfd] # injection well is in center of the model
 
 
-print(wel_spd) # {nper:[layer, row, column, Q],nper+1:[layer, row, column, Q],....} # make sure to use python indexing 
+# print(wel_spd) # {nper:[layer, row, column, Q],nper+1:[layer, row, column, Q],....} # make sure to use python indexing 
 wel = flopy.modflow.ModflowWel(mf,stress_period_data=wel_spd) # well package
 
 # CHD
 chd_df = pd.read_csv('chb_t1.csv') # read in csv with pandas
-print(chd_df.head()) # printing with .head() lets you see the first 5 rows of a dataframe
+# print(chd_df.head()) # printing with .head() lets you see the first 5 rows of a dataframe
 
 chd_dat = []
 for i, vals in chd_df.iterrows(): # fancy for loop that returns the index in i, and the values in vals
@@ -77,7 +75,7 @@ for i, vals in chd_df.iterrows(): # fancy for loop that returns the index in i, 
 
 
 chd_spd = {0:chd_dat} # only need do do in the first stress period since modflow uses the previous stress period if there is nothing in the current stress period.
-print(chd_spd)
+# print(chd_spd)
 chd = flopy.modflow.ModflowChd(mf,stress_period_data=chd_spd)
 
 # write modflow files
@@ -92,8 +90,6 @@ mf.run_model()
 # now for modpath
 
 mpexe = os.path.join(gw_codes,'mp6.exe')
-if platform.system() == 'Darwin':
-    mpexe = 'mp6' # assuming you have mp6 in your path
 
 mp = flopy.modpath.Modpath('pollock_88_mp',exe_name=mpexe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
 
@@ -140,49 +136,49 @@ def calc_line_length(globalx, globaly):
 
 # get the 0 day average from mppth
 xlist0d = df.loc[(df['Time']==0.000000000000000E+00), ['ParticleID','Time','GlobalX','GlobalY']]
-print(xlist0d)
+# print(xlist0d)
 
 # get the 2500 day average from mppth
 xlist25h = df.loc[(df['Time']==0.250000000000000E+04), ['ParticleID','Time','GlobalX','GlobalY']]
 xlist25h['length']=np.sqrt((xlist25h['GlobalX']**2)+(xlist25h['GlobalY']**2))
 av_len_25h = np.average(xlist25h['length'])
-print(av_len_25h)
+# print(av_len_25h)
 
 # get the 5000 day average from mppth
 xlist5k = df.loc[(df['Time']==0.500000000000000E+04), ['ParticleID','Time','GlobalX','GlobalY']]
 xlist5k['length']=np.sqrt((xlist5k['GlobalX']**2)+(xlist5k['GlobalY']**2))
 av_len_5k = np.average(xlist5k['length'])
-print(av_len_5k)
+# print(av_len_5k)
 
 # get the 7500 day average from mppth
 xlist75h = df.loc[(df['Time']==0.750000000000000E+04), ['ParticleID','Time','GlobalX','GlobalY']]
 xlist75h['length']=np.sqrt((xlist75h['GlobalX']**2)+(xlist75h['GlobalY']**2))
 av_len_75h = np.average(xlist75h['length'])
-print(av_len_75h)
+# print(av_len_75h)
 
 mppth_all = [av_len_25h, av_len_5k, av_len_75h]
 
 # get the 2500 day average from digitized file
 dig_xlist25h = digitized.loc[(digitized['days']==2500), ['distance']]
 dig_av_len_25h = np.average(dig_xlist25h['distance'])
-print(dig_av_len_25h)
+# print(dig_av_len_25h)
 
 # get the 5000 day average from digitized file
 dig_xlist5k = digitized.loc[(digitized['days']==5000), ['distance']]
 dig_av_len_5k = np.average(dig_xlist5k['distance'])
-print(dig_av_len_5k)
+# print(dig_av_len_5k)
 
 # get the 7500 day average from digitized file
 dig_xlist75h = digitized.loc[(digitized['days']==7500), ['distance']]
 dig_av_len_75h = np.average(dig_xlist75h['distance'])
-print(dig_av_len_75h)
+# print(dig_av_len_75h)
 
 dig_all = [dig_av_len_25h, dig_av_len_5k, dig_av_len_75h]
 
 # calculate percent difference
 perd_tc1 = []
 perdl=[perd_tc1.append(((dig_all[i] - mppth_all[i])/(dig_all[i]+mppth_all[i]/2))*100) for i in range(0,len(mppth_all))]
-print(perd_tc1)
+# print(perd_tc1)
 
 # determine pass/fail
 
@@ -190,24 +186,31 @@ pf_tc1 = []
 
 for item in perd_tc1:
     if abs(item) > 5.:
-        pf_tc1.append('fail')
+        pf_tc1.append('Fail')
     else:
-        pf_tc1.append('pass')
+        pf_tc1.append('Pass')
 
 # compile everything
 
-dictionary = {'Time':[2500, 5000, 7500], 'digitized':dig_all, 'this_run':mppth_all, 'Percent_difference':perd_tc1, 'Pass/Fail':pf_tc1}
+dictionary = {'Time_Days':[2500, 5000, 7500], 'Digitized_dist_ft':dig_all, 'Current_run_ft':mppth_all, 'Percent_difference':perd_tc1, 'Pass/Fail':pf_tc1}
 output=pd.DataFrame(dictionary)
-print(output)
+# print(output)
+
+outpath = os.path.join('output')
+if not os.path.exists(outpath): os.mkdir(outpath)
+figures = os.path.join('output','figures')
+if not os.path.exists(figures): os.mkdir(figures)
+
+
 out_csv = 'tc1_results.csv'
-output.to_csv(out_csv)
+output.to_csv(os.path.join(outpath, out_csv))
 
 # make figures
 import flopy.utils.binaryfile as bf
 
 headobj = bf.HeadFile(os.path.join(model_ws,'pollock_88.hds')) # make head object with hds file
 times = [2500, 5000, 7500] # get the times
-print(times) # should be every 500 days
+# print(times) # should be every 500 days
 
 pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'pollock_88_mp.mppth')) # create pathline object
 epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'pollock_88_mp.mpend')) # create endpoint object
@@ -218,8 +221,8 @@ for time in times:
     extent=(0,Lx,0,Ly)
     if time != 0:
         head = headobj.get_data(totim=times[-1])
-        CS = plt.contour(np.flipud(head[0]), extent=extent, color='k')
-        plt.clabel(CS, inline=1, fontsize=10)
+        # CS = plt.contour(np.flipud(head[0]), extent=extent, color='k')
+        # plt.clabel(CS, inline=1, fontsize=10)
         # plt.imshow(head[0],cmap='cubehelix',extent=extent)
         # plt.colorbar()
 
@@ -229,9 +232,9 @@ for time in times:
 
     well_epd = epdobj.get_alldata()
     well_pathlines = pthobj.get_alldata()
-    modelmap.plot_pathline(well_pathlines, travel_time=f'<={time}', layer='all', colors='red') # plot pathline <= time
+    modelmap.plot_pathline(well_pathlines, travel_time=f'<={time}', layer='all', color='red') # plot pathline <= time
     modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
-    fig_name = os.path.join('figures',f'{int(time)}_days.png') # figure path to save to
+    fig_name = os.path.join(figures,f'{int(time)}_days.png') # figure path to save to
     fig.text(0.15, 0.85,
              f'Day = {int(time)}',
              fontsize=16, color='k',
@@ -241,5 +244,4 @@ for time in times:
     # ax.set_xlim([0,delc*2])
     fig.tight_layout()
     fig.savefig(fig_name)
-    fig_list.append(imageio.imread(fig_name)) # append imagio.imread() for each figure path
-    plt.close()
+plt.close('all') 
