@@ -2,13 +2,12 @@ import flopy
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-import imageio
 import pandas as pd
 import geopandas as gpd
 
 
 modelname = 'test_2'
-exe = os.path.join("..\gw_codes",'mf2k-chprc08spl.exe')
+exe = os.path.join("..","gw_codes",'mf2k-chprc08spl.exe')
 model_ws = os.path.join('workspace')
 mf = flopy.modflow.Modflow(modelname, version='mf2k', exe_name =exe,model_ws=model_ws)
 
@@ -76,7 +75,7 @@ success, buff = mf.run_model(silent=False)
 
 #modpath
 
-mpexe = os.path.join("..\gw_codes",'mp6.exe')
+mpexe = os.path.join("..","gw_codes",'mp6.exe')
 
 mp = flopy.modpath.Modpath('test_2',exe_name=mpexe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
 
@@ -94,16 +93,18 @@ sim = mp.create_mpsim(trackdir='forward', simtype='pathline', packages=srt_loc, 
 # sim.time_ct = 10
 # time_pts =[]
 # for tp in range(sim.time_ct):
-#     time_pts.append(tp*2.18)
+    # time_pts.append(tp*2.18)
 #
 # sim.time_pts = time_pts
 
-print(sim)
 mp.write_input() # write files
 
 mp.run_model(silent=False) # run model
 
-
+outpath = os.path.join('output')
+if not os.path.exists(outpath): os.mkdir(outpath)
+figures = os.path.join('output','figures')
+if not os.path.exists(figures): os.mkdir(figures)
 
 import flopy.utils.binaryfile as bf
 
@@ -122,7 +123,9 @@ for time in times:
         head = headobj.get_data(totim=time)
         # CS = plt.contour(np.flipud(head[0]), extent=extent, color='k',vmin=0,vmax=55)
         # plt.clabel(CS, inline=1, fontsize=10)
-        plt.imshow(head[0],cmap='cubehelix',extent=extent,vmin=0)
+        plt.imshow(head[0],cmap='jet',extent=extent,vmin=0)
+    else:
+        plt.imshow(np.ones((nrow,ncol)),cmap='jet',extent=extent)
         # plt.colorbar()
 
     modelmap = flopy.plot.ModelMap(model=mf, layer=0, ax=ax)
@@ -134,54 +137,50 @@ for time in times:
     well_pathlines = pthobj.get_alldata()
     modelmap.plot_pathline(well_pathlines, travel_time=f'<={time}', layer='all', colors='red') # plot pathline <= time
     modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
-    fig_name = os.path.join('figures_ex2',f'{str(round(time,2)).replace(".","pt")}_days.png') # figure path to save to
-    fig.text(0.15, 0.85,
+    fig_name = os.path.join(figures,f'{str(round(time,2)).replace(".","pt")}_days.png') # figure path to save to
+    fig.text(0.15, .95,
              f'Day = {round(time,3)}',
              fontsize=16, color='k',
              ha='left', va='bottom', alpha=1)
     plt.title('Pollock 1988 Ex. 2')
     fig.tight_layout()
     fig.savefig(fig_name)
-    fig_list.append(imageio.imread(fig_name)) # append imagio.imread() for each figure path
     plt.close()
 
 
-imageio.mimsave(os.path.join('figures_ex2','final_gif.gif'),fig_list,duration=.5) # now save a gif of all the figures in fig_list
 
 
 
-names = ['Time_Point_Index','Cumulative_Time_Step','Tracking_Time','Particle_ID','Particle_Group','Global_X','Global_Y',
-         'Global_Z','Grid','Layer','Row','Column','Local_X','Local_Y','Local_Z']
-ts_df = pd.read_csv(os.path.join(model_ws,'test_2.mp.tim_ser'),skiprows=3,names = names,delim_whitespace=True)
-print(ts_df.loc[ts_df['Particle_ID']==1])
-fig_list = [] # initialize list of figure paths we will use to make a gif
-for time in time_pts:
-    fig, ax = plt.subplots(figsize=(8,5))
-    extent=(0,Lx,0,Ly)
+# names = ['Time_Point_Index','Cumulative_Time_Step','Tracking_Time','Particle_ID','Particle_Group','Global_X','Global_Y',
+#          'Global_Z','Grid','Layer','Row','Column','Local_X','Local_Y','Local_Z']
+# ts_df = pd.read_csv(os.path.join(model_ws,'test_2.mp.tim_ser'),skiprows=3,names = names,delim_whitespace=True)
+# print(ts_df.loc[ts_df['Particle_ID']==1])
+# fig_list = [] # initialize list of figure paths we will use to make a gif
+# for time in time_pts:
+#     fig, ax = plt.subplots(figsize=(8,5))
+#     extent=(0,Lx,0,Ly)
 
-    modelmap = flopy.plot.ModelMap(model=mf, layer=0, ax=ax)
-    lc = modelmap.plot_grid(color='c',alpha=.25)
-    qm = modelmap.plot_bc('CHD', alpha=0.5)
-    ib = modelmap.plot_ibound()
+#     modelmap = flopy.plot.ModelMap(model=mf, layer=0, ax=ax)
+#     lc = modelmap.plot_grid(color='c',alpha=.25)
+#     qm = modelmap.plot_bc('CHD', alpha=0.5)
+#     ib = modelmap.plot_ibound()
 
-    # well_epd = epdobj.get_alldata()
-    # well_pathlines = pthobj.get_alldata()
-    # modelmap.plot_pathline(well_pathlines, travel_time=f'<={time}', layer='all', colors='red') # plot pathline <= time
-    # modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
-    tempdf = ts_df.loc[(ts_df['Tracking_Time'] >= time-.5) & (ts_df['Tracking_Time'] <= time+.5)]
-    ax.scatter(tempdf['Global_X'],tempdf['Global_Y'])
-    fig_name = os.path.join('figures_ex2',f'1c_{str(round(time,2)).replace(".","pt")}_days.png') # figure path to save to
-    fig.text(0.15, 0.85,
-             f'Day = {str(round(time,3))}',
-             fontsize=16, color='k',
-             ha='left', va='bottom', alpha=1)
-    plt.title('Pollock 1988 Ex. 2')
-    ax.set_ylim([0,10])
-    ax.set_xlim([0,10])
-    fig.tight_layout()
-    fig.savefig(fig_name)
-    fig_list.append(imageio.imread(fig_name)) # append imagio.imread() for each figure path
-    plt.close()
+#     # well_epd = epdobj.get_alldata()
+#     # well_pathlines = pthobj.get_alldata()
+#     # modelmap.plot_pathline(well_pathlines, travel_time=f'<={time}', layer='all', colors='red') # plot pathline <= time
+#     # modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
+#     tempdf = ts_df.loc[(ts_df['Tracking_Time'] >= time-.5) & (ts_df['Tracking_Time'] <= time+.5)]
+#     ax.scatter(tempdf['Global_X'],tempdf['Global_Y'])
+#     fig_name = os.path.join(figures,f'1c_{str(round(time,2)).replace(".","pt")}_days.png') # figure path to save to
+#     fig.text(0.15, 0.85,
+#              f'Day = {str(round(time,3))}',
+#              fontsize=16, color='k',
+#              ha='left', va='bottom', alpha=1)
+#     plt.title('Pollock 1988 Ex. 2')
+#     ax.set_ylim([0,10])
+#     ax.set_xlim([0,10])
+#     fig.tight_layout()
+#     fig.savefig(fig_name)
+#     plt.close()
 
-
-imageio.mimsave(os.path.join('figures_ex2','one_cell.gif'),fig_list,duration=.5) # now save a gif of all the figures in fig_list
+plt.close('all')
