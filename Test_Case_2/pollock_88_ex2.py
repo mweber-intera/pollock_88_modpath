@@ -146,40 +146,4 @@ for time in times:
     fig.savefig(fig_name)
     plt.close()
 
-
-
-
-
-# names = ['Time_Point_Index','Cumulative_Time_Step','Tracking_Time','Particle_ID','Particle_Group','Global_X','Global_Y',
-#          'Global_Z','Grid','Layer','Row','Column','Local_X','Local_Y','Local_Z']
-# ts_df = pd.read_csv(os.path.join(model_ws,'test_2.mp.tim_ser'),skiprows=3,names = names,delim_whitespace=True)
-# print(ts_df.loc[ts_df['Particle_ID']==1])
-# fig_list = [] # initialize list of figure paths we will use to make a gif
-# for time in time_pts:
-#     fig, ax = plt.subplots(figsize=(8,5))
-#     extent=(0,Lx,0,Ly)
-
-#     modelmap = flopy.plot.ModelMap(model=mf, layer=0, ax=ax)
-#     lc = modelmap.plot_grid(color='c',alpha=.25)
-#     qm = modelmap.plot_bc('CHD', alpha=0.5)
-#     ib = modelmap.plot_ibound()
-
-#     # well_epd = epdobj.get_alldata()
-#     # well_pathlines = pthobj.get_alldata()
-#     # modelmap.plot_pathline(well_pathlines, travel_time=f'<={time}', layer='all', colors='red') # plot pathline <= time
-#     # modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
-#     tempdf = ts_df.loc[(ts_df['Tracking_Time'] >= time-.5) & (ts_df['Tracking_Time'] <= time+.5)]
-#     ax.scatter(tempdf['Global_X'],tempdf['Global_Y'])
-#     fig_name = os.path.join(figures,f'1c_{str(round(time,2)).replace(".","pt")}_days.png') # figure path to save to
-#     fig.text(0.15, 0.85,
-#              f'Day = {str(round(time,3))}',
-#              fontsize=16, color='k',
-#              ha='left', va='bottom', alpha=1)
-#     plt.title('Pollock 1988 Ex. 2')
-#     ax.set_ylim([0,10])
-#     ax.set_xlim([0,10])
-#     fig.tight_layout()
-#     fig.savefig(fig_name)
-#     plt.close()
-
 plt.close('all')
