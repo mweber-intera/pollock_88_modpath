@@ -122,9 +122,9 @@ for time in times:
         head = headobj.get_data(totim=time)
         # CS = plt.contour(np.flipud(head[0]), extent=extent, color='k',vmin=0,vmax=55)
         # plt.clabel(CS, inline=1, fontsize=10)
-        plt.imshow(head[0],cmap='jet',extent=extent,vmin=0)
+        plt.imshow(head[0],extent=extent,vmin=0)
     else:
-        plt.imshow(np.ones((nrow,ncol)),cmap='jet',extent=extent)
+        plt.imshow(np.ones((nrow,ncol)),extent=extent)
         # plt.colorbar()
 
     modelmap = flopy.plot.ModelMap(model=mf, layer=0, ax=ax)
