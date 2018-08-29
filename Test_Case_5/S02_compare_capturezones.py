@@ -26,7 +26,15 @@ for row in pd.DataFrame(gwpath_shp.bounds).iterrows():
 
 columns = ['Case','Area_sqft','Area_acre','Left_extent','Lower_extent','Right_extent','Upper_extent']
 
-data = {'Case' : ['GWpath','Modpath6'],'Area_sqft':[gwpath_area, mp3du_area],'Area_acre':[gwpath_area*2.2957e-5, mp3du_area*2.2957e-5],'Left_extent':[gw_minx,mp3du_minx],'Lower_extent':[gw_miny,mp3du_miny],'Right_extent':[gw_maxx,mp3du_maxx],'Upper_extent':[gw_maxy,mp3du_maxy]}
+def perc_diff(v1,v2):
+	return abs((v2-v1)/(v2+v1))
+area_pd = perc_diff(mp3du_area,gwpath_area)
+
+pf = 'Fail'
+if area_pd <= 10.:
+	pf = 'Pass'
+
+data = {'Name' : ['GWpath','Modpath6','Percent Difference','Pass/Fail'],'Area_sqft':[gwpath_area, mp3du_area, area_pd, pf],'Area_acre':[gwpath_area*2.2957e-5, mp3du_area*2.2957e-5,area_pd,pf],'Left_extent':[gw_minx,mp3du_minx,'',''],'Lower_extent':[gw_miny,mp3du_miny,'',''],'Right_extent':[gw_maxx,mp3du_maxx,'',''],'Upper_extent':[gw_maxy,mp3du_maxy,'','']}
 df = pd.DataFrame(data)
 
 df.to_csv(os.path.join('output','mp3du_well_capture_stats.csv'),index=False)
@@ -78,14 +86,15 @@ modelmap.plot_bc('wel',color='k')
 mp3du_pathlines.plot(ax=ax)
 
 
-labels = [item.get_text() for item in ax.get_xticklabels()]
-print(labels)
-labels[1] = 'Testing'
-labels = np.arange(0,8001,720)
-print(labels)
-
-# ax.set_xticklabels(labels)
-
+# ef pass_fail(x):
+#     if abs(x)>10.:
+#         tc='Fail'
+#         return tc
+#     else:
+#         tc='Pass'
+#         return tc
+        
+# output['Pass/Fail'] = output.apply(lambda x: pass_fail(x['percent_difference']),axis=1)
 
 
 

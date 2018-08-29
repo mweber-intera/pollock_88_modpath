@@ -221,9 +221,6 @@ for index, row in results.iterrows():
     value=pass_fail(results.loc[index,'PerdX'])
     listx.append(value)
 
-out_csv = 'local_pass_fail.csv'
-results.to_csv(out_csv)
-
 listy =[]
 
 for index, row in results.iterrows():
@@ -236,7 +233,7 @@ results['PassFailY'] = listy
 
 
 out_csv = 'local_pass_fail.csv'
-results.to_csv(out_csv)
+results.to_csv(os.path.join('output',out_csv), index=False)
 
 
 # Post-Processing: Figures

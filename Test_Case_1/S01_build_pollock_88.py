@@ -42,7 +42,6 @@ bas = flopy.modflow.ModflowBas(mf, ibound=1, strt=100.0) # create bas object, al
 lpf = flopy.modflow.ModflowLpf(mf, hk=10, vka=10., ipakcb=53)
 
 #PCG
-#I've seen examples of all three solvers being used
 pcg = flopy.modflow.ModflowPcg(mf)
 
 # OC
@@ -59,7 +58,6 @@ for sp in range(nper):
     wel_spd[sp] = [0,nrow-1,0,Qcfd] # injection well is in center of the model
 
 
-# print(wel_spd) # {nper:[layer, row, column, Q],nper+1:[layer, row, column, Q],....} # make sure to use python indexing 
 wel = flopy.modflow.ModflowWel(mf,stress_period_data=wel_spd) # well package
 
 # CHD
@@ -109,7 +107,7 @@ digitized = pd.read_csv('figure_7_distances.csv')
 
 
 # import modpath results
-with open(os.path.join('pollock_model_ex1','pollock_88_mp.mppth'), 'r') as f:
+with open(os.path.join(model_ws,'pollock_88_mp.mppth'), 'r') as f:
     lines_after_header = f.readlines()[3:]
     step = []
     step2 = []
@@ -192,7 +190,7 @@ if not os.path.exists(figures): os.mkdir(figures)
 
 
 out_csv = 'tc1_results.csv'
-output.to_csv(os.path.join(outpath, out_csv))
+output.to_csv(os.path.join(outpath, out_csv),index=False)
 
 # make figures
 import flopy.utils.binaryfile as bf

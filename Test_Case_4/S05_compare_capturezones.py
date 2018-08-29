@@ -23,7 +23,15 @@ for row in pd.DataFrame(gwpath_shp.bounds).iterrows():
 
 columns = ['Case','Area_sqft','Area_acre','Left_extent','Lower_extent','Right_extent','Upper_extent']
 
-data = {'Case' : ['GWpath','Modpath6'],'Area_sqft':[gwpath_area, mp6_area],'Area_acre':[gwpath_area*2.2957e-5, mp6_area*2.2957e-5],'Left_extent':[gw_minx,minx6],'Lower_extent':[gw_miny,miny6],'Right_extent':[gw_maxx,maxx6],'Upper_extent':[gw_maxy,maxy6]}
+def perc_diff(v1,v2):
+	return abs((v2-v1)/(v2+v1))
+area_pd = perc_diff(mp6_area,gwpath_area)
+
+pf = 'Fail'
+if area_pd <= 10.:
+	pf = 'Pass'
+
+data = {'Name' : ['GWpath','Modpath6','Percent Difference','Pass/Fail'],'Area_sqft':[gwpath_area, mp6_area, area_pd, pf],'Area_acre':[gwpath_area*2.2957e-5, mp6_area*2.2957e-5,area_pd,pf],'Left_extent':[gw_minx,minx6,'',''],'Lower_extent':[gw_miny,miny6,'',''],'Right_extent':[gw_maxx,maxx6,'',''],'Upper_extent':[gw_maxy,maxy6,'','']}
 df = pd.DataFrame(data)
 
 df.to_csv(os.path.join('outputs','well_capture_stats.csv'),index=False)
