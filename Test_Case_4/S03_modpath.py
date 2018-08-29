@@ -9,11 +9,6 @@ import shutil
 import flopy
 import matplotlib.pyplot as plt
 
-# hundo = 100 X 100 grids
-hundo = False
-twohundotoofurious = False
-halfhundo = True
-
 
 model_ws = os.path.join('workspace')
 modelname = 'test_3'
@@ -24,12 +19,7 @@ Ly = 8000. + 160.
 ztop = 150.
 zbot = 0
 nlay = 1
-if hundo:
-    nrow, ncol = 101, 101
-elif twohundotoofurious:
-    nrow, ncol = 201, 201
-else:
-    nrow, ncol = 51, 51
+nrow, ncol = 51, 51
 delr, delc = int(Lx / ncol), int(Ly / nrow)
 delv = (ztop - zbot) / nlay
 botm = np.linspace(ztop, zbot, nlay + 1)
@@ -72,7 +62,7 @@ circle['Row'], circle['Column'] = rows, cols
 
 
 
-# todo get the local coordinates
+# get the local coordinates for input to modpath6
 def calc_local_x(delr, col, x):
     temp_x = delr * (col)
     val = x - temp_x
@@ -89,7 +79,6 @@ def calc_local_y(delc, row, y, nrow):
 circle['LocalX'] = circle.apply(lambda xy: calc_local_x(delr, xy['Column'], xy['ModelX']), axis=1)
 circle['LocalY'] = circle.apply(lambda xy: calc_local_y(delc, xy['Row'], xy['ModelY'],nrow), axis=1)
 
-# print(circle)
 
 
 circle['cirque'] = circle.apply(lambda x: Point((float(x.x), float(x.y))), axis=1)
@@ -139,17 +128,21 @@ starting_loc = os.path.join(model_ws,'starting_pts.loc')
 
 write_loc_file(starting_loc,starting_csv=os.path.join(model_ws,'starting_locs.csv'))
 
-mp6_exe = os.path.join('gw_codes','mp6.exe')
+mp6_exe = os.path.join('..','gw_codes','mp6.exe')
 
 mp = flopy.modpath.Modpath('test_3',exe_name=mp6_exe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
 mp_ibound = mf.bas6.ibound.array # use ibound from modflow model
 mpb = flopy.modpath.ModpathBas(mp,-1e30,ibound=mp_ibound,prsity =.25) # make modpath bas object
 
+# run the simulation two times, first for pathline then for time series
 sim = mp.create_mpsim(trackdir='backward', simtype='pathline', packages='starting_pts.loc',
                       start_time=(0, 0, 0),stop_time=3652.)  # create simulation file
 
-# the stop_time is very finicky,
-# sim = flopy.modpath.ModpathSim(mp,mp.nam,mp.lst,option_flags=[2,2,2,1,2,3,2,3,1,1,1,1],stop_time=3650,strt_file='starting_pts.loc',time_pts=np.arange(365.2,3652.1,365.2),time_ct=10)
+mp.write_input()
+mp.run_model(silent=False)
+
+# now create the sim file for timeseries backwards tracking
+sim = flopy.modpath.ModpathSim(mp,mp.nam,mp.lst,option_flags=[3,2,2,1,2,2,2,3,1,1,1,1],stop_time=3652,strt_file='starting_pts.loc',time_pts=np.arange(365.2,3652.1,365.2),time_ct=10)
 
 mp.write_input()
 mp.run_model(silent=False)
@@ -158,9 +151,9 @@ cbb = bf.CellBudgetFile(os.path.join(model_ws,modelname+'.cbc'))
 
 
 pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'test_3.mppth')) # create pathline object
-epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'test_3.mpend')) # create endpoint object
+# epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'test_3.mpend')) # create endpoint object
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(8,8))
 
 hds = bf.HeadFile(os.path.join(model_ws,modelname+'.hds'))
 times = hds.get_times()
@@ -176,13 +169,19 @@ lc = modelmap.plot_grid()
 
 quiver = modelmap.plot_discharge(frf, fff, head=head)
 
-well_epd = epdobj.get_alldata()
+# well_epd = epdobj.get_alldata()
 well_pathlines = pthobj.get_alldata()
 
-print(times)
 
-modelmap.plot_pathline(well_pathlines, travel_time='< 7300', layer='all', colors='red') # plot pathline <= time
-modelmap.plot_endpoint(well_epd, direction='ending', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
+modelmap.plot_pathline(well_pathlines, travel_time='<= 3652.5', layer='all', colors='red') # plot pathline <= time
+# modelmap.plot_endpoint(well_epd, direction='ending', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
 modelmap.plot_bc('wel',color='k')
 
-plt.show()
+outputs = os.path.join('outputs')
+if not os.path.exists(outputs): os.mkdir(outputs)
+
+plt.title('Pathline of particles after 10 years'.title())
+fig.tight_layout()
+fig.savefig(os.path.join(outputs,'pathline.png'))
+
+plt.close('all')

@@ -7,7 +7,6 @@ from flopy.utils.reference import SpatialReference
 import flopy.utils.binaryfile as bf
 import shutil
 import flopy
-import matplotlib.pyplot as plt
 
 pd.set_option("display.max_rows",8)
 
@@ -39,47 +38,30 @@ def get_gamy(globaly,yul,Ly):
 
 
 ts['GAMX'] = sr.xul - ts['Global_X'] + Lx
-ts['GAMY'] = sr.yul - ts['Global_Y']# + (ts['Global_Y'] - sr.yll)
+ts['GAMY'] = sr.yul - ts['Global_Y']
 
 ts['GAMX'] = ts.apply(lambda xy: get_gamx(xy['Global_X'],sr.xul,Lx),axis=1)
 ts['GAMY'] = ts.apply(lambda xy: get_gamy(xy['Global_Y'],sr.yul,Ly),axis=1)
 
-print(ts[['GAMX','GAMY']].head())
 
 ts['geometry'] = ts.apply(lambda xy: Point(xy['GAMX'],xy['GAMY']),axis=1)
 
 gdf = gpd.GeoDataFrame(ts,geometry='geometry')
-gdf = gdf[gdf['Tracking_Time']>=3650]
-
-# gdf.to_file(os.path.join('shapefiles','ending_pt.shp'))
-# shutil.copy(os.path.join('grid','grid.prj'),os.path.join('shapefiles','ending_pt.prj'))
-
-# fig, ax = plt.subplots()
-# ax.scatter(ts['GAMX'],ts['GAMY'])
-gdf = gdf[gdf['Tracking_Time']>=3650]
+gdf = gdf[gdf['Tracking_Time']>=3650] # get 10 years
 points = gdf['geometry']
 point_collection = MultiPoint(list(points))
-# convex_hull_polygon = point_collection
-# print(convex_hull_polygon)
-#
-# chDF = pd.DataFrame({'geometry':[point_collection]})
-# ch = gpd.GeoDataFrame(chDF,geometry='geometry')
-# ch['geometry'] = ch['geometry'].convex_hull
-#
-#
 
+# make a polygon using the points after 10 years
 df2 = pd.DataFrame({'geometry':points,'end':'end_pt'})
 df2['geometry'] = df2['geometry'].apply(lambda x:x.coords[0])
 df2.reset_index(inplace=True,drop=True)
 df2 = df2.groupby(['end'])['geometry'].apply(lambda x: Polygon(x.tolist()))
 gdf2 = gpd.GeoDataFrame(df2,geometry='geometry')
 
+outputs = os.path.join('outputs')
+if not os.path.exists(outputs): os.mkdir(outputs)
+shapefiles = os.path.join('outputs','shapefiles')
+if not os.path.exists(shapefiles): os.mkdir(shapefiles)
 
-gdf2.to_file(os.path.join('shapefiles','convex.shp'))
-shutil.copy(os.path.join('grid','grid.prj'),os.path.join('shapefiles','convex.prj'))
-
-
-gdf2.plot()
-
-plt.show()
-
+gdf2.to_file(os.path.join(shapefiles,'mp6_10_yrs_poly.shp'))
+shutil.copy(os.path.join('texas_gam.prj'),os.path.join(shapefiles,'mp6_10_yrs_poly.prj'))
