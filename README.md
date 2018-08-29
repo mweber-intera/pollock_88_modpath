@@ -1,6 +1,6 @@
 # README #
 
-Python scripts for building modflow and modpath models to test particle tracking for homogenous and hetergenous examples as well as well capture zone analysis. 
+Python scripts for building and testing modflow and modpath models to test particle tracking for homogenous and hetergenous examples as well as well capture zone analysis. 
 
 ## Installation notes
 
@@ -31,8 +31,6 @@ To activate your new environment:
 ```
 source activate modpath_qa
 ```
-
-=======
 
 # Test Cases #
 There are 5 test cases presented in this directory, each is to compare the USGS's modpath version 6 with alternative particle traking solutions.
@@ -137,7 +135,10 @@ This will produce a directory called output that figures, shapefiles and pass/fa
 
 
 sspa - mp3du version 2 http://mp3du.sspa.com/man/
+
 pollock 1988
+
 grubb 1993
+
 Shafer 1987  
 
