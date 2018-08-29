@@ -31,7 +31,7 @@ Allocating and reading data for grid  1
     1 LAYERS        11 ROWS        21 COLUMNS
    30 STRESS PERIOD(S) IN SIMULATION
  MODEL TIME UNIT IS DAYS
- MODEL LENGTH UNIT IS METERS
+ MODEL LENGTH UNIT IS FEET
   Confining bed flag for each layer:
    0
 
@@ -338,8 +338,8 @@ EXTEND INITIAL OR FINAL STEADY-STATE TIMESTEP AND CONTINUE TRACKING (ISTOPT =  2
  
 TOTAL NUMBER OF PARTICLES FOR ALL GROUPS =          5
  
-     1Time points will be read from a list.
-    0.10000E+01
+    10Time points will be read from a list.
+    0.00000E+00    0.21800E+01    0.43600E+01    0.65400E+01    0.87200E+01    0.10900E+02    0.13080E+02    0.15260E+02    0.17440E+02    0.19620E+02
  
 DO NOT PERFORM BUDGET CHECKS (IBDOPT =  1)
  
