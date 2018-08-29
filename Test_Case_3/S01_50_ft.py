@@ -44,7 +44,7 @@ lpf = flopy.modflow.ModflowLpf(mf, hk=1000, vka=5000., ipakcb=53)
 #OC
 spd = {} # slight change to oc so we can save heads and budget for all stress periods
 for sp in range(nper):
-    spd[(sp, 0)] = ['print head', 'print budget', 'save head', 'save budget']
+    spd[(sp, 0)] = ['save head', 'save budget']
 oc = flopy.modflow.ModflowOc(mf, stress_period_data=spd, compact=True)
 #, extension=['oc', 'hds', 'ddn', 'cbb', 'ibo']
 

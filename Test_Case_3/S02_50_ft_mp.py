@@ -78,12 +78,9 @@ y = fetter.get_y_vals(ymax)
 y = np.array(y)
 yinv = np.array(y) * -1
 
-print(ymax,xstag)
-print(y)
 
 
 x = -fetter.make_shape_uc(y,Qcfd,hk,h1,h2,L)
-print(x)
 # exit()
 
 import flopy.utils.binaryfile as bf
@@ -92,7 +89,6 @@ cbb = bf.CellBudgetFile(os.path.join(model_ws,modelname+'.cbc'))
 times = cbb.get_times()
 
 frf = cbb.get_data(text='FLOW RIGHT FACE', totim=times[-1])[0]
-print(frf[0][19:22,1])
 
 
 
@@ -119,8 +115,12 @@ qm = modelmap.plot_ibound()
 
 well_epd = epdobj.get_alldata()
 well_pathlines = pthobj.get_alldata()
-ax.plot(x+53350+25,y+20000-25,lw=4,color='g')
-ax.plot(x+53350+25,yinv+20000-25,lw=4,color='g',label='Analytical Solution')
+# ax.plot(x+53350+25,y+20000-25,lw=4,color='g')
+# ax.plot(x+53350+25,yinv+20000-25,lw=4,color='g',label='Analytical Solution')
+
+ax.scatter(x+53350+25,y+20000-25,s=40,color='g',zorder=5)
+ax.scatter(x+53350+25,yinv+20000-25,s=40,color='g',label='Analytical Solution',zorder=4)
+
 modelmap.plot_pathline(well_pathlines, travel_time=None, layer='all', colors='red',zorder=2,lw=5) # plot pathline <= time
 modelmap.plot_endpoint(well_epd, direction='starting', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
 modelmap.plot_bc('wel',color='k')
