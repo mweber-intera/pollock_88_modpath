@@ -90,8 +90,54 @@ source activate modpath_qa
 cd Test_Case_3
 ./runme.bat
 ```
-This will produce a directory called output that plot figures and pass/fail statistics will be placed.
+This will produce a directory called output that figures and pass/fail statistics will be placed.
+
+## Test Case 4
+Test Case 4 compares the 10 year well capture zone for a steady state aquifer with a heterogenous hydraulic conductivity from an example from GWPATH (Shafer, 1987)
+
+![alt text](https://github.com/rosskush/pollock_88_modpath/blob/master//Test_Case_4/preproccessing/hk_fig20.png)
+
+![alt text](https://github.com/rosskush/pollock_88_modpath/blob/master//Test_Case_4/preproccessing/10_yr_capture_zone_fig21.png)
+
+A modflow model was created to replicate this example and track backwards particles with modpath 6
+
+![alt text](https://github.com/rosskush/pollock_88_modpath/blob/master//Test_Case_4/outputs/pathline.png)
+
+To run this example follow these steps in a terminal or Anaconda prompt after moving to this directory:
+
+(if not active already, activate the modpath_qa conda enviroment):
+```
+source activate modpath_qa
+cd Test_Case_4
+./runme.bat
+```
+This will produce a directory called outputs that figures, shapefiles and pass/fail statistics will be placed.
+(shapfiles include a grid of the model, the head contour after 10 years, and a bounding polygon of the 10 year capture zone)
+
+## Test Case 5
+Test Case 5 uses the same example from GWPATH (Shafer, 1987)
+
+Although the the modflow model is the same as Test Case 4, the backwards particle tracking method used is SSPA's mod-PATH3DU version 2 (SSPA, 2018) 
+
+![alt text](https://github.com/rosskush/pollock_88_modpath/blob/master//Test_Case_5/outputs/mp3du_pathline.png)
+
+To run this example follow these steps in a terminal or Anaconda prompt after moving to this directory:
+
+(if not active already, activate the modpath_qa conda enviroment):
+```
+source activate modpath_qa
+cd Test_Case_5
+./runme.bat
+```
+This will produce a directory called output that figures, shapefiles and pass/fail statistics will be placed.
+(shapfiles include a bounding polygon of the 10 year capture zone, pathlines, and endpoints after 10 years)
 
 
+# Refrences #
 
+
+sspa - mp3du version 2 http://mp3du.sspa.com/man/
+pollock 1988
+grubb 1993
+Shafer 1987  
 
