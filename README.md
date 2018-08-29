@@ -61,7 +61,7 @@ Test case 2 utilizes flopy and modpath6 to reproduce figure 10 in Pollock 1988
 
 Particles are placed radially around the well cell in the bottom left corner and are tracked for 7,500 days.
 
-![alt text](https://github.com/rosskush/pollock_88_modpath/blob/master//Test_Case_2/output/figures/30pt0_days.png)
+![alt text](https://github.com/rosskush/pollock_88_modpath/blob/master//Test_Case_2/output/Compared_pathlines.png)
 
 To run this example follow these steps in terminal or Anaconda prompt after moving to this directory:
 
