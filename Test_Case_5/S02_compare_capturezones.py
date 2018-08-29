@@ -32,9 +32,6 @@ df = pd.DataFrame(data)
 df.to_csv(os.path.join('output','mp3du_well_capture_stats.csv'),index=False)
 
 def coords_to_mf_cords(xll,yll,ls):
-	# print(xul,yul)
-	# print(ls.coords[0])
-
 	new_points = []
 	for point in ls.coords:
 		new_points.append((point[0]-xul,point[1]-yll))  
@@ -102,7 +99,7 @@ fig.savefig(os.path.join(outputs,'mp3du_pathline.png'))
 
 
 
-plt.show()
+plt.close('all')
 
 
 
