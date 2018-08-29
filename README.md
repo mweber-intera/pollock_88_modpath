@@ -1,23 +1,26 @@
 # README #
 
-Python scripts for building modflow and modpath models from Polluck 1988 
+Python scripts for building modflow and modpath models to test particle tracking for homogenous and hetergenous examples as well as well capture zone analysis. 
 
 ## Installation notes
 
-Following this tutorial will require recent installations of:
+These tests were compiled with python using the following packages and versions:
 =======
-- Python >= 3.6.5
-- pandas
-- geopandas >= 0.4.0
-- matplotlib
-- flopy >= 3.2.9 
-- numpy
+- Python = 3.6.5
+- pandas = 0.23.3
+- geopandas = 0.4.0
+- matplotlib = 2.2.2
+- flopy = 3.2.9 
+- numpy = 1.14.2
 
 If you do not yet have these packages installed, we recommend to use the [conda](http://conda.pydata.org/docs/intro.html) package manager to install all the requirements 
+
+Please note that Anaconda and Miniconda are python package distibuters, this means that Anaconda will be downloaded to your machine and will conatiain a working version of python. 
+
 (you can install [miniconda](http://conda.pydata.org/miniconda.html) or install the (larger) Anaconda
 distribution, found at https://www.anaconda.com/download/).
 
-Once this is installed, the following command will install all required packages in your Python environment:
+Once this is installed, the following command will install all required packages in your Python environment, you may run this command out of a terminal if you add conda to your system's path, or you can simply use the Anaconda prompt:
 (this may take a bit)
 ```
 conda env create -f environment.yml
@@ -43,7 +46,7 @@ Particles are placed radially around the well cell in the bottom left corner and
 
 ![alt text](https://github.com/rosskush/pollock_88_modpath/blob/master//Test_Case_1/output/figures/7500_days.png)
 
-To run this example follow these steps in a terminal or bash after moving to this directory:
+To run this example follow these steps in a terminal or Anaconda prompt after moving to this directory:
 
 (if not active already, activate the modpath_qa conda enviroment):
 ```
@@ -62,7 +65,7 @@ Particles are placed radially around the well cell in the bottom left corner and
 
 ![alt text](https://github.com/rosskush/pollock_88_modpath/blob/master//Test_Case_2/output/figures/30pt0_days.png)
 
-To run this example follow these steps in terminal or bash after moving to this directory:
+To run this example follow these steps in terminal or Anaconda prompt after moving to this directory:
 
 (if not active already, activate the modpath_qa conda enviroment):
 ```
@@ -79,7 +82,7 @@ Test Case 3 compares an analytical well capture zone solution described by Grubb
 ![alt text](https://github.com/rosskush/pollock_88_modpath/blob/master//Test_Case_3/output/backwards.png)
 
 
-To run this example follow these steps in a terminal or bash after moving to this directory:
+To run this example follow these steps in a terminal or Anaconda prompt after moving to this directory:
 
 (if not active already, activate the modpath_qa conda enviroment):
 ```
