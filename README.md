@@ -119,7 +119,7 @@ Test Case 5 uses the same example from GWPATH (Shafer, 1987)
 
 Although the the modflow model is the same as Test Case 4, the backwards particle tracking method used is SSPA's mod-PATH3DU version 2 (SSPA, 2018) 
 
-![alt text](https://github.com/rosskush/pollock_88_modpath/blob/master//Test_Case_5/outputs/mp3du_pathline.png)
+![alt text](https://github.com/rosskush/pollock_88_modpath/blob/master//Test_Case_5/output/mp3du_pathline.png)
 
 To run this example follow these steps in a terminal or Anaconda prompt after moving to this directory:
 
