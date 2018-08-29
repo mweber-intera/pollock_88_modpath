@@ -1,7 +1,9 @@
 import os
 import geopandas as gpd
 import pandas as pd
-
+import flopy
+import numpy as np
+from shapely.geometry import LineString
 
 
 mp3du_shp = gpd.read_file(os.path.join('output','shapefiles','mp3du_10_yrs_poly.shp'))
@@ -29,7 +31,78 @@ df = pd.DataFrame(data)
 
 df.to_csv(os.path.join('output','mp3du_well_capture_stats.csv'),index=False)
 
+def coords_to_mf_cords(xll,yll,ls):
+	# print(xul,yul)
+	# print(ls.coords[0])
 
+	new_points = []
+	for point in ls.coords:
+		new_points.append((point[0]-xul,point[1]-yll))  
+	return LineString(new_points)
+
+
+
+
+
+import matplotlib.pyplot as plt
+import flopy.utils.binaryfile as bf
+model_ws = ''
+modelname = 'test_3'
+mf = flopy.modflow.Modflow.load(f'{modelname}.nam',check=False)
+xul, yul = mf.sr.xul, mf.sr.yul
+xll, yll = mf.sr.xll, mf.sr.yll
+
+mf.sr.xul, mf.sr.yul = 0, 8000  + 160
+
+mp3du_pathlines = gpd.read_file(os.path.join('output','shapefiles','Pathline_mp3du.shp'))
+mp3du_pathlines.geometry = mp3du_pathlines.apply(lambda xy: coords_to_mf_cords(xll,yll,xy['geometry']),axis=1)
+
+
+# exit()
+
+
+fig, ax = plt.subplots(figsize=(8,8))
+
+hds = bf.HeadFile(os.path.join(model_ws,modelname+'.hds'))
+times = hds.get_times()
+head = hds.get_data(totim=times[-1])
+
+cbb = bf.CellBudgetFile(os.path.join(model_ws,modelname+'.cbc'))
+
+frf = cbb.get_data(text='FLOW RIGHT FACE', totim=times[-1])[0]
+fff = cbb.get_data(text='FLOW FRONT FACE', totim=times[-1])[0]
+
+modelmap = flopy.plot.ModelMap(model=mf, layer=0)
+qm = modelmap.plot_ibound()
+lc = modelmap.plot_grid()
+
+quiver = modelmap.plot_discharge(frf, fff, head=head)
+modelmap.plot_bc('wel',color='k')
+mp3du_pathlines.plot(ax=ax)
+
+
+labels = [item.get_text() for item in ax.get_xticklabels()]
+print(labels)
+labels[1] = 'Testing'
+labels = np.arange(0,8001,720)
+print(labels)
+
+# ax.set_xticklabels(labels)
+
+
+
+
+
+outputs = os.path.join('output')
+if not os.path.exists(outputs): os.mkdir(outputs)
+
+plt.title('Pathline of particles after 10 years'.title()+' (mp3du)')
+fig.tight_layout()
+fig.savefig(os.path.join(outputs,'mp3du_pathline.png'))
+
+
+
+plt.show()
 
 
 
