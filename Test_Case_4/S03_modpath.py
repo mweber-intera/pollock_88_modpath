@@ -162,7 +162,7 @@ levels = np.linspace(0, 10, 11)
 
 frf = cbb.get_data(text='FLOW RIGHT FACE', totim=times[-1])[0]
 fff = cbb.get_data(text='FLOW FRONT FACE', totim=times[-1])[0]
-mf.sr.xul, mf.sr.yul = 0, 8000 + 80
+mf.sr.xul, mf.sr.yul = 0, 8000 + 160
 
 modelmap = flopy.plot.ModelMap(model=mf, layer=0)
 qm = modelmap.plot_ibound()
