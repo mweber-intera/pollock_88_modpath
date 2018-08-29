@@ -181,7 +181,7 @@ modelmap.plot_bc('wel',color='k')
 outputs = os.path.join('outputs')
 if not os.path.exists(outputs): os.mkdir(outputs)
 
-plt.title('Pathline of particles after 10 years'.title())
+plt.title('Pathline of particles after 10 years'.title()+' (modpath6)')
 fig.tight_layout()
 fig.savefig(os.path.join(outputs,'pathline.png'))
 
