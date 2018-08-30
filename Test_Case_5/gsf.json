@@ -9,7 +9,7 @@
          "GSF_FILE" : {
            "TYPE" : "STRUCTURED_DIS"
          },
-         "NAME_FILE" : "test_3.nam"
+         "NAME_FILE" : "test_case_5.nam"
       }
    },
    "OUTPUT_FILENAME" : "output/mp3du.gsf"

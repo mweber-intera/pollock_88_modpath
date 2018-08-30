@@ -11,7 +11,7 @@ import flopy
 pd.set_option("display.max_rows",8)
 
 model_ws = os.path.join('workspace')
-modelname = 'test_3'
+modelname = 'test_case_4'
 
 names = ['Time Point Index','Cumulative Time Step','Tracking Time','Particle ID','Particle Group','Global X','Global Y','Global Z','Grid','Layer','Row','Column','Local X','Local Y','Local Z']
 names = [item.replace(' ','_') for item in names]
@@ -58,9 +58,9 @@ df2.reset_index(inplace=True,drop=True)
 df2 = df2.groupby(['end'])['geometry'].apply(lambda x: Polygon(x.tolist()))
 gdf2 = gpd.GeoDataFrame(df2,geometry='geometry')
 
-outputs = os.path.join('outputs')
-if not os.path.exists(outputs): os.mkdir(outputs)
-shapefiles = os.path.join('outputs','shapefiles')
+output = os.path.join('output')
+if not os.path.exists(output): os.mkdir(output)
+shapefiles = os.path.join('output','shapefiles')
 if not os.path.exists(shapefiles): os.mkdir(shapefiles)
 
 gdf2.to_file(os.path.join(shapefiles,'mp6_10_yrs_poly.shp'))

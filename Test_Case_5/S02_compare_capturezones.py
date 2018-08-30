@@ -37,7 +37,7 @@ if area_pd <= 10.:
 data = {'Name' : ['GWpath','Modpath6','Percent Difference','Pass/Fail'],'Area_sqft':[gwpath_area, mp3du_area, area_pd, pf],'Area_acre':[gwpath_area*2.2957e-5, mp3du_area*2.2957e-5,area_pd,pf],'Left_extent':[gw_minx,mp3du_minx,'',''],'Lower_extent':[gw_miny,mp3du_miny,'',''],'Right_extent':[gw_maxx,mp3du_maxx,'',''],'Upper_extent':[gw_maxy,mp3du_maxy,'','']}
 df = pd.DataFrame(data)
 
-df.to_csv(os.path.join('output','mp3du_well_capture_stats.csv'),index=False)
+df.to_csv(os.path.join('output','tc5_results.csv'),index=False)
 
 def coords_to_mf_cords(xll,yll,ls):
 	new_points = []
@@ -52,7 +52,7 @@ def coords_to_mf_cords(xll,yll,ls):
 import matplotlib.pyplot as plt
 import flopy.utils.binaryfile as bf
 model_ws = ''
-modelname = 'test_3'
+modelname = 'test_case_5'
 mf = flopy.modflow.Modflow.load(f'{modelname}.nam',check=False)
 xul, yul = mf.sr.xul, mf.sr.yul
 xll, yll = mf.sr.xll, mf.sr.yll
@@ -84,19 +84,6 @@ lc = modelmap.plot_grid()
 quiver = modelmap.plot_discharge(frf, fff, head=head)
 modelmap.plot_bc('wel',color='k')
 mp3du_pathlines.plot(ax=ax)
-
-
-# ef pass_fail(x):
-#     if abs(x)>10.:
-#         tc='Fail'
-#         return tc
-#     else:
-#         tc='Pass'
-#         return tc
-        
-# output['Pass/Fail'] = output.apply(lambda x: pass_fail(x['percent_difference']),axis=1)
-
-
 
 
 outputs = os.path.join('output')

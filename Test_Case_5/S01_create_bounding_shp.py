@@ -16,7 +16,6 @@ gdf = gpd.read_file(os.path.join('output','shapefiles','Endpoint_mp3du.shp'))
 
 gdf['geometry'] = gdf['geometry'].apply(lambda x:x.coords[0])
 gdf['end'] = 'final'
-print(gdf.head())
 crs = gdf.crs
 
 
@@ -25,7 +24,6 @@ df = pd.DataFrame(gdf)
 df = df.groupby(['end'])['geometry'].apply(lambda x: Polygon(x.tolist()))
 gdf = gpd.GeoDataFrame(df,geometry='geometry')
 gdf.crs = crs
-print(gdf.head())
 
 if not os.path.exists(os.path.join('output','shapefiles')): os.mkdir(os.path.join('output','shapefiles'))
 

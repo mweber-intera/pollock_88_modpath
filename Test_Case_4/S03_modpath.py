@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 
 
 model_ws = os.path.join('workspace')
-modelname = 'test_3'
+modelname = 'test_case_4'
 mf = flopy.modflow.Modflow.load(modelname+'.nam',model_ws=model_ws)
 # DIS
 Lx = 8000. + 160.
@@ -130,7 +130,7 @@ write_loc_file(starting_loc,starting_csv=os.path.join(model_ws,'starting_locs.cs
 
 mp6_exe = os.path.join('..','gw_codes','mp6.exe')
 
-mp = flopy.modpath.Modpath('test_3',exe_name=mp6_exe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
+mp = flopy.modpath.Modpath('test_case_4',exe_name=mp6_exe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
 mp_ibound = mf.bas6.ibound.array # use ibound from modflow model
 mpb = flopy.modpath.ModpathBas(mp,-1e30,ibound=mp_ibound,prsity =.25) # make modpath bas object
 
@@ -150,7 +150,7 @@ mp.run_model(silent=False)
 cbb = bf.CellBudgetFile(os.path.join(model_ws,modelname+'.cbc'))
 
 
-pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'test_3.mppth')) # create pathline object
+pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'test_case_4.mppth')) # create pathline object
 # epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'test_3.mpend')) # create endpoint object
 
 fig, ax = plt.subplots(figsize=(8,8))
@@ -178,12 +178,12 @@ modelmap.plot_pathline(well_pathlines, travel_time='<= 3652.5', layer='all', col
 # modelmap.plot_endpoint(well_epd, direction='ending', colorbar=False) # can only plot starting of ending, not as dynamic as pathlines
 modelmap.plot_bc('wel',color='k')
 
-outputs = os.path.join('outputs')
-if not os.path.exists(outputs): os.mkdir(outputs)
+output = os.path.join('output')
+if not os.path.exists(output): os.mkdir(output)
 
 plt.title('Pathline of particles after 10 years'.title()+' (modpath6)')
 fig.tight_layout()
-fig.savefig(os.path.join(outputs,'pathline.png'))
+fig.savefig(os.path.join(output,'pathline.png'))
 
 
 plt.close('all')

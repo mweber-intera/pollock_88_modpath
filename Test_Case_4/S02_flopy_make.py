@@ -6,15 +6,15 @@ import os
 import geopandas as gpd
 import shutil
 
-modelname = 'test_3'
+modelname = 'test_case_4'
 exe = os.path.join('..','gw_codes','mf2k-chprc08spl.exe')
 model_ws = os.path.join('workspace')
 if not os.path.exists(model_ws): os.mkdir(model_ws)
 
-outputs = os.path.join('outputs')
-if not os.path.exists(outputs): os.mkdir(outputs)
+output = os.path.join('output')
+if not os.path.exists(output): os.mkdir(output)
 
-shapefiles = os.path.join('outputs','shapefiles')
+shapefiles = os.path.join('output','shapefiles')
 if not os.path.exists(shapefiles): os.mkdir(shapefiles)
 
 mf = flopy.modflow.Modflow(modelname, version='mf2k', exe_name =exe,model_ws=model_ws)
@@ -151,7 +151,7 @@ plt.clabel(contour, inline=1, fontsize=10,fmt='%1.0f',colors='k')
 
 
 fig.tight_layout()
-fig.savefig(os.path.join(outputs,'contour_head.png'))
+fig.savefig(os.path.join(output,'contour_head.png'))
 
 
 

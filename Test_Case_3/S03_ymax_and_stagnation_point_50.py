@@ -131,22 +131,6 @@ else:
 outpath = 'output'
 if not os.path.exists(outpath): os.mkdir(os.path.join(outpath))
 
-dictionary = {'analytical_local_x':c_list, 'modpath_local_x':loc_x, 'modpath_local_y':loc_y, 'modpath_global_x':mp_x,
-              'modpath_global_y':mp_y, 'percent_difference':perd}
-output=pd.DataFrame(dictionary)
-
-def pass_fail(x):
-    if abs(x)>10.:
-        tc='Fail'
-        return tc
-    else:
-        tc='Pass'
-        return tc
-        
-output['Pass/Fail'] = output.apply(lambda x: pass_fail(x['percent_difference']),axis=1)
-
-out_csv = 'percent_diff_shape.csv'
-output.to_csv(os.path.join(outpath, out_csv))
 
 dictionary2 = {'analytical_xstag':xstag, 'modpath_xstag':mmaxx, 'Percent_difference_xstag':percent_difference_xstag,
                'Xstag_Status':xstag_pf, 'analytical_ymax':ymax, 'modpath_ymax':mymax,
@@ -155,14 +139,6 @@ dictionary2 = {'analytical_xstag':xstag, 'modpath_xstag':mmaxx, 'Percent_differe
 output2=pd.DataFrame(dictionary2, index=[0])
 
 
-out_csv2 = 'percent_diff_ymax_xstag.csv'
+out_csv2 = 'tc3_results.csv'
 output2.to_csv(os.path.join(outpath, out_csv2),index=False)
 
-# dictionary3 = [percent_difference_xstag, ymax_pf,ymin_pf]
-#
-# with open(final_file, 'a') as fd:
-#     fd.write (dictionary3)
-
-# should probably write that to a csv as well
-# should probably set it up such that it gives you a wrong number when you have the wrong sign
-# nah, all points are reaching the well, so don't worry about it

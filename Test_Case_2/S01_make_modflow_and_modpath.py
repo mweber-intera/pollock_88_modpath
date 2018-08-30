@@ -2,13 +2,12 @@ import flopy
 import os
 import numpy as np
 import matplotlib.pyplot as plt
-import imageio
 import pandas as pd
 import geopandas as gpd
 from shapely.geometry import LineString, Point
 
 
-modelname = 'test_2'
+modelname = 'test_case_2'
 exe = os.path.join('..','gw_codes','mf2k-chprc08spl.exe')
 model_ws = os.path.join('workspace')
 mf = flopy.modflow.Modflow(modelname, version='mf2k', exe_name =exe,model_ws=model_ws)
@@ -85,7 +84,7 @@ success, buff = mf.run_model(silent=False)
 
 mpexe = os.path.join('..',"gw_codes","mp6.exe")
 
-mp = flopy.modpath.Modpath('test_2',exe_name=mpexe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
+mp = flopy.modpath.Modpath('test_case_2',exe_name=mpexe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
 
 mp_ibound = mf.bas6.ibound.array # use ibound from modflow model
 mpb = flopy.modpath.ModpathBas(mp,-1e30,ibound=mp_ibound,prsity=.3) # make modpath bas object
@@ -126,7 +125,7 @@ shp_pts = {'ParticleID':pid, 'PointX':lon, 'PointY':lat}
 shppt = pd.DataFrame(shp_pts)
 
 # Point name
-with open(os.path.join('workspace','test_2.mpend'), 'r') as f:
+with open(os.path.join('workspace','test_case_2.mpend'), 'r') as f:
     lines_after_header = f.readlines()[6:]
     stepp = []
     for line in lines_after_header:
@@ -135,7 +134,7 @@ floatp = [float(x) for x in stepp]
 
 
 # x data
-with open(os.path.join('workspace','test_2.mpend'), 'r') as f:
+with open(os.path.join('workspace','test_case_2.mpend'), 'r') as f:
     lines_after_header = f.readlines()[6:]
     stepx = []
     for line in lines_after_header:
@@ -144,7 +143,7 @@ floatx = [float(x) for x in stepx]
 
 
 # y data
-with open(os.path.join('workspace','test_2.mpend'), 'r') as f:
+with open(os.path.join('workspace','test_case_2.mpend'), 'r') as f:
     lines_after_header = f.readlines()[6:]
     stepy = []
     for line in lines_after_header:
@@ -177,7 +176,7 @@ results['PerdY'] = per_diff(xpt=results['localpY'], xmp=results['ParticleY'])
 
 # For plotting pathline
 names = ['ParticleID', 'Particle_Group', 'Time_Point_Index', 'Cumulative_TimeStep', 'Tracking_Time', 'Global_X', 'Global_y', 'Global_Z', 'Layer', 'Row', 'Column', 'Grid', 'Local_X', 'Local_Y', 'Local_Z', 'Line_Segment_Index']
-pathline_gdf = pd.read_csv(os.path.join(model_ws,'test_2.mppth'),skiprows=3,delim_whitespace=True, names=names)
+pathline_gdf = pd.read_csv(os.path.join(model_ws,'test_case_2.mppth'),skiprows=3,delim_whitespace=True, names=names)
 pathline_gdf['geometry'] = pathline_gdf.apply(lambda xy: (xy['Global_X'],xy['Global_y']),axis=1)
 
 pathline_gdf = pathline_gdf.groupby(['ParticleID'])['geometry'].apply(lambda x: LineString(x.tolist()))
@@ -232,7 +231,7 @@ results['PassFailX'] = listx
 results['PassFailY'] = listy
 
 
-out_csv = 'local_pass_fail.csv'
+out_csv = 'tc2_results.csv'
 results.to_csv(os.path.join('output',out_csv), index=False)
 
 
@@ -245,11 +244,11 @@ results.to_csv(os.path.join('output',out_csv), index=False)
 
 import flopy.utils.binaryfile as bf
 
-headobj = bf.HeadFile(os.path.join(model_ws,'test_2.hds')) # make head object with hds file
+headobj = bf.HeadFile(os.path.join(model_ws,'test_case_2.hds')) # make head object with hds file
 times = [0] + headobj.get_times() # get the times
 
-pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'test_2.mppth')) # create pathline object
-epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'test_2.mpend')) # create endpoint object
+pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'test_case_2.mppth')) # create pathline object
+epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'test_case_2.mpend')) # create endpoint object
 
 figures = os.path.join('output','figures')
 if not os.path.exists(figures): os.mkdir(figures)

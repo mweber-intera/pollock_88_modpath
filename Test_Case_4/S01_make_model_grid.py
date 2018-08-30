@@ -22,9 +22,9 @@ delr, delc = int(Lx/ncol), int(Ly/nrow)
 
 # nrow, ncol = 50, 50
 # delr, delc = 160, 160
-outputs = os.path.join('outputs')
+outputs = os.path.join('output')
 if not os.path.exists(outputs): os.mkdir(outputs)
-shapefiles = os.path.join('outputs','shapefiles')
+shapefiles = os.path.join('output','shapefiles')
 if not os.path.exists(shapefiles): os.mkdir(shapefiles)
 
 dis = flopy.modflow.ModflowDis(mf,1,nrow,ncol,lenuni=1,delr=delr,delc=delc,xul=xul, yul=yul,proj4_str=proj4)

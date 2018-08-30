@@ -16,11 +16,11 @@
 		{
 			"Elapsed" : 
 			{
-				"minutes" : 1.25828050e-002,
-				"seconds" : 7.54968300e-001
+				"minutes" : 1.19975783e-002,
+				"seconds" : 7.19854700e-001
 			},
-			"Finished" : "Wed Aug 29 09:09:33 2018\n",
-			"Started" : "Wed Aug 29 09:09:32 2018\n"
+			"Finished" : "Thu Aug 30 16:19:27 2018\n",
+			"Started" : "Thu Aug 30 16:19:27 2018\n"
 		}
 	},
 	{
@@ -30,13 +30,13 @@
 			{
 				"CHD" : 
 				{
-					"Binary_File" : "test_3.cbc",
+					"Binary_File" : "test_case_5.cbc",
 					"Binary_Header" : "CONSTANT HEAD",
 					"IFACE" : "7 - internal sink/source, no well correction"
 				},
 				"WEL" : 
 				{
-					"Binary_File" : "test_3.cbc",
+					"Binary_File" : "test_case_5.cbc",
 					"Binary_Header" : "WELLS",
 					"IFACE" : "0 - internal sink/source, with well correction"
 				}
@@ -44,7 +44,7 @@
 			"Cell-by-cell flow file" : 
 			[
 				{
-					"File name" : "H:\\github\\pollock_88_modpath\\Test_Case_5\\test_3.cbc",
+					"File name" : "H:\\github\\pollock_88_modpath\\Test_Case_5\\test_case_5.cbc",
 					"Headers" : 
 					[
 						[             "TSTP",             "SPER",             "ITEM",             "NCOL",             "NROW",             "NLAY",            "IMETH",             "DELT",           "PERTIM",            "TOTIM" ],
@@ -103,7 +103,7 @@
 			},
 			"Head-save file" : 
 			{
-				"File name" : "H:\\github\\pollock_88_modpath\\Test_Case_5\\test_3.hds",
+				"File name" : "H:\\github\\pollock_88_modpath\\Test_Case_5\\test_case_5.hds",
 				"Headers" : 
 				[
 					[             "TSTP",             "SPER",           "PERTIM",            "TOTIM",             "ITEM",             "NCOL",             "NROW",             "ILAY" ],
@@ -140,12 +140,12 @@
 							"SPER" : 1,
 							"TSTP" : 1
 						},
-						"test_3.cbc" : 
+						"test_case_5.cbc" : 
 						{
 							"SPER" : 1,
 							"TSTP" : 1
 						},
-						"test_3.hds" : 
+						"test_case_5.hds" : 
 						{
 							"SPER" : 1,
 							"TSTP" : 1
@@ -157,12 +157,12 @@
 							"SPER" : 2,
 							"TSTP" : 1
 						},
-						"test_3.cbc" : 
+						"test_case_5.cbc" : 
 						{
 							"SPER" : 2,
 							"TSTP" : 1
 						},
-						"test_3.hds" : 
+						"test_case_5.hds" : 
 						{
 							"SPER" : 2,
 							"TSTP" : 1
@@ -174,12 +174,12 @@
 							"SPER" : 3,
 							"TSTP" : 1
 						},
-						"test_3.cbc" : 
+						"test_case_5.cbc" : 
 						{
 							"SPER" : 3,
 							"TSTP" : 1
 						},
-						"test_3.hds" : 
+						"test_case_5.hds" : 
 						{
 							"SPER" : 3,
 							"TSTP" : 1
@@ -191,12 +191,12 @@
 							"SPER" : 4,
 							"TSTP" : 1
 						},
-						"test_3.cbc" : 
+						"test_case_5.cbc" : 
 						{
 							"SPER" : 4,
 							"TSTP" : 1
 						},
-						"test_3.hds" : 
+						"test_case_5.hds" : 
 						{
 							"SPER" : 4,
 							"TSTP" : 1
@@ -208,12 +208,12 @@
 							"SPER" : 5,
 							"TSTP" : 1
 						},
-						"test_3.cbc" : 
+						"test_case_5.cbc" : 
 						{
 							"SPER" : 5,
 							"TSTP" : 1
 						},
-						"test_3.hds" : 
+						"test_case_5.hds" : 
 						{
 							"SPER" : 5,
 							"TSTP" : 1
@@ -225,12 +225,12 @@
 							"SPER" : 6,
 							"TSTP" : 1
 						},
-						"test_3.cbc" : 
+						"test_case_5.cbc" : 
 						{
 							"SPER" : 6,
 							"TSTP" : 1
 						},
-						"test_3.hds" : 
+						"test_case_5.hds" : 
 						{
 							"SPER" : 6,
 							"TSTP" : 1
@@ -242,12 +242,12 @@
 							"SPER" : 7,
 							"TSTP" : 1
 						},
-						"test_3.cbc" : 
+						"test_case_5.cbc" : 
 						{
 							"SPER" : 7,
 							"TSTP" : 1
 						},
-						"test_3.hds" : 
+						"test_case_5.hds" : 
 						{
 							"SPER" : 7,
 							"TSTP" : 1
@@ -259,12 +259,12 @@
 							"SPER" : 8,
 							"TSTP" : 1
 						},
-						"test_3.cbc" : 
+						"test_case_5.cbc" : 
 						{
 							"SPER" : 8,
 							"TSTP" : 1
 						},
-						"test_3.hds" : 
+						"test_case_5.hds" : 
 						{
 							"SPER" : 8,
 							"TSTP" : 1
@@ -276,12 +276,12 @@
 							"SPER" : 9,
 							"TSTP" : 1
 						},
-						"test_3.cbc" : 
+						"test_case_5.cbc" : 
 						{
 							"SPER" : 9,
 							"TSTP" : 1
 						},
-						"test_3.hds" : 
+						"test_case_5.hds" : 
 						{
 							"SPER" : 9,
 							"TSTP" : 1
@@ -293,12 +293,12 @@
 							"SPER" : 10,
 							"TSTP" : 1
 						},
-						"test_3.cbc" : 
+						"test_case_5.cbc" : 
 						{
 							"SPER" : 10,
 							"TSTP" : 1
 						},
-						"test_3.hds" : 
+						"test_case_5.hds" : 
 						{
 							"SPER" : 10,
 							"TSTP" : 1
@@ -310,12 +310,12 @@
 							"SPER" : 11,
 							"TSTP" : 1
 						},
-						"test_3.cbc" : 
+						"test_case_5.cbc" : 
 						{
 							"SPER" : 11,
 							"TSTP" : 1
 						},
-						"test_3.hds" : 
+						"test_case_5.hds" : 
 						{
 							"SPER" : 11,
 							"TSTP" : 1
@@ -324,7 +324,7 @@
 				]
 			},
 			"Model type" : "MODFLOW",
-			"NAME file" : "test_3.nam",
+			"NAME file" : "test_case_5.nam",
 			"Note(s)" : 
 			[
 				"Successfully initialized MODFLOW.",

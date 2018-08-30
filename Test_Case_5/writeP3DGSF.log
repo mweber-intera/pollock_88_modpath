@@ -16,11 +16,11 @@
 		{
 			"Elapsed" : 
 			{
-				"minutes" : 4.23187500e-003,
-				"seconds" : 2.53912500e-001
+				"minutes" : 3.90110667e-003,
+				"seconds" : 2.34066400e-001
 			},
-			"Finished" : "Wed Aug 29 09:09:32 2018\n",
-			"Started" : "Wed Aug 29 09:09:32 2018\n"
+			"Finished" : "Thu Aug 30 16:19:26 2018\n",
+			"Started" : "Thu Aug 30 16:19:26 2018\n"
 		}
 	},
 	{
@@ -38,12 +38,12 @@
 			{
 				"CHD" : 
 				{
-					"Binary_File" : "test_3.cbc",
+					"Binary_File" : "test_case_5.cbc",
 					"Binary_Header" : "CONSTANT HEAD"
 				},
 				"WEL" : 
 				{
-					"Binary_File" : "test_3.cbc",
+					"Binary_File" : "test_case_5.cbc",
 					"Binary_Header" : "WELLS"
 				}
 			},
@@ -57,7 +57,7 @@
 				"Type" : "Structured"
 			},
 			"Model type" : "MODFLOW",
-			"NAME file" : "test_3.nam",
+			"NAME file" : "test_case_5.nam",
 			"Note(s)" : 
 			[
 				"Successfully initialized MODFLOW.",

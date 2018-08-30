@@ -61,7 +61,7 @@ for sp in range(nper):
 wel = flopy.modflow.ModflowWel(mf,stress_period_data=wel_spd) # well package
 
 # CHD
-chd_df = pd.read_csv(os.path.join(model_ws,'chb_t1.csv')) # read in csv with pandas
+chd_df = pd.read_csv(os.path.join('preproccessing','chb_t1.csv')) # read in csv with pandas
 
 chd_dat = []
 for i, vals in chd_df.iterrows(): # fancy for loop that returns the index in i, and the values in vals
@@ -103,7 +103,7 @@ mp.write_input() # write files
 mp.run_model(silent=False) # run model
 
 # import digitized data csv
-digitized = pd.read_csv(os.path.join(model_ws,'figure_7_distances.csv'))
+digitized = pd.read_csv(os.path.join('preproccessing','figure_7_distances.csv'))
 
 
 # import modpath results

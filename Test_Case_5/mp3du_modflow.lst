@@ -5,44 +5,44 @@
  LIST FILE: mp3du_modflow.lst
                          UNIT    2
 
- OPENING test_3.dis
+ OPENING test_case_5.dis
  FILE TYPE:DIS   UNIT   11   STATUS:OLD    
  FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
 
- OPENING test_3.bas
+ OPENING test_case_5.bas
  FILE TYPE:BAS6   UNIT   13   STATUS:OLD    
  FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
 
- OPENING test_3.lpf
+ OPENING test_case_5.lpf
  FILE TYPE:LPF   UNIT   15   STATUS:OLD    
  FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
 
- OPENING test_3.oc
+ OPENING test_case_5.oc
  FILE TYPE:OC   UNIT   14   STATUS:OLD    
  FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
  IGNORING UNKNOWN FILE TYPE IN NAME FILE: PCG
 
- OPENING test_3.pcg
+ OPENING test_case_5.pcg
  FILE TYPE:PCG   UNIT   27   STATUS:UNKNOWN
  FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
 
- OPENING test_3.chd
+ OPENING test_case_5.chd
  FILE TYPE:CHD   UNIT   24   STATUS:OLD    
  FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
 
- OPENING test_3.wel
+ OPENING test_case_5.wel
  FILE TYPE:WEL   UNIT   20   STATUS:OLD    
  FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
 
- OPENING test_3.cbc
+ OPENING test_case_5.cbc
  FILE TYPE:DATA(BINARY)   UNIT   53   STATUS:UNKNOWN
  FORMAT:BINARY                 ACCESS:SEQUENTIAL          
 
- OPENING test_3.hds
+ OPENING test_case_5.hds
  FILE TYPE:DATA(BINARY)   UNIT   51   STATUS:UNKNOWN
  FORMAT:BINARY                 ACCESS:SEQUENTIAL          
 
- OPENING mp3du_test_3.p3d
+ OPENING mp3du_test_case_5.p3d
  FILE TYPE:PATH   UNIT   28   STATUS:OLD    
  FORMAT:FORMATTED              ACCESS:SEQUENTIAL          
 
