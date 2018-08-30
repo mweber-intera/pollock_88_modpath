@@ -9,7 +9,7 @@ model_ws = os.path.join('workspace')
 if not os.path.exists(model_ws): os.mkdir(model_ws)
 gw_codes = os.path.join('..','gw_codes')
 exe = os.path.join(gw_codes,'mf2k-chprc08spl.exe')
-mf = flopy.modflow.Modflow('pollock_88', version='mf2k', exe_name =exe,model_ws=model_ws)
+mf = flopy.modflow.Modflow('test_case_1', version='mf2k', exe_name =exe,model_ws=model_ws)
 
 
 # DIS
@@ -61,7 +61,7 @@ for sp in range(nper):
 wel = flopy.modflow.ModflowWel(mf,stress_period_data=wel_spd) # well package
 
 # CHD
-chd_df = pd.read_csv('chb_t1.csv') # read in csv with pandas
+chd_df = pd.read_csv(os.path.join(model_ws,'chb_t1.csv')) # read in csv with pandas
 
 chd_dat = []
 for i, vals in chd_df.iterrows(): # fancy for loop that returns the index in i, and the values in vals
@@ -87,7 +87,7 @@ mf.run_model()
 
 mpexe = os.path.join(gw_codes,'mp6.exe')
 
-mp = flopy.modpath.Modpath('pollock_88_mp',exe_name=mpexe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
+mp = flopy.modpath.Modpath('test_case_1',exe_name=mpexe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
 
 mp_ibound = mf.bas6.ibound.array # use ibound from modflow model
 mpb = flopy.modpath.ModpathBas(mp,-1e30,ibound=mp_ibound,prsity =.3) # make modpath bas object
@@ -103,11 +103,11 @@ mp.write_input() # write files
 mp.run_model(silent=False) # run model
 
 # import digitized data csv
-digitized = pd.read_csv('figure_7_distances.csv')
+digitized = pd.read_csv(os.path.join(model_ws,'figure_7_distances.csv'))
 
 
 # import modpath results
-with open(os.path.join(model_ws,'pollock_88_mp.mppth'), 'r') as f:
+with open(os.path.join(model_ws,'test_case_1.mppth'), 'r') as f:
     lines_after_header = f.readlines()[3:]
     step = []
     step2 = []
@@ -195,12 +195,12 @@ output.to_csv(os.path.join(outpath, out_csv),index=False)
 # make figures
 import flopy.utils.binaryfile as bf
 
-headobj = bf.HeadFile(os.path.join(model_ws,'pollock_88.hds')) # make head object with hds file
+headobj = bf.HeadFile(os.path.join(model_ws,'test_case_1.hds')) # make head object with hds file
 times = [2500, 5000, 7500] # get the times
 # print(times) # should be every 500 days
 
-pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'pollock_88_mp.mppth')) # create pathline object
-epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'pollock_88_mp.mpend')) # create endpoint object
+pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'test_case_1.mppth')) # create pathline object
+epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'test_case_1.mpend')) # create endpoint object
 
 fig_list = [] # initialize list of figure paths we will use to make a gif
 for time in times:
