@@ -11,7 +11,7 @@ These tests were compiled with python using the following packages and versions:
 - geopandas = 0.4.0
 - matplotlib = 2.2.2
 - flopy = 3.2.9 
-- numpy = 1.14.2
+- numpy = 1.15.0
 
 If you do not yet have these packages installed, we recommend using the [conda](http://conda.pydata.org/docs/intro.html) package manager to install all the requirements 
 
