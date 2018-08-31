@@ -7,7 +7,7 @@ import pandas as pd
 
 model_ws = os.path.join('workspace')
 if not os.path.exists(model_ws): os.mkdir(model_ws)
-gw_codes = os.path.join('..','gw_codes')
+gw_codes = os.path.join('gw_codes')
 exe = os.path.join(gw_codes,'mf2k-chprc08spl.exe')
 mf = flopy.modflow.Modflow('test_case_1', version='mf2k', exe_name =exe,model_ws=model_ws)
 

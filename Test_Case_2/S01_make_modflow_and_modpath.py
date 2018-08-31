@@ -8,7 +8,7 @@ from shapely.geometry import LineString, Point
 
 
 modelname = 'test_case_2'
-exe = os.path.join('..','gw_codes','mf2k-chprc08spl.exe')
+exe = os.path.join('gw_codes','mf2k-chprc08spl.exe')
 model_ws = os.path.join('workspace')
 mf = flopy.modflow.Modflow(modelname, version='mf2k', exe_name =exe,model_ws=model_ws)
 
@@ -82,7 +82,7 @@ success, buff = mf.run_model(silent=False)
 
 #modpath
 
-mpexe = os.path.join('..',"gw_codes","mp6.exe")
+mpexe = os.path.join("gw_codes","mp6.exe")
 
 mp = flopy.modpath.Modpath('test_case_2',exe_name=mpexe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
 

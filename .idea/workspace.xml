@@ -21,7 +21,32 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="S02_flopy_make.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Test_Case_4/S02_flopy_make.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="474">
+              <caret line="366" lean-forward="true" selection-start-line="366" selection-end-line="366" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="S04_read_timeseries.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Test_Case_4/S04_read_timeseries.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="67" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -54,6 +79,12 @@
       <find>hk</find>
       <find>modflowbas</find>
       <find>pollock</find>
+      <find>endpoint</find>
+      <find>mpend</find>
+      <find>mppth</find>
+      <find>modpath</find>
+      <find>sim</find>
+      <find>load</find>
     </findStrings>
     <replaceStrings>
       <replace>4,</replace>
@@ -79,14 +110,19 @@
         <option value="$PROJECT_DIR$/Test_Case_3/test_1_50/50_ft_mp.py" />
         <option value="$PROJECT_DIR$/Test_Case_3/test_1_50/ymax_and_stagnation_point_50.py" />
         <option value="$PROJECT_DIR$/Test_Case_2/pollock_88_ex2.py" />
+        <option value="$PROJECT_DIR$/Test_Case_3/S02_50_ft_mp.py" />
+        <option value="$PROJECT_DIR$/Test_Case_3/S01_50_ft.py" />
+        <option value="$PROJECT_DIR$/Test_Case_3/S03_ymax_and_stagnation_point_50.py" />
+        <option value="$PROJECT_DIR$/Test_Case_4/S04_read_timeseries.py" />
+        <option value="$PROJECT_DIR$/Test_Case_4/S02_flopy_make.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="1912" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="168" />
+    <option name="y" value="-9" />
+    <option name="width" value="980" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -94,7 +130,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -111,6 +146,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -129,8 +165,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.pollock_88_ex2">
-    <configuration name="50_ft" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.S02_flopy_make">
+    <configuration name="S01_50_ft" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pollock_88_modpath" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -138,17 +174,17 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test_Case_3/test_1_50" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test_Case_3" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test_Case_3/test_1_50/50_ft.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test_Case_3/S01_50_ft.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="50_ft_mp" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="S01_make_model_grid" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pollock_88_modpath" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -156,17 +192,17 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test_Case_3/test_1_50" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test_Case_4" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test_Case_3/test_1_50/50_ft_mp.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test_Case_4/S01_make_model_grid.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="S00_pngs_2_tiffs" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="S02_flopy_make" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="pollock_88_modpath" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -174,11 +210,29 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test_Case_4" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/S00_pngs_2_tiffs.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test_Case_4/S02_flopy_make.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="S03_ymax_and_stagnation_point_50" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="pollock_88_modpath" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test_Case_3" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test_Case_3/S03_ymax_and_stagnation_point_50.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -220,39 +274,21 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="ymax_and_stagnation_point_50" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="pollock_88_modpath" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test_Case_3/test_1_50" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test_Case_3/test_1_50/ymax_and_stagnation_point_50.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
     <list>
       <item itemvalue="Python.build_pollock_88" />
-      <item itemvalue="Python.S00_pngs_2_tiffs" />
-      <item itemvalue="Python.50_ft" />
-      <item itemvalue="Python.50_ft_mp" />
-      <item itemvalue="Python.ymax_and_stagnation_point_50" />
       <item itemvalue="Python.pollock_88_ex2" />
+      <item itemvalue="Python.S03_ymax_and_stagnation_point_50" />
+      <item itemvalue="Python.S01_50_ft" />
+      <item itemvalue="Python.S02_flopy_make" />
+      <item itemvalue="Python.S01_make_model_grid" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.S02_flopy_make" />
+        <item itemvalue="Python.S01_make_model_grid" />
+        <item itemvalue="Python.S03_ymax_and_stagnation_point_50" />
+        <item itemvalue="Python.S01_50_ft" />
         <item itemvalue="Python.pollock_88_ex2" />
-        <item itemvalue="Python.50_ft" />
-        <item itemvalue="Python.ymax_and_stagnation_point_50" />
-        <item itemvalue="Python.50_ft_mp" />
-        <item itemvalue="Python.S00_pngs_2_tiffs" />
       </list>
     </recent_temporary>
   </component>
@@ -278,18 +314,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32982087" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16126901" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.8964029" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" weight="0.32897604" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="7" visible="true" weight="0.24183007" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.36467236" />
+      <window_info anchor="bottom" id="Python Console" order="7" weight="0.24639769" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39769453" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -322,15 +358,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Test_Case_2/pollock_88_ex2.py" />
-    <entry file="file://$PROJECT_DIR$/Write_starting_locations.py" />
-    <entry file="file://$PROJECT_DIR$/build_pollock_88.py" />
-    <entry file="file://$PROJECT_DIR$/pollock_88_ex2.py" />
-    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modpath/mpbas.py" />
-    <entry file="file://$PROJECT_DIR$/read_pth_file.py" />
-    <entry file="file://$PROJECT_DIR$/zonal_bud_ex2.py" />
-    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/utils/zonbud.py" />
-    <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modpath/mpsim.py" />
     <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modpath/mp.py" />
     <entry file="file://$PROJECT_DIR$/Write_starting_locations.py" />
     <entry file="file://H:/Miniconda3/Lib/site-packages/flopy/modflow/mfbcf.py" />
@@ -379,6 +406,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Test_Case_3/test_1_50/50_ft.py" />
     <entry file="file://$PROJECT_DIR$/Test_Case_2/pollock_88_ex2.py" />
+    <entry file="file://$PROJECT_DIR$/Test_Case_2/S01_make_modflow_and_modpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4163">
+          <caret line="21" column="58" lean-forward="true" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test_Case_1/S01_build_pollock_88.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="113" column="14" lean-forward="true" selection-start-line="105" selection-start-column="26" selection-end-line="113" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test_Case_4/S03_modpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="189" lean-forward="true" selection-start-line="11" selection-end-line="189" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test_Case_3/S02_50_ft_mp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test_Case_3/S01_50_ft.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1700">
+          <caret line="105" selection-start-line="105" selection-end-line="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test_Case_3/S03_ymax_and_stagnation_point_50.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test_Case_4/S01_make_model_grid.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test_Case_4/S04_read_timeseries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="67" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test_Case_4/S02_flopy_make.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="366" lean-forward="true" selection-start-line="366" selection-end-line="366" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>

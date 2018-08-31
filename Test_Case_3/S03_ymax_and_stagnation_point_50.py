@@ -7,7 +7,7 @@ model_ws = os.path.join('workspace')
 # ymax
 # step 1: identify maximum y value from endpoint pathfile
 
-endpoint = os.path.join('workspace','test_case_3.mpend')
+#endpoint = os.path.join('workspace','test_case_3.mpend')
 pathline = os.path.join('workspace','test_case_3.mppth')
 
 well_x = 31025
@@ -18,11 +18,11 @@ well_y = 19950 + 25
 
 
 
-with open(os.path.join('workspace','test_case_3.mpend'), 'r') as f:
-    lines_after_header = f.readlines()[6:]
+with open(os.path.join('workspace','test_case_3.mppth'), 'r') as f:
+    lines_after_header = f.readlines()[3:]
     step = []
     for line in lines_after_header:
-        step.append(line.split()[27])
+        step.append(line.split()[6])
 floaty = [float(x) for x in step]
 maxy = max(floaty)
 mymax = maxy-well_y

@@ -5,7 +5,7 @@ import os
 import matplotlib.pyplot as plt
 
 modelname = 'test_case_3'
-exe = os.path.join('..','gw_codes','mf2k-chprc08spl.exe') # moved the exes here for clean up, RKK
+exe = os.path.join('gw_codes','mf2k-chprc08spl.exe') # moved the exes here for clean up, RKK
 mp6_exe = os.path.join('..','gw_codes','mp6.exe')
 model_ws = os.path.join('workspace') # moved model here to keep things orginized, RKK
 mf = flopy.modflow.Modflow.load('test_case_3.nam',model_ws=model_ws)

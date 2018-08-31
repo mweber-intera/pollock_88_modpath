@@ -18,7 +18,7 @@ names = [item.replace(' ','_') for item in names]
 ts = pd.read_csv(os.path.join(model_ws,modelname+'.mp.tim_ser'),skiprows=3,names=names,delim_whitespace=True)
 ts = ts.loc[ts['Tracking_Time'] <= 3652]
 
-mf = flopy.modflow.Modflow.load(modelname+'.nam',model_ws=model_ws)
+#mf = flopy.modflow.Modflow.load(modelname+'.nam',model_ws=model_ws)
 
 sr = mf.sr
 Lx = np.sum(mf.dis.delr.array)
