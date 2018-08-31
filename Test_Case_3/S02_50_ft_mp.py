@@ -4,11 +4,11 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 
-modelname = 'test_1'
+modelname = 'test_case_3'
 exe = os.path.join('..','gw_codes','mf2k-chprc08spl.exe') # moved the exes here for clean up, RKK
 mp6_exe = os.path.join('..','gw_codes','mp6.exe')
 model_ws = os.path.join('workspace') # moved model here to keep things orginized, RKK
-mf = flopy.modflow.Modflow.load('test_1.nam',model_ws=model_ws)
+mf = flopy.modflow.Modflow.load('test_case_3.nam',model_ws=model_ws)
 
 
 def write_loc_file(file_nam,strt_time=0,input_style=1,backwards=True):
@@ -43,7 +43,7 @@ starting_loc = os.path.join(model_ws,'starting_pts.loc')
 
 
 
-mp = flopy.modpath.Modpath('test_1',exe_name=mp6_exe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
+mp = flopy.modpath.Modpath('test_case_3',exe_name=mp6_exe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
 mp_ibound = mf.bas6.ibound.array # use ibound from modflow model
 mpb = flopy.modpath.ModpathBas(mp,-1e30,ibound=mp_ibound,prsity =.3) # make modpath bas object
 
@@ -92,8 +92,8 @@ frf = cbb.get_data(text='FLOW RIGHT FACE', totim=times[-1])[0]
 
 
 
-pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'test_1.mppth')) # create pathline object
-epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'test_1.mpend')) # create endpoint object
+pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'test_case_3.mppth')) # create pathline object
+epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'test_case_3.mpend')) # create endpoint object
 
 
 fig = plt.figure(figsize=(10,10))

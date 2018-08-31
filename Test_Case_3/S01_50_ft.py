@@ -5,7 +5,7 @@ import flopy.utils.binaryfile as bf
 import os
 
 #note: change the version from modflow 2005 to mf2k. Guessed at the version code, because I couldn't figure out the help
-modelname = 'test_1'
+modelname = 'test_case_3'
 exe = os.path.join("..","gw_codes",'mf2k-chprc08spl.exe') # moved the exes here for clean up, RKK
 model_ws = os.path.join('workspace') # moved model here to keep things orginized, RKK
 mf = flopy.modflow.Modflow(modelname, version='mf2k', exe_name =exe,model_ws=model_ws)

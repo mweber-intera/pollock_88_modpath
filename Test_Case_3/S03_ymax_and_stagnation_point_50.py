@@ -4,12 +4,11 @@ import numpy as np
 import os
 
 model_ws = os.path.join('workspace')
-final_file = os.path.join('..','..', 'pass_fail.csv')
 # ymax
 # step 1: identify maximum y value from endpoint pathfile
 
-endpoint = os.path.join('workspace','test_1.mpend')
-pathline = os.path.join('workspace','test_1.mppth')
+endpoint = os.path.join('workspace','test_case_3.mpend')
+pathline = os.path.join('workspace','test_case_3.mppth')
 
 well_x = 31025
 well_y = 9975
@@ -19,7 +18,7 @@ well_y = 19950 + 25
 
 
 
-with open(os.path.join('workspace','test_1.mpend'), 'r') as f:
+with open(os.path.join('workspace','test_case_3.mpend'), 'r') as f:
     lines_after_header = f.readlines()[6:]
     step = []
     for line in lines_after_header:
@@ -49,7 +48,7 @@ percent_difference_ymin = (((0-ymax) - mymin)/(((0-ymax)+mymin)/2))*100
 
 # stagnation point
 # step 1: identify maximum x value from pathline file
-with open(os.path.join('workspace','test_1.mppth'), 'r') as f:
+with open(os.path.join('workspace','test_case_3.mppth'), 'r') as f:
     lines_after_header = f.readlines()[3:]
     step = []
     for line in lines_after_header:
@@ -74,7 +73,7 @@ percent_difference_xstag = ((xstag - mmaxx)/((xstag+mmaxx)/2))*100
 
 # checking points along the curve
 # step 1: pull y values from pathline file
-with open(os.path.join('workspace','test_1.mppth'), 'r') as f:
+with open(os.path.join('workspace','test_case_3.mppth'), 'r') as f:
     lines_after_header = f.readlines()[3:]
     step = []
     for line in lines_after_header:
@@ -84,7 +83,7 @@ mp_y = [float(x) for x in step]
 #print(mp_y)
 
 # pull modpath x
-with open(os.path.join('workspace','test_1.mppth'), 'r') as f:
+with open(os.path.join('workspace','test_case_3.mppth'), 'r') as f:
     lines_after_header2 = f.readlines()[3:]
     step2 = []
     for line in lines_after_header2:
