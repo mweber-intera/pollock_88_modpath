@@ -83,20 +83,20 @@
            IN:                                      IN:
            ---                                      ---
              STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =      101744.5160         CONSTANT HEAD =      101744.5160
+       CONSTANT HEAD =      101517.7970         CONSTANT HEAD =      101517.7970
                WELLS =           0.0000                 WELLS =           0.0000
 
-            TOTAL IN =      101744.5160              TOTAL IN =      101744.5160
+            TOTAL IN =      101517.7970              TOTAL IN =      101517.7970
 
           OUT:                                     OUT:
           ----                                     ----
              STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =       82289.7813         CONSTANT HEAD =       82289.7813
+       CONSTANT HEAD =       82063.0703         CONSTANT HEAD =       82063.0703
                WELLS =       19454.7266                 WELLS =       19454.7266
 
-           TOTAL OUT =      101744.5080             TOTAL OUT =      101744.5080
+           TOTAL OUT =      101517.7970             TOTAL OUT =      101517.7970
 
-            IN - OUT =       7.8125E-03              IN - OUT =       7.8125E-03
+            IN - OUT =           0.0000              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -147,20 +147,20 @@
            IN:                                      IN:
            ---                                      ---
              STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =      203489.0310         CONSTANT HEAD =      101744.5160
+       CONSTANT HEAD =      203035.5940         CONSTANT HEAD =      101517.7970
                WELLS =           0.0000                 WELLS =           0.0000
 
-            TOTAL IN =      203489.0310              TOTAL IN =      101744.5160
+            TOTAL IN =      203035.5940              TOTAL IN =      101517.7970
 
           OUT:                                     OUT:
           ----                                     ----
              STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =      164579.5620         CONSTANT HEAD =       82289.7813
+       CONSTANT HEAD =      164126.1410         CONSTANT HEAD =       82063.0703
                WELLS =       38909.4531                 WELLS =       19454.7266
 
-           TOTAL OUT =      203489.0160             TOTAL OUT =      101744.5080
+           TOTAL OUT =      203035.5940             TOTAL OUT =      101517.7970
 
-            IN - OUT =       1.5625E-02              IN - OUT =       7.8125E-03
+            IN - OUT =           0.0000              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -211,20 +211,20 @@
            IN:                                      IN:
            ---                                      ---
              STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =      305233.5620         CONSTANT HEAD =      101744.5160
+       CONSTANT HEAD =      304553.3750         CONSTANT HEAD =      101517.7970
                WELLS =           0.0000                 WELLS =           0.0000
 
-            TOTAL IN =      305233.5620              TOTAL IN =      101744.5160
+            TOTAL IN =      304553.3750              TOTAL IN =      101517.7970
 
           OUT:                                     OUT:
           ----                                     ----
              STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =      246869.3440         CONSTANT HEAD =       82289.7813
+       CONSTANT HEAD =      246189.2190         CONSTANT HEAD =       82063.0703
                WELLS =       58364.1797                 WELLS =       19454.7266
 
-           TOTAL OUT =      305233.5310             TOTAL OUT =      101744.5080
+           TOTAL OUT =      304553.4060             TOTAL OUT =      101517.7970
 
-            IN - OUT =       3.9062E-02              IN - OUT =       7.8125E-03
+            IN - OUT =      -2.3438E-02              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -275,20 +275,20 @@
            IN:                                      IN:
            ---                                      ---
              STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =      406978.0630         CONSTANT HEAD =      101744.5160
+       CONSTANT HEAD =      406071.1880         CONSTANT HEAD =      101517.7970
                WELLS =           0.0000                 WELLS =           0.0000
 
-            TOTAL IN =      406978.0630              TOTAL IN =      101744.5160
+            TOTAL IN =      406071.1880              TOTAL IN =      101517.7970
 
           OUT:                                     OUT:
           ----                                     ----
              STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =      329159.1250         CONSTANT HEAD =       82289.7813
+       CONSTANT HEAD =      328252.2810         CONSTANT HEAD =       82063.0703
                WELLS =       77818.9062                 WELLS =       19454.7266
 
-           TOTAL OUT =      406978.0310             TOTAL OUT =      101744.5080
+           TOTAL OUT =      406071.1880             TOTAL OUT =      101517.7970
 
-            IN - OUT =       3.1250E-02              IN - OUT =       7.8125E-03
+            IN - OUT =           0.0000              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 
@@ -339,20 +339,20 @@
            IN:                                      IN:
            ---                                      ---
              STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =      508722.5620         CONSTANT HEAD =      101744.5160
+       CONSTANT HEAD =      507589.0000         CONSTANT HEAD =      101517.7970
                WELLS =           0.0000                 WELLS =           0.0000
 
-            TOTAL IN =      508722.5620              TOTAL IN =      101744.5160
+            TOTAL IN =      507589.0000              TOTAL IN =      101517.7970
 
           OUT:                                     OUT:
           ----                                     ----
              STORAGE =           0.0000               STORAGE =           0.0000
-       CONSTANT HEAD =      411448.9060         CONSTANT HEAD =       82289.7813
+       CONSTANT HEAD =      410315.3440         CONSTANT HEAD =       82063.0703
                WELLS =       97273.6328                 WELLS =       19454.7266
 
-           TOTAL OUT =      508722.5310             TOTAL OUT =      101744.5080
+           TOTAL OUT =      507588.9690             TOTAL OUT =      101517.7970
 
-            IN - OUT =       2.3438E-02              IN - OUT =       7.8125E-03
+            IN - OUT =       2.3438E-02              IN - OUT =           0.0000
 
  PERCENT DISCREPANCY =           0.00     PERCENT DISCREPANCY =           0.00
 

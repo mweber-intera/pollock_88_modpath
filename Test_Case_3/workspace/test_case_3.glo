@@ -99,14 +99,14 @@
    LAYER FLAGS:
  LAYER       LAYTYP        LAYAVG         CHANI        LAYVKA        LAYWET
  ---------------------------------------------------------------------------
-    1             0             0     1.000E+00             0             0
+    1             1             0     1.000E+00             0             0
 
    INTERPRETATION OF LAYER FLAGS:
                         INTERBLOCK     HORIZONTAL    DATA IN
          LAYER TYPE   TRANSMISSIVITY   ANISOTROPY   ARRAY VKA   WETTABILITY
  LAYER      (LAYTYP)      (LAYAVG)       (CHANI)      (LAYVKA)      (LAYWET)
  ---------------------------------------------------------------------------
-    1      CONFINED      HARMONIC     1.000E+00    VERTICAL K  NON-WETTABLE
+    1   CONVERTIBLE      HARMONIC     1.000E+00    VERTICAL K  NON-WETTABLE
 
     2560000 ELEMENTS IN X ARRAY ARE USED BY LPF
           6 ELEMENTS IN IX ARRAY ARE USED BY LPF

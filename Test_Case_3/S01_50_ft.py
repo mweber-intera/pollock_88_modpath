@@ -40,7 +40,7 @@ strt[:, :, -1] = 199.048
 bas = flopy.modflow.ModflowBas(mf, ibound=ibound, strt=strt)
 
 #LPF change hydraulic conductivity here
-lpf = flopy.modflow.ModflowLpf(mf, hk=1000, vka=5000., ipakcb=53)
+lpf = flopy.modflow.ModflowLpf(mf, hk=1000, vka=5000., laytyp=1, ipakcb=53)
 
 #OC
 spd = {} # slight change to oc so we can save heads and budget for all stress periods
