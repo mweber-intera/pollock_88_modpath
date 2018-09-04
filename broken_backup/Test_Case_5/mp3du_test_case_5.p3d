@@ -1,0 +1,8 @@
+# MP3DU input file
+
+  CONSTANT       3           (10f12.4)        -1 VELOCITY METHOD L1
+  CONSTANT    0.25           (10f12.4)        -1 POROSITY L1
+  CONSTANT     0.0           (10f12.4)        -1 RETARDATION L1
+  CONSTANT     0.0           (10f12.4)        -1 DISPH L1
+  CONSTANT     0.0           (10f12.4)        -1 DISPT L1
+  CONSTANT     0.0           (10f12.4)        -1 DISPV L1

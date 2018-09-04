@@ -1,2 +1,2 @@
 rem runme.bat for test case 2
-python S01_make_modflow_and_modpath.py
+python S01_tc2.py

@@ -1,14 +1,9 @@
 # create a modflow model and store it in \workspace
-python S01_make_model_grid.py
+python S01_pre_process.py
 
 # run modflow model in flopy
-python S02_flopy_make.py
+python S02_tc4.py
 
-rem #run modpath model
-rem python S03_modpath.py
-
-rem # create convexhull shapefile for 10 years
-rem python S04_read_timeseries.py
 
 # create stats table comparing  10 year capture zones
-python S05_compare_capturezones.py
+python S03_post_process.py

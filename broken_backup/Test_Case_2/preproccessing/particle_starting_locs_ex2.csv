@@ -1,0 +1,6 @@
+ParticleID,GroupNumber,Grid,Layer,Row,Column,LocalX,LocalY,LocalZ,ReleaseTime,Label
+1,1,1,1,1,1,0.001,0,0.5,0,GP01
+2,1,1,1,1,3,0.5,0,0.5,0,GP01
+3,1,1,1,1,5,0.5,0,0.5,0,GP01
+4,1,1,1,1,7,0.5,0,0.5,0,GP01
+5,1,1,1,1,9,0.5,0,0.5,0,GP01

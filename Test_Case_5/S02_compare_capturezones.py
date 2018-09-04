@@ -26,15 +26,51 @@ for row in pd.DataFrame(gwpath_shp.bounds).iterrows():
 
 columns = ['Case','Area_sqft','Area_acre','Left_extent','Lower_extent','Right_extent','Upper_extent']
 
+offset = 160/2
+xul, yul = 5661342.80316535942256451 - offset, 19628009.74438977241516113 + offset
+yll = yul - 8000.
+gw_minx_rel = gw_minx-xul
+gw_maxx_rel = gw_maxx-xul
+gw_miny_rel = gw_miny - yll
+gw_maxy_rel = gw_maxy - yll
+mp3du_minx_rel = mp3du_minx-xul
+mp3du_maxx_rel = mp3du_maxx-xul
+mp3du_miny_rel = mp3du_miny - yll
+mp3du_maxy_rel = mp3du_maxy - yll
+
 def perc_diff(v1,v2):
-	return abs((v2-v1)/(v2+v1))
+	return abs((v2-v1)/(v2+v1))*100
 area_pd = perc_diff(mp3du_area,gwpath_area)
+lext_pd = perc_diff(mp3du_minx_rel,gw_minx_rel)
+rext_pd = perc_diff(mp3du_maxx_rel,gw_maxx_rel)
+uext_pd = perc_diff(mp3du_maxy_rel,gw_maxy_rel)
+lwext_pd = perc_diff(mp3du_miny_rel,gw_miny_rel)
 
 pf = 'Fail'
 if area_pd <= 10.:
 	pf = 'Pass'
 
-data = {'Name' : ['GWpath','Modpath6','Percent Difference','Pass/Fail'],'Area_sqft':[gwpath_area, mp3du_area, area_pd, pf],'Area_acre':[gwpath_area*2.2957e-5, mp3du_area*2.2957e-5,area_pd,pf],'Left_extent':[gw_minx,mp3du_minx,'',''],'Lower_extent':[gw_miny,mp3du_miny,'',''],'Right_extent':[gw_maxx,mp3du_maxx,'',''],'Upper_extent':[gw_maxy,mp3du_maxy,'','']}
+pfl = 'Fail'
+if lext_pd <= 10.:
+	pfl = 'Pass'
+
+pfr = 'Fail'
+if rext_pd <= 10.:
+	pfr = 'Pass'
+
+pfu = 'Fail'
+if uext_pd <= 10.:
+	pfu = 'Pass'
+
+pflw = 'Fail'
+if lwext_pd <= 10.:
+	pflw = 'Pass'
+
+
+data = {'Name' : ['GWpath','Modpath6','Percent Difference','Pass/Fail'],'Area_sqft':[gwpath_area, mp3du_area, area_pd, pf],
+		'Area_acre':[gwpath_area*2.2957e-5, mp3du_area*2.2957e-5,area_pd,pf],'Left_extent':[gw_minx_rel,mp3du_minx_rel,lext_pd, pfl],
+		'Lower_extent':[gw_miny_rel,mp3du_miny_rel,lwext_pd, pflw],'Right_extent':[gw_maxx_rel,mp3du_maxx_rel,rext_pd, pfr],
+		'Upper_extent':[gw_maxy_rel,mp3du_maxy_rel,uext_pd, pfu]}
 df = pd.DataFrame(data)
 
 df.to_csv(os.path.join('output','tc5_results.csv'),index=False)
@@ -42,7 +78,7 @@ df.to_csv(os.path.join('output','tc5_results.csv'),index=False)
 def coords_to_mf_cords(xll,yll,ls):
 	new_points = []
 	for point in ls.coords:
-		new_points.append((point[0]-xul,point[1]-yll))  
+		new_points.append((point[0]-xll,point[1]-yll))
 	return LineString(new_points)
 
 
