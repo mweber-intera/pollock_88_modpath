@@ -249,6 +249,3 @@ times = [0] + headobj.get_times() # get the times
 
 pthobj = flopy.utils.PathlineFile(os.path.join(model_ws,'test_case_2.mppth')) # create pathline object
 epdobj = flopy.utils.EndpointFile(os.path.join(model_ws,'test_case_2.mpend')) # create endpoint object
-
-figures = os.path.join('output','figures')
-if not os.path.exists(figures): os.mkdir(figures)
