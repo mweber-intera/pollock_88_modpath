@@ -12,7 +12,7 @@ from flopy.utils.reference import SpatialReference
 
 
 modelname = 'test_case_4'
-exe = os.path.join('gw_codes','mf2k-chprc08spl.exe')
+exe = "../gw_codes/mf2k-chprc08spl.exe"
 model_ws = os.path.join('workspace')
 if not os.path.exists(model_ws): os.mkdir(model_ws)
 
@@ -22,7 +22,7 @@ if not os.path.exists(output): os.mkdir(output)
 shapefiles = os.path.join('output','shapefiles')
 if not os.path.exists(shapefiles): os.mkdir(shapefiles)
 
-griddata = os.path.join('preproccessing')
+griddata = 'preproccessing'
 
 mf = flopy.modflow.Modflow(modelname, version='mf2k', exe_name =exe,model_ws=model_ws)
 
@@ -89,8 +89,8 @@ chd = flopy.modflow.ModflowChd(mf,stress_period_data=chd_spd,ipakcb=53)
 
 #LPF change hydraulic conductivity here
 
-gdf = gpd.read_file(os.path.join(griddata,f'grid_offset_{nrow}.shp'))
-
+#gdf = gpd.read_file(os.path.join(griddata,f'grid_offset_{nrow}.shp'))
+gdf = gpd.read_file(griddata+f'/grid_offset_{nrow}.shp')
 
 hk_array = np.ones((nlay, nrow, ncol), dtype=np.int32)
 for i in range(len(gdf)):
@@ -290,7 +290,7 @@ starting_loc = os.path.join(model_ws,'starting_pts.loc')
 
 write_loc_file(starting_loc,starting_csv=os.path.join(model_ws,'starting_locs.csv'))
 
-mp6_exe = os.path.join('gw_codes','mp6.exe')
+mp6_exe = "../gw_codes/mp6.exe"
 
 mp = flopy.modpath.Modpath('test_case_4',exe_name=mp6_exe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
 mp_ibound = mf.bas6.ibound.array # use ibound from modflow model

@@ -2,15 +2,7 @@
    "MP3DU_BIN" : "output/output_PATHLINE.bin",
    "OUTPUTS" : [
      { "SUMMARY" : {
-     } },
-     { "ASCII_TABLE" : {
-        "FILE_NAME" : "output/output_table.dat"
-      } },
-      { "POINTS_IN_TIME" : {
-        "FILE_NAME" : "output/shapefiles/pts_in_time.shp",
-        "TIME_CONVERSION" : 2.7397E-03,
-        "TIME_DT" : 10.0
-      } },      
+     } }, 
       { "ENDPOINT" : {
         "FILE_NAME" : "output/shapefiles/Endpoint_mp3du.shp"
       } },

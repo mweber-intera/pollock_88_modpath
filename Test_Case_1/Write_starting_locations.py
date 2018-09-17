@@ -29,15 +29,11 @@ def find_row_col(dis,globx,globy):
         locx = (gx - Lx_temp)/delc[0]
         locy = (1-(Ly_temp-gy))/delr[0]
 
-        # print(gx,row)
-        # print(gy, col)
-        # print(Lx_temp,Ly_temp)
-        # print(locx,locy)
-        # exit()
+
         # if (row >= 0) and (row < nrow) and (col >= 0) and (col < ncol):  # make sure the points are in model domain
         if (locx >= 0) and (locy >= 0):# and(locx <=1) and (locy <= 1):
-            print(locx, col, Lx_temp)
-            print(locy, row, Ly_temp)
+            # print(locx, col, Lx_temp)
+            # print(locy, row, Ly_temp)
             print('---')
             rows.append(row-1)
             cols.append(col)
@@ -121,7 +117,7 @@ def write_file(file_nam,dis,strt_time,n,input_style=1):
             file.write('\n')
 
 def write_file_ex2(file_nam,dis,strt_time,n,input_style=1):
-    df = pd.read_csv('particle_starting_locs_ex2.csv')
+    df = pd.read_csv(os.path.join('preproccessing','particle_starting_locs_ex2.csv'))
     columns = ['ParticleID', 'GroupNumber', 'Grid', 'Layer', 'Row', 'Column', 'LocalX', 'LocalY', 'LocalZ',
              'ReleaseTime', 'Label']
     grps = df['GroupNumber'].unique().tolist()

@@ -15,9 +15,9 @@ cd ..
 cd Test_Case_2
 call runme.bat
 
-cd ..
-cd Test_Case_3
-call runme.bat
+#cd ..
+#cd Test_Case_3
+#call runme.bat
 
 cd ..
 cd Test_Case_4
@@ -26,11 +26,6 @@ call runme.bat
 cd ..
 cd Test_Case_5
 call runme.bat
-
-rem # Test case 6
-rem cd ..
-rem cd Test_Case_6
-rem call runme.bat
 
 cd ..
 python compile_results.py

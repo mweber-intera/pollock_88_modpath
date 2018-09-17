@@ -8,7 +8,7 @@ import pandas as pd
 model_ws = os.path.join('workspace')
 if not os.path.exists(model_ws): os.mkdir(model_ws)
 gw_codes = os.path.join('gw_codes')
-exe = os.path.join(gw_codes,'mf2k-chprc08spl.exe')
+exe = "../gw_codes/mf2k-chprc08spl.exe"
 mf = flopy.modflow.Modflow('test_case_1', version='mf2k', exe_name =exe,model_ws=model_ws)
 
 
@@ -85,7 +85,7 @@ mf.run_model()
 
 # now for modpath
 
-mpexe = os.path.join(gw_codes,'mp6.exe')
+mpexe = "../gw_codes/mp6.exe"
 
 mp = flopy.modpath.Modpath('test_case_1',exe_name=mpexe,modflowmodel=mf,model_ws=model_ws,dis_file = mf.name+'.dis',head_file=mf.name+'.hds',budget_file=mf.name+'.cbc')
 

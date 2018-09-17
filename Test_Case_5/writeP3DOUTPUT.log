@@ -16,21 +16,17 @@
 		{
 			"Elapsed" : 
 			{
-				"minutes" : 4.45307517e-002,
-				"seconds" : 2.67184510e+000
+				"minutes" : 6.10376000e-003,
+				"seconds" : 3.66225600e-001
 			},
-			"Finished" : "Thu Sep 06 16:36:53 2018\n",
-			"Started" : "Thu Sep 06 16:36:50 2018\n"
+			"Finished" : "Mon Sep 17 13:13:01 2018\n",
+			"Started" : "Mon Sep 17 13:13:01 2018\n"
 		}
 	},
 	{
 		"OUTPUTS" : 
 		{
-			"ASCII_TABLE" : 
-			{
-				"FILE_NAME" : "output/output_table.dat"
-			},
-			"COUNT" : 5,
+			"COUNT" : 3,
 			"ENDPOINTS" : 
 			{
 				"FILE_NAME" : "output/shapefiles/Endpoint_mp3du.shp"
@@ -39,12 +35,8 @@
 			{
 				"FILE_NAME" : "output/shapefiles/Pathline_mp3du.shp"
 			},
-			"POINTS_IN_TIME" : 
-			{
-				"FILE_NAME" : "output/shapefiles/pts_in_time.shp"
-			},
 			"SUMMARY" : null,
-			"TYPES" : [          "SUMMARY",      "ASCII_TABLE",   "POINTS_IN_TIME",         "ENDPOINT",   "PATHLINE_WHOLE" ]
+			"TYPES" : [          "SUMMARY",         "ENDPOINT",   "PATHLINE_WHOLE" ]
 		}
 	},
 	{
